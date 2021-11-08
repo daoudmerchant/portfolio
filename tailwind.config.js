@@ -23,6 +23,24 @@ module.exports = {
       inset: {
         "30px": "30px",
         "40px": "40px",
+        "60px": "60px",
+        "80px": "80px",
+      },
+      fontSize: {
+        "40px": "40px",
+        "60px": "60px",
+      },
+      // animation
+      keyframes: {
+        swipeleft: {
+          "100%": { width: 0 },
+        },
+        swipedown: {
+          "100%": { height: 0 },
+        },
+      },
+      animation: {
+        swipeleft: "swipeleft 1s ease-in-out",
       },
     },
   },

@@ -2,7 +2,6 @@ import tw from "tailwind-styled-components/dist/tailwind";
 
 const Panel = tw.div`
   z-0
-  absolute
   bg-black
   mix-blend-screen
   overflow-hidden
@@ -10,19 +9,22 @@ const Panel = tw.div`
 
 const Horizontal = tw(Panel)`
   h-16
-  left-0
-  right-0
-  ${(props) => (props.side === "TOP" ? "top-0" : "bottom-0")}
+  relative
+  ${(props) =>
+    props.corner === "TOPRIGHT" ? "left-0 right-0" : "top-64 w-1/3"}
+  top-0
 `;
 
 const Vertical = tw(Panel)`
   w-16
-  top-0
-  bottom-0
-  ${(props) => (props.side === "RIGHT" ? "right-0" : "left-0")}
+  ${(props) =>
+    props.corner === "TOPRIGHT"
+      ? "absolute right-0 bottom-0 top-0"
+      : "clear-both relative h-80"}
 `;
 
 const IconContainer = tw(Panel)`
+  absolute
   z-10
   w-full
   flex
@@ -33,6 +35,7 @@ const IconContainer = tw(Panel)`
 `;
 
 const LinkContainer = tw(Panel)`
+  absolute
   z-10
   h-full
   flex
@@ -50,7 +53,7 @@ const Swiper = tw.div`
   absolute
   transform
   transition-all
-  duration-500
+  duration-700
   ease-in-out
 `;
 
@@ -58,41 +61,43 @@ const HorizontalSwiper = tw(Swiper)`
   skew-x-minus45
   h-16
   ${(props) =>
-    props.side === "TOP"
+    props.corner === "TOPRIGHT"
       ? "top-0 -left-16 right-8"
       : "bottom-0 left-8 -right-16"}
-  ${(props) => (props.visible ? "right-fulloffset" : null)}
+  ${(props) =>
+    !props.visible
+      ? null
+      : props.corner === "TOPRIGHT"
+      ? "right-fulloffset"
+      : "left-fulloffset"}
+  hover:right-fulloffset
 `;
 
 const VerticalSwiper = tw(Swiper)`
   skew-y-minus45
   w-16
   ${(props) =>
-    props.side === "RIGHT"
+    props.corner === "TOPRIGHT"
       ? "right-0 -bottom-16 top-8"
       : "left-0 bottom-8 -top-16"}
-  ${(props) => (props.visible ? "top-fulloffset" : null)}
+  ${(props) =>
+    !props.visible
+      ? null
+      : props.corner === "TOPRIGHT"
+      ? "top-fulloffset"
+      : "bottom-fulloffset"}
+  hover:top-fulloffset
 `;
 
 const Frame = ({ corner, vertical, visible, children }) => {
-  const alignment =
-    corner === "TOPRIGHT"
-      ? {
-          horizontalSide: "TOP",
-          verticalSide: "RIGHT",
-        }
-      : {
-          horizontalSide: "BOTTOM",
-          verticalSide: "LEFT",
-        };
   return (
     <>
-      <Horizontal side={alignment.horizontalSide}>
-        <HorizontalSwiper visible={visible} side={alignment.horizontalSide} />
+      <Horizontal corner={corner}>
+        <HorizontalSwiper visible={visible} corner={corner} />
         <LinkContainer>{children}</LinkContainer>
       </Horizontal>
-      <Vertical side={alignment.verticalSide}>
-        <VerticalSwiper visible={visible} side={alignment.verticalSide} />
+      <Vertical corner={corner}>
+        <VerticalSwiper visible={visible} corner={corner} />
         {!!vertical && <IconContainer>{vertical}</IconContainer>}
       </Vertical>
     </>

@@ -12,6 +12,7 @@ import { ICONS } from "./images/icons/iconindex";
 // components
 import Frame from "./components/Frame";
 import Greeting from "./components/Greeting";
+import Project from "./components/Project";
 
 const GlobalStyle = createGlobalStyle`
   body, html, .App {
@@ -82,6 +83,7 @@ const IconLink = tw.a`
 const TestContainer = styled.div`
   position: absolute;
   z-index: 2;
+  left: 100px;
   bottom: 0;
   height: 100px;
   width: 100px;
@@ -139,7 +141,8 @@ function App() {
           </Frame>
           <Main>
             <Greeting />
-            <Projects>These are projects</Projects>
+            <Project visible={showBanner} />
+            <Project visible={showBanner} />
             <TestContainer>
               <Toggle onClick={toggleBanner}>Toggle Banner</Toggle>
             </TestContainer>

@@ -10,6 +10,7 @@ module.exports = {
       inset: {
         fulloffset: "calc(100% - 2em)",
         "1/6": "16.6666667%",
+        74: "74rem",
       },
       borderWidth: {
         16: "16px",

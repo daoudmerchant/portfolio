@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   body, html, .App {
     margin: 0;
     padding: 0;
+    height: 100%;
     box-sizing: border-box;
     overflow: hidden;
     font-family: 'Tenor Sans', sans-serif;
@@ -48,16 +49,24 @@ const Background = tw(background)`
   right-0
 `;
 
-const Main = tw.main`
+const main = styled.main`
+  // hide scrollbar
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const Main = tw(main)`
   absolute
   left-0
   bottom-0
-  right-8
-  top-8
-  md:right-16
-  md:top-16
+  right-16
+  top-16
   z-1
   bg-opacity-0
+  overflow-x-auto
 `;
 
 const Icon = tw.img`
@@ -84,6 +93,15 @@ const Toggle = tw.button`
   text-3xl
 `;
 //
+
+const Projects = tw.div`
+  w-full
+  text-8xl
+  h-2/3
+  bg-white
+  clear-both
+  mix-blend-screen
+`;
 
 const LINKS = {
   CV: "#",
@@ -117,10 +135,11 @@ function App() {
       <div className="App">
         <Background BACKGROUND={BACKGROUND}>
           <Frame corner="TOPRIGHT" vertical={Icons} visible={showBanner}>
-            <h1>Daoud Merchant</h1>
+            {["Daoud Merchant"]}
           </Frame>
           <Main>
-            {/* <Greeting /> */}
+            <Greeting />
+            <Projects>These are projects</Projects>
             <TestContainer>
               <Toggle onClick={toggleBanner}>Toggle Banner</Toggle>
             </TestContainer>

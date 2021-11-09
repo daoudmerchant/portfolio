@@ -1,17 +1,18 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
 const Panel = tw.div`
-z-0
+  z-0
   absolute
   bg-black
   mix-blend-screen
+  overflow-hidden
 `;
 
 const Horizontal = tw(Panel)`
   h-16
   left-0
   right-0
-${(props) => (props.side === "TOP" ? "top-0" : "bottom-0")}
+  ${(props) => (props.side === "TOP" ? "top-0" : "bottom-0")}
 `;
 
 const Vertical = tw(Panel)`

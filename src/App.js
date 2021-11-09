@@ -11,6 +11,7 @@ import { ICONS } from "./images/icons/iconindex";
 
 // components
 import Frame from "./components/Frame";
+import Greeting from "./components/Greeting";
 
 const GlobalStyle = createGlobalStyle`
   body, html, .App {
@@ -18,10 +19,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
+    font-family: 'Tenor Sans', sans-serif;
   }
 `;
 
-const background = styled.main`
+const background = styled.div`
   background-image: url(${(props) => props.BACKGROUND.res640});
   @media (min-width: 641px) {
     background-image: url(${(props) => props.BACKGROUND.res1920});
@@ -34,7 +36,7 @@ const background = styled.main`
   }
 `;
 
-const Main = tw(background)`
+const Background = tw(background)`
   bg-cover
   bg-no-repeat
   bg-center
@@ -46,13 +48,16 @@ const Main = tw(background)`
   right-0
 `;
 
-const WhiteFilter = tw.div`
-  h-full
-  w-full
+const Main = tw.main`
   absolute
+  left-0
+  bottom-0
+  right-8
+  top-8
+  md:right-16
+  md:top-16
   z-1
-  bg-white
-  mix-blend-screen
+  bg-opacity-0
 `;
 
 const Icon = tw.img`
@@ -64,21 +69,21 @@ const IconLink = tw.a`
   my-4
 `;
 
+// TEST
 const TestContainer = styled.div`
   position: absolute;
   z-index: 2;
   bottom: 0;
   height: 100px;
-  width: 500px;
-  background-color: red;
-  isolation: isolate;
+  width: 100px;
+  background-color: white;
+  mix-blend-mode: screen;
 `;
-
 const Toggle = tw.button`
   absolute
-  text-4xl
-  mix-blend-normal
+  text-3xl
 `;
+//
 
 const LINKS = {
   CV: "#",
@@ -110,16 +115,17 @@ function App() {
     <>
       <GlobalStyle />
       <div className="App">
-        <Main BACKGROUND={BACKGROUND}>
-          <WhiteFilter>
-            <Frame corner="TOPRIGHT" vertical={Icons} visible={showBanner}>
-              <h1>Daoud Merchant</h1>
-            </Frame>
+        <Background BACKGROUND={BACKGROUND}>
+          <Frame corner="TOPRIGHT" vertical={Icons} visible={showBanner}>
+            <h1>Daoud Merchant</h1>
+          </Frame>
+          <Main>
+            {/* <Greeting /> */}
             <TestContainer>
               <Toggle onClick={toggleBanner}>Toggle Banner</Toggle>
             </TestContainer>
-          </WhiteFilter>
-        </Main>
+          </Main>
+        </Background>
 
         {/* Photo by <a href="https://unsplash.com/@maripopeo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maria Vojtovicova</a> on <a href="https://unsplash.com/s/photos/aurora-borealis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*/}

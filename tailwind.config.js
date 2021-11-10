@@ -9,10 +9,19 @@ module.exports = {
       },
       height: {
         fullpanel: "calc(100% - 4rem)",
+        halfpanel: "calc(50% - 4rem)",
+        "3/4panel": "calc(75% - 4rem)",
+        bannervertical: "8vh",
+        bannerhorizontal: "8vw",
       },
       width: {
         fullpanel: "calc(100% - 4rem)",
         halfpanel: "calc(50% - 4rem)",
+        bannervertical: "8vh",
+        bannerhorizontal: "8vw",
+      },
+      translate: {
+        raisescreenshot: "calc(-100% - 4rem)",
       },
       inset: {
         "1/6": "16.6666667%",
@@ -34,6 +43,12 @@ module.exports = {
             opacity: 1,
           },
         },
+      },
+      transitionProperty: {
+        position: "left, right, top, bottom",
+      },
+      screens: {
+        portrait: { raw: "(orientation: portrait)" },
       },
     },
   },

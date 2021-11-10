@@ -26,25 +26,49 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     font-family: 'Tenor Sans', sans-serif;
   }
-`;
 
-const background = styled.div`
-  background-image: url(${(props) => props.BACKGROUND.res640});
-  @media (min-width: 641px) {
-    background-image: url(${(props) => props.BACKGROUND.res1920});
-  }
-  @media (min-width: 1921px) {
-    background-image: url(${(props) => props.BACKGROUND.res2400});
-  }
-  @media (min-width: 2401px) {
-    background-image: url(${(props) => props.BACKGROUND.res4160});
+  .App {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
   }
 `;
 
-const Background = tw(background)`
-  bg-cover
-  bg-no-repeat
-  bg-center
+// const background = styled.div`
+//   background-color: darkblue;
+//   @media (min-width: 641px) {
+//     background-image: url(${(props) => props.BACKGROUND.res1920});
+//   }
+//   @media (min-width: 1921px) {
+//     background-image: url(${(props) => props.BACKGROUND.res2400});
+//   }
+//   @media (min-width: 2401px) {
+//     background-image: url(${(props) => props.BACKGROUND.res4160});
+//   }
+//   background-image: url(${(props) => props.BACKGROUND.res640});
+// `;
+
+// const Background = tw(background)`
+//   bg-cover
+//   bg-no-repeat
+//   bg-center
+//   z-0
+//   absolute
+//   top-0
+//   bottom-0
+//   left-0
+//   right-0
+//   overflow-hidden
+// `;
+
+const Background = tw.img`
+  object-fill
+  center
+  h-full
+  w-full
   z-0
   absolute
   top-0
@@ -75,7 +99,7 @@ const Main = tw(main)`
 `;
 
 const Fader = tw.div`
-  h-8
+  h-4
   right-16
   left-0
   absolute
@@ -130,25 +154,30 @@ function App() {
 
   // TODO: Improve 'start the show' logic
   useEffect(() => {
-    setTimeout(() => setShowBanner(true), 1000);
+    setTimeout(() => setShowBanner(true), 500);
   }, []);
   return (
     <>
       <GlobalStyle />
       <div className="App">
-        <Background BACKGROUND={BACKGROUND}>
-          <Frame corner="TOPRIGHT" vertical={Icons} visible={showBanner}>
-            {["Daoud Merchant"]}
-          </Frame>
-          <TopFader />
-          <Main>
-            <Greeting visible={showBanner} />
-            <Project visible={showBanner} />
-            <Project visible={showBanner} />
-            <Footer />
-          </Main>
-          <BottomFader />
-        </Background>
+        {/* <Background BACKGROUND={BACKGROUND}> */}
+        <Background
+          srcSet={`${BACKGROUND.res640} 640w, ${BACKGROUND.res1920} 1920w, ${BACKGROUND.res2400} 2400w, ${BACKGROUND.res4160} 4160w`}
+          src={BACKGROUND.res1920}
+          alt="Aurora Borealis"
+        />
+        <Frame corner="TOPRIGHT" vertical={Icons} visible={showBanner}>
+          {["Daoud Merchant"]}
+        </Frame>
+        <TopFader />
+        <Main>
+          <Greeting visible={showBanner} />
+          <Project visible={showBanner} />
+          <Project visible={showBanner} />
+          <Footer />
+        </Main>
+        <BottomFader />
+        {/*  </Background> */}
 
         {/* Photo by <a href="https://unsplash.com/@maripopeo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maria Vojtovicova</a> on <a href="https://unsplash.com/s/photos/aurora-borealis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*/}

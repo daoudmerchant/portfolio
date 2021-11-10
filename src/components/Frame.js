@@ -21,7 +21,7 @@ const Vertical = tw(Panel)`
   ${(props) =>
     props.corner === "TOPRIGHT"
       ? "mix-blend-screen absolute right-0 top-0 bottom-8"
-      : "relative h-80"}
+      : "relative h-fullpanel"}
     top-8
 `;
 
@@ -58,7 +58,7 @@ const Swiper = tw.div`
   bg-white
   absolute
   transform
-  transition-all
+  transition-position
   duration-700
   ease-in-out
 `;

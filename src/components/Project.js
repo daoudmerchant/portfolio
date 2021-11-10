@@ -14,7 +14,8 @@ const FrameContainer = tw.div`
     bg-white
     w-full
     md:w-1/2
-    h-100
+    h-3/4
+    md:h-1/2
     mix-blend-screen
 `;
 
@@ -24,10 +25,11 @@ const ProjectPic = tw.div`
     z-40
     w-fullpanel
     md:w-halfpanel
-    h-80
+    h-3/4panel
+    md:h-halfpanel
     left-16
     transform
-    -translate-y-96
+    translate-y-raisescreenshot
 `;
 
 const ProjectDescription = tw.div`
@@ -37,7 +39,7 @@ const ProjectDescription = tw.div`
   bg-blue-500
   z-40
   w-1/2
-  h-96
+  h-1/2
   transform
   translate-x-full
   -translate-y-full
@@ -72,17 +74,22 @@ const Project = ({ visible }) => {
         onMouseEnter={reportHovered}
         onMouseLeave={reportUnhovered}
       >
-        {isTouchscreen ? (
-          <ReactVisibilitySensor onChange={handleScroll}>
-            <Frame corner="BOTTOMLEFT" visible={focused} />
-          </ReactVisibilitySensor>
-        ) : (
-          <Frame corner="BOTTOMLEFT" visible={focused} />
-        )}
+        <Frame corner="BOTTOMLEFT" visible={focused} />
       </FrameContainer>
-      <ProjectPic onMouseEnter={reportHovered} onMouseLeave={reportUnhovered}>
-        <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
-      </ProjectPic>
+      {isTouchscreen ? (
+        <ReactVisibilitySensor onChange={handleScroll}>
+          <ProjectPic
+            onMouseEnter={reportHovered}
+            onMouseLeave={reportUnhovered}
+          >
+            <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
+          </ProjectPic>
+        </ReactVisibilitySensor>
+      ) : (
+        <ProjectPic onMouseEnter={reportHovered} onMouseLeave={reportUnhovered}>
+          <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
+        </ProjectPic>
+      )}
       <ProjectDescription
         onMouseEnter={reportHovered}
         onMouseLeave={reportUnhovered}

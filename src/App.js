@@ -19,6 +19,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
+    overflow-x: hidden;
     box-sizing: border-box;
     overflow: hidden;
     font-family: 'Tenor Sans', sans-serif;
@@ -48,6 +50,7 @@ const Background = tw(background)`
   bottom-0
   left-0
   right-0
+  overflow-hidden
 `;
 
 const main = styled.main`
@@ -66,7 +69,7 @@ const Main = tw(main)`
   right-16
   top-16
   z-1
-  bg-opacity-0
+  bg-transparent
   overflow-x-auto
 `;
 

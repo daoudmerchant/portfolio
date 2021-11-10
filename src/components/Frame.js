@@ -1,31 +1,36 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
 const Panel = tw.div`
-  z-0
+  z-10
   bg-black
-  mix-blend-screen
-  overflow-hidden
+  transform
 `;
 
 const Horizontal = tw(Panel)`
   h-16
   relative
+  skew-x-minus45
   ${(props) =>
-    props.corner === "TOPRIGHT" ? "left-0 right-0" : "top-64 w-1/3"}
-  top-0
+    props.corner === "TOPRIGHT"
+      ? "mix-blend-screen left-8 right-8 top-0"
+      : "overflow-hidden w-fullpanel left-8"}
 `;
 
 const Vertical = tw(Panel)`
   w-16
+  skew-y-minus45
   ${(props) =>
     props.corner === "TOPRIGHT"
-      ? "absolute right-0 bottom-0 top-0"
-      : "clear-both relative h-80"}
+      ? "mix-blend-screen absolute right-0 -top-8 bottom-8"
+      : "relative h-80"}
+    top-8
 `;
 
 const IconContainer = tw(Panel)`
+transform
+skew-y-45
   absolute
-  z-10
+  z-20
   w-full
   flex
   flex-col
@@ -35,8 +40,10 @@ const IconContainer = tw(Panel)`
 `;
 
 const LinkContainer = tw(Panel)`
+transform
+skew-x-45
   absolute
-  z-10
+  z-20
   h-full
   flex
   items-center
@@ -48,7 +55,7 @@ const LinkContainer = tw(Panel)`
 `;
 
 const Swiper = tw.div`
-  z-20
+  z-30
   bg-white
   absolute
   transform
@@ -58,48 +65,46 @@ const Swiper = tw.div`
 `;
 
 const HorizontalSwiper = tw(Swiper)`
-  skew-x-minus45
   h-16
   ${(props) =>
     props.corner === "TOPRIGHT"
       ? "top-0 -left-16 right-8"
-      : "bottom-0 left-8 -right-16"}
+      : "bottom-0 left-0 right-0"}
   ${(props) =>
     !props.visible
       ? null
       : props.corner === "TOPRIGHT"
-      ? "right-fulloffset"
-      : "left-fulloffset"}
+      ? "right-full"
+      : "left-full"}
   hover:right-fulloffset
 `;
 
 const VerticalSwiper = tw(Swiper)`
-  skew-y-minus45
   w-16
   ${(props) =>
     props.corner === "TOPRIGHT"
-      ? "right-0 -bottom-16 top-8"
-      : "left-0 bottom-8 -top-16"}
+      ? "right-0 -bottom-16 top-0"
+      : "left-0 bottom-0 top-0"}
   ${(props) =>
     !props.visible
       ? null
       : props.corner === "TOPRIGHT"
-      ? "top-fulloffset"
-      : "bottom-fulloffset"}
+      ? "top-full"
+      : "bottom-full"}
   hover:top-fulloffset
 `;
 
 const Frame = ({ corner, vertical, visible, children }) => {
   return (
     <>
-      <Horizontal corner={corner}>
-        <HorizontalSwiper visible={visible} corner={corner} />
-        <LinkContainer>{children}</LinkContainer>
-      </Horizontal>
       <Vertical corner={corner}>
-        <VerticalSwiper visible={visible} corner={corner} />
         {!!vertical && <IconContainer>{vertical}</IconContainer>}
+        <VerticalSwiper visible={visible} corner={corner} />
       </Vertical>
+      <Horizontal corner={corner}>
+        <LinkContainer>{children}</LinkContainer>
+        <HorizontalSwiper visible={visible} corner={corner} />
+      </Horizontal>
     </>
   );
 };

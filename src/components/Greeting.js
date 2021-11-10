@@ -56,7 +56,6 @@ const ProfilePic = tw.img`
     transform
     -translate-x-1/2
     top-12
-    
     rounded-full
     m-0
 `;

@@ -1,7 +1,6 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
 const GreetingContainer = tw.header`
-    text-2xl
     w-full
     md:w-1/2
     lg:w-2/3
@@ -12,9 +11,18 @@ const GreetingContainer = tw.header`
     md:flex
     md:justify-center
     md:items-center
-    text-center
     px-6
-    italic
+`;
+
+const GreetingText = tw.p`
+text-2xl
+text-center
+italic
+
+
+// animation
+opacity-0
+${(props) => (props.visible ? "animate-fade-in" : null)}
 `;
 
 const ProfileContainer = tw.div`
@@ -40,6 +48,10 @@ const ProfileBorder = tw.div`
     md:h-64
     md:w-64
     rounded-full
+
+    // animation
+    opacity-0
+    ${(props) => (props.visible ? "animate-fade-in" : null)}
 `;
 
 const ProfilePic = tw.img`
@@ -58,23 +70,30 @@ const ProfilePic = tw.img`
     top-12
     rounded-full
     m-0
+
+    // animation
+    opacity-0
+    ${(props) => (props.visible ? "animate-fade-in" : null)}
 `;
 
-const Greeting = () => {
+const Greeting = ({ visible }) => {
   return (
     <>
       <ProfileContainer>
-        <ProfileBorder />
+        <ProfileBorder visible={visible} />
       </ProfileContainer>
       <ProfilePic
         src="https://hips.hearstapps.com/countryliving.cdnds.net/17/47/2048x1365/gallery-1511194376-cavachon-puppy-christmas.jpg?resize=980:*"
         alt="PLACEHOLDER ALTER"
+        visible={visible}
       />
-      <GreetingContainer>
-        This is the greeting (NOT blended)
-        <br />
-        In it I'll talk a little bit about myself, trying to sound professional
-        and appealing
+      <GreetingContainer visible={visible}>
+        <GreetingText visible={visible}>
+          This is the greeting (NOT blended)
+          <br />
+          In it I'll talk a little bit about myself, trying to sound
+          professional and appealing
+        </GreetingText>
       </GreetingContainer>
     </>
   );

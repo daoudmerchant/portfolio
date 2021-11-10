@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import tw from "tailwind-styled-components";
 import styled, { createGlobalStyle } from "styled-components";
@@ -13,6 +13,7 @@ import { ICONS } from "./images/icons/iconindex";
 import Frame from "./components/Frame";
 import Greeting from "./components/Greeting";
 import Project from "./components/Project";
+import Footer from "./components/Footer";
 
 const GlobalStyle = createGlobalStyle`
   body, html, .App {
@@ -119,15 +120,6 @@ const Toggle = tw.button`
 `;
 //
 
-const Projects = tw.div`
-  w-full
-  text-8xl
-  h-2/3
-  bg-white
-  clear-both
-  mix-blend-screen
-`;
-
 const LINKS = {
   CV: "#",
   LinkedIn: "https://www.linkedin.com",
@@ -153,6 +145,11 @@ const Icons = [ICONS.GITHUB, ICONS.LINKEDIN, ICONS.CV, ICONS.EMAIL].map(
 function App() {
   const [showBanner, setShowBanner] = useState(false);
 
+  // TODO: Improve 'start the show' logic
+  useEffect(() => {
+    setTimeout(() => setShowBanner(true), 1000);
+  }, []);
+
   const toggleBanner = () => setShowBanner((prevVisibility) => !prevVisibility);
   return (
     <>
@@ -164,12 +161,13 @@ function App() {
           </Frame>
           <TopFader />
           <Main>
-            <Greeting />
+            <Greeting visible={showBanner} />
             <Project visible={showBanner} />
             <Project visible={showBanner} />
             <TestContainer>
               <Toggle onClick={toggleBanner}>Toggle Banner</Toggle>
             </TestContainer>
+            <Footer />
           </Main>
           <BottomFader />
         </Background>

@@ -12,6 +12,7 @@ module.exports = {
       },
       width: {
         fullpanel: "calc(100% - 4rem)",
+        halfpanel: "calc(50% - 4rem)",
       },
       inset: {
         "1/6": "16.6666667%",
@@ -20,9 +21,18 @@ module.exports = {
       borderWidth: {
         16: "16px",
       },
-      outline: {
-        white: "2px solid white",
-        black: "2px solid black",
+      animation: {
+        "fade-in": "fade-in 1s linear forwards",
+      },
+      keyframes: {
+        "fade-in": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
       },
     },
   },

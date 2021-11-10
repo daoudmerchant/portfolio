@@ -73,6 +73,26 @@ const Main = tw(main)`
   overflow-x-auto
 `;
 
+const Fader = tw.div`
+  h-8
+  right-16
+  left-0
+  absolute
+  z-50
+  from-transparent
+  to-white
+`;
+
+const TopFader = tw(Fader)`
+  top-16
+  bg-gradient-to-t
+`;
+
+const BottomFader = tw(Fader)`
+  bottom-0
+  bg-gradient-to-b
+`;
+
 const Icon = tw.img`
   filter
   invert
@@ -142,6 +162,7 @@ function App() {
           <Frame corner="TOPRIGHT" vertical={Icons} visible={showBanner}>
             {["Daoud Merchant"]}
           </Frame>
+          <TopFader />
           <Main>
             <Greeting />
             <Project visible={showBanner} />
@@ -150,6 +171,7 @@ function App() {
               <Toggle onClick={toggleBanner}>Toggle Banner</Toggle>
             </TestContainer>
           </Main>
+          <BottomFader />
         </Background>
 
         {/* Photo by <a href="https://unsplash.com/@maripopeo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maria Vojtovicova</a> on <a href="https://unsplash.com/s/photos/aurora-borealis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

@@ -3,6 +3,8 @@ import tw from "tailwind-styled-components/dist/tailwind";
 import { useMediaQuery } from "react-responsive";
 import ReactVisibilitySensor from "react-visibility-sensor";
 
+import ShowMeSomething from "../images/Projects/ShowMeSomething/ShowMeSomethingLg.png";
+
 import Frame from "./Frame";
 
 const FrameContainer = tw.div`
@@ -41,6 +43,18 @@ const ProjectDescription = tw.div`
   -translate-y-full
 `;
 
+const ProjectImg = tw.img`
+  max-h-full
+  max-w-full
+  p-5
+  relative
+  left-1/2
+  top-1/2
+  transform
+  -translate-x-1/2
+  -translate-y-1/2
+`;
+
 const Project = ({ visible }) => {
   const [focused, setFocused] = useState(false);
   const reportHovered = () => setFocused(true);
@@ -66,7 +80,9 @@ const Project = ({ visible }) => {
           <Frame corner="BOTTOMLEFT" visible={focused} />
         )}
       </FrameContainer>
-      <ProjectPic onMouseEnter={reportHovered} onMouseLeave={reportUnhovered} />
+      <ProjectPic onMouseEnter={reportHovered} onMouseLeave={reportUnhovered}>
+        <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
+      </ProjectPic>
       <ProjectDescription
         onMouseEnter={reportHovered}
         onMouseLeave={reportUnhovered}

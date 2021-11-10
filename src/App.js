@@ -103,23 +103,6 @@ const IconLink = tw.a`
   my-4
 `;
 
-// TEST
-const TestContainer = styled.div`
-  position: absolute;
-  z-index: 2;
-  left: 100px;
-  bottom: 0;
-  height: 100px;
-  width: 100px;
-  background-color: white;
-  mix-blend-mode: screen;
-`;
-const Toggle = tw.button`
-  absolute
-  text-3xl
-`;
-//
-
 const LINKS = {
   CV: "#",
   LinkedIn: "https://www.linkedin.com",
@@ -149,8 +132,6 @@ function App() {
   useEffect(() => {
     setTimeout(() => setShowBanner(true), 1000);
   }, []);
-
-  const toggleBanner = () => setShowBanner((prevVisibility) => !prevVisibility);
   return (
     <>
       <GlobalStyle />
@@ -164,9 +145,6 @@ function App() {
             <Greeting visible={showBanner} />
             <Project visible={showBanner} />
             <Project visible={showBanner} />
-            <TestContainer>
-              <Toggle onClick={toggleBanner}>Toggle Banner</Toggle>
-            </TestContainer>
             <Footer />
           </Main>
           <BottomFader />

@@ -20,6 +20,7 @@ module.exports = {
       },
       borderWidth: {
         16: "16px",
+        "16rem": "16rem",
       },
       animation: {
         "fade-in": "fade-in 1s linear forwards",

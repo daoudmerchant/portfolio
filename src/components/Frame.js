@@ -8,12 +8,11 @@ const Panel = tw.div`
 
 const Horizontal = tw(Panel)`
   h-16
-  relative
   skew-x-minus45
   ${(props) =>
     props.corner === "TOPRIGHT"
-      ? "mix-blend-screen left-8 right-8 top-0"
-      : "overflow-hidden w-fullpanel left-8"}
+      ? "absolute mix-blend-screen left-8 right-8 top-0"
+      : "relative overflow-hidden w-fullpanel left-8"}
 `;
 
 const Vertical = tw(Panel)`
@@ -21,7 +20,7 @@ const Vertical = tw(Panel)`
   skew-y-minus45
   ${(props) =>
     props.corner === "TOPRIGHT"
-      ? "mix-blend-screen absolute right-0 -top-8 bottom-8"
+      ? "mix-blend-screen absolute right-0 top-0 bottom-8"
       : "relative h-80"}
     top-8
 `;
@@ -68,7 +67,7 @@ const HorizontalSwiper = tw(Swiper)`
   h-16
   ${(props) =>
     props.corner === "TOPRIGHT"
-      ? "top-0 -left-16 right-8"
+      ? "top-0 -left-16 right-0"
       : "bottom-0 left-0 right-0"}
   ${(props) =>
     !props.visible

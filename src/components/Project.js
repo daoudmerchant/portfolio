@@ -14,9 +14,13 @@ const FrameContainer = tw.div`
 `;
 
 const ProjectPic = tw.div`
-    h-60
-    bg-green
-    w-20
+    bg-black
+    absolute
+    z-50
+    top-100
+    bottom-0
+    left-0
+    right-0
 `;
 
 const Project = ({ visible }) => {
@@ -25,8 +29,7 @@ const Project = ({ visible }) => {
       <FrameContainer>
         <Frame corner="BOTTOMLEFT" visible={visible} />
       </FrameContainer>
-      {/* <ProjectContainer />
-      <ProjectPic /> */}
+      <ProjectPic />
     </>
   );
 };

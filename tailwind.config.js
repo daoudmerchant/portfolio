@@ -9,13 +9,17 @@ module.exports = {
       },
       height: {
         fullpanel: "calc(100% - 4rem)",
-        halfpanel: "calc(50% - 4rem)",
+        projectpanel: "31.25vw",
+        projectbox: "calc(31.25vw - 4rem)",
         "3/4panel": "calc(75% - 4rem)",
         bannervertical: "8vh",
         bannerhorizontal: "8vw",
       },
       width: {
         fullpanel: "calc(100% - 4rem)",
+        fulllinks: "calc(100% - 8rem)",
+        projectpanel: "calc(50vw - 2rem)",
+        projectbox: "calc(50vw - 6rem)",
         halfpanel: "calc(50% - 4rem)",
         bannervertical: "8vh",
         bannerhorizontal: "8vw",
@@ -53,7 +57,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      position: ["hover"],
+    },
   },
   plugins: [],
 };

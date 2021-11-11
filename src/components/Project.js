@@ -1,11 +1,15 @@
 import { useState } from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
+import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import ReactVisibilitySensor from "react-visibility-sensor";
+
+import { useFocusManagement } from "../hooks";
 
 import ShowMeSomething from "../images/Projects/ShowMeSomething/ShowMeSomethingLg.png";
 
 import Frame from "./Frame";
+import ProjectLink from "./ProjectLink";
 
 const FrameContainer = tw.div`
     z-0
@@ -13,56 +17,58 @@ const FrameContainer = tw.div`
     clear-both
     bg-white
     w-full
-    md:w-1/2
+    md:w-projectpanel
     h-3/4
-    md:h-1/2
+    md:h-projectpanel
     mix-blend-screen
 `;
 
-const ProjectPic = tw.div`
-    bg-green-500
+/*
+  Project height
+
+  16x10
+
+  width = 50vw - 2rem;
+  height = (50vw - 8rem) / 16 * 10 = 31.25vw - 1.25rem
+*/
+
+const ProjectPreview = tw.div`
     absolute
     z-40
-    w-fullpanel
-    md:w-halfpanel
-    h-3/4panel
-    md:h-halfpanel
+    w-projectbox
+    md:w-projectbox
+    h-projectbox
     left-16
     transform
     translate-y-raisescreenshot
+    p-4
+`;
+
+const ProjectImg = tw.img`
+  h-full
+  w-full
 `;
 
 const ProjectDescription = tw.div`
   hidden
   md:block
   absolute
-  bg-blue-500
+  bg-white
   z-40
-  w-1/2
-  h-1/2
+  w-projectpanel
+  h-projectpanel
   transform
   translate-x-full
   -translate-y-full
 `;
 
-const ProjectImg = tw.img`
-  max-h-full
-  max-w-full
-  p-5
-  relative
-  left-1/2
-  top-1/2
-  transform
-  -translate-x-1/2
-  -translate-y-1/2
+const TouchTitle = styled.p`
+  writing-mode: sideways-lr;
 `;
 
 const Project = ({ visible }) => {
-  const [focused, setFocused] = useState(false);
-  const reportHovered = () => setFocused(true);
-  const reportUnhovered = () => setFocused(false);
-
-  const handleScroll = (isVisible) => setFocused(isVisible);
+  const { focused, handleScroll, reportHovered, reportUnhovered } =
+    useFocusManagement();
 
   const isTouchscreen = useMediaQuery({
     query: "(hover: none) and (pointer: coarse)",
@@ -74,26 +80,45 @@ const Project = ({ visible }) => {
         onMouseEnter={reportHovered}
         onMouseLeave={reportUnhovered}
       >
-        <Frame corner="BOTTOMLEFT" visible={focused} />
+        <Frame
+          corner="BOTTOMLEFT"
+          vertical={
+            isTouchscreen ? <TouchTitle>ShowMeSomething</TouchTitle> : null
+          }
+          visible={focused}
+        >
+          <ProjectLink href="#">DEMO</ProjectLink>
+          <ProjectLink href="#">REPO</ProjectLink>
+          <ProjectLink href="#">MORE</ProjectLink>
+        </Frame>
       </FrameContainer>
       {isTouchscreen ? (
         <ReactVisibilitySensor onChange={handleScroll}>
-          <ProjectPic
+          <ProjectPreview
             onMouseEnter={reportHovered}
             onMouseLeave={reportUnhovered}
           >
             <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
-          </ProjectPic>
+          </ProjectPreview>
         </ReactVisibilitySensor>
       ) : (
-        <ProjectPic onMouseEnter={reportHovered} onMouseLeave={reportUnhovered}>
+        <ProjectPreview
+          onMouseEnter={reportHovered}
+          onMouseLeave={reportUnhovered}
+        >
           <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
-        </ProjectPic>
+        </ProjectPreview>
       )}
       <ProjectDescription
         onMouseEnter={reportHovered}
         onMouseLeave={reportUnhovered}
-      />
+      >
+        <h2>ShowMeSomething</h2>
+        <p>
+          A 'button'-based Reddit client using the Reddit API, with CRUD button
+          management stored on user accounts in Google Firebase.
+        </p>
+      </ProjectDescription>
     </>
   );
 };

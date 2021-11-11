@@ -21,8 +21,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
     overflow: hidden;
     font-family: 'Tenor Sans', sans-serif;
   }
@@ -173,7 +171,7 @@ function App() {
         <Main>
           <Greeting visible={showBanner} />
           <Project visible={showBanner} />
-          <Project visible={showBanner} />
+          {/* <Project visible={showBanner} /> */}
           <Footer />
         </Main>
         <BottomFader />

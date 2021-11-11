@@ -15,6 +15,12 @@ const Horizontal = tw(Panel)`
       : "relative overflow-hidden w-fullpanel left-8"}
 `;
 
+/*
+    Project horizontal will always be 50% (- 4em)
+    16:10 ratio
+    50 / 16 * 10 = 31.25% (- 4em)
+*/
+
 const Vertical = tw(Panel)`
   w-16
   skew-y-minus45
@@ -44,13 +50,12 @@ skew-x-45
   absolute
   z-20
   h-full
+  w-fullpanel
   flex
   items-center
-  left-12
   text-white
-  text-4xl
-  md:text-5xl
-  md:left-16
+  ${(props) =>
+    props.length > 1 ? "left-8 justify-between" : "left-12 justify-start"}
 `;
 
 const Swiper = tw.div`
@@ -101,7 +106,7 @@ const Frame = ({ corner, vertical, visible, children }) => {
         <VerticalSwiper visible={visible} corner={corner} />
       </Vertical>
       <Horizontal corner={corner}>
-        <LinkContainer>{children}</LinkContainer>
+        <LinkContainer length={children.length}>{children}</LinkContainer>
         <HorizontalSwiper visible={visible} corner={corner} />
       </Horizontal>
     </>

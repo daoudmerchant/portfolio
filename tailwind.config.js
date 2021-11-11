@@ -56,10 +56,6 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {
-      position: ["hover"],
-    },
-  },
+  variants: {},
   plugins: [],
 };

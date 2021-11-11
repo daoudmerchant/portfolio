@@ -1,17 +1,27 @@
-import { useFocusManagement } from "../hooks";
+import { useFocusManagement, useScreenType } from "../hooks";
 import tw from "tailwind-styled-components";
+import styled from "styled-components";
 
-const Link = tw.div`
+const link = styled.a`
+  //   -webkit-tap-highlight-color: transparent;
+`;
+
+const Link = tw(link)`
   h-full
   flex-grow
   flex
   text-l
-  md:text-xl
-  lg:text-2xl
+  sm:text-xl
+  md:text-2xl
+  lg:text-3xl
   justify-center
   items-center
   relative
   overflow-hidden
+  cursor-pointer
+  active:bg-white
+  active:text-black
+  select-none
 `;
 
 const LinkSwiper = tw.div`
@@ -28,15 +38,15 @@ const LinkSwiper = tw.div`
     mix-blend-difference
 `;
 
-const ProjectLink = ({ children }) => {
+const ProjectLink = ({ text, url }) => {
   const { focused, reportHovered, reportUnhovered } = useFocusManagement();
 
-  console.log(focused);
+  const isTouchscreen = useScreenType();
 
   return (
     <Link onMouseEnter={reportHovered} onMouseLeave={reportUnhovered}>
-      <LinkSwiper hovered={focused} />
-      {"Hello"}
+      {!isTouchscreen && <LinkSwiper hovered={focused} />}
+      {text}
     </Link>
   );
 };

@@ -1,10 +1,8 @@
-import { useState } from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
 import styled from "styled-components";
-import { useMediaQuery } from "react-responsive";
 import ReactVisibilitySensor from "react-visibility-sensor";
 
-import { useFocusManagement } from "../hooks";
+import { useFocusManagement, useScreenType } from "../hooks";
 
 import ShowMeSomething from "../images/Projects/ShowMeSomething/ShowMeSomethingLg.png";
 
@@ -70,9 +68,7 @@ const Project = ({ visible }) => {
   const { focused, handleScroll, reportHovered, reportUnhovered } =
     useFocusManagement();
 
-  const isTouchscreen = useMediaQuery({
-    query: "(hover: none) and (pointer: coarse)",
-  });
+  const isTouchscreen = useScreenType();
 
   return (
     <>
@@ -87,9 +83,9 @@ const Project = ({ visible }) => {
           }
           visible={focused}
         >
-          <ProjectLink href="#">DEMO</ProjectLink>
-          <ProjectLink href="#">REPO</ProjectLink>
-          <ProjectLink href="#">MORE</ProjectLink>
+          <ProjectLink href="#" text="DEMO" />
+          <ProjectLink href="#" text="REPO" />
+          {isTouchscreen && <ProjectLink href="#" text="MORE" />}
         </Frame>
       </FrameContainer>
       {isTouchscreen ? (

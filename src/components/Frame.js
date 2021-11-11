@@ -80,7 +80,6 @@ const HorizontalSwiper = tw(Swiper)`
       : props.corner === "TOPRIGHT"
       ? "right-full"
       : "left-full"}
-  hover:right-fulloffset
 `;
 
 const VerticalSwiper = tw(Swiper)`
@@ -95,7 +94,6 @@ const VerticalSwiper = tw(Swiper)`
       : props.corner === "TOPRIGHT"
       ? "top-full"
       : "bottom-full"}
-  hover:top-fulloffset
 `;
 
 const Frame = ({ corner, vertical, visible, children }) => {

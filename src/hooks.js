@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export const useFocusManagement = () => {
   const [focused, setFocused] = useState(false);
@@ -11,4 +12,10 @@ export const useFocusManagement = () => {
     reportUnhovered,
     handleScroll,
   };
+};
+
+export const useScreenType = () => {
+  return useMediaQuery({
+    query: "(hover: none) and (pointer: coarse)",
+  });
 };

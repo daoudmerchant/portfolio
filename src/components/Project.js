@@ -100,9 +100,9 @@ const Project = ({ visible }) => {
           <ProjectLink href="#" text="REPO" type="LINK" />
           <ProjectLink
             href="#"
-            text={showMore ? "LESS" : "MORE"}
+            text={showMore && !isTouchscreen ? "LESS" : "MORE"}
             type="BUTTON"
-            onClick={toggleShowMore}
+            handleClick={toggleShowMore}
           />
         </Frame>
       </FrameContainer>

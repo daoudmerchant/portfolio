@@ -50,20 +50,30 @@ select-none
 
 const LinkSwiper = tw.div`
     absolute
-    bg-white
+    text-black
+    
     w-full
     h-full
     transform
-    translate-z-0
+    flex
+    items-center
+    justify-center
     ${(props) => (props.hovered ? "translate-x-0" : "-translate-x-full")}
+    ${(props) =>
+      props.top ? "bg-white z-30 mix-blend-difference" : "bg-black z-20"}
     transition-transform
     duration-300
     ease-in-out
-    mix-blend-difference
 `;
 
-const ProjectLink = ({ text, url, type, onClick }) => {
-  const { focused, reportHovered, reportUnhovered } = useFocusManagement();
+const LinkText = tw.span`
+  // absolute
+  ${(props) => (props.focused ? "l-full" : null)}
+`;
+
+const ProjectLink = ({ text, url, type, handleClick }) => {
+  const { focused, reportHovered, reportUnhovered, toggleFocused } =
+    useFocusManagement();
 
   const { isTouchscreen } = useScreenType();
 
@@ -71,11 +81,21 @@ const ProjectLink = ({ text, url, type, onClick }) => {
 
   return (
     <Content
-      onMouseEnter={reportHovered}
-      onMouseLeave={reportUnhovered}
-      onClick={onClick || null}
+      onMouseEnter={!isTouchscreen && reportHovered}
+      onMouseLeave={!isTouchscreen && reportUnhovered}
+      onClick={() => {
+        isTouchscreen && toggleFocused();
+        handleClick?.();
+      }}
     >
-      <LinkSwiper hovered={focused} />
+      {!(type === "LINK" && isTouchscreen) && (
+        <>
+          <LinkSwiper hovered={focused} top={true}>
+            {text === "MORE" && isTouchscreen ? "LESS" : ""}
+          </LinkSwiper>
+          {isTouchscreen && <LinkSwiper hovered={focused} top={false} />}
+        </>
+      )}
       {text}
     </Content>
   );

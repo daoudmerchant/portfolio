@@ -6,11 +6,13 @@ export const useFocusManagement = () => {
   const reportHovered = () => setFocused(true);
   const reportUnhovered = () => setFocused(false);
   const handleScroll = (isVisible) => setFocused(isVisible);
+  const toggleFocused = () => setFocused((prevState) => !prevState);
   return {
     focused,
     reportHovered,
     reportUnhovered,
     handleScroll,
+    toggleFocused,
   };
 };
 

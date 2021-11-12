@@ -41,7 +41,7 @@ skew-y-45
   flex-col
   justify-center
   items-center
-  bottom-16
+  ${(props) => (props.corner === "TOPRIGHT" ? "bottom-16" : "top-24")}
 `;
 
 const LinkContainer = tw(Panel)`
@@ -100,7 +100,9 @@ const Frame = ({ corner, vertical, visible, children }) => {
   return (
     <>
       <Vertical corner={corner}>
-        {!!vertical && <IconContainer>{vertical}</IconContainer>}
+        {!!vertical && (
+          <IconContainer corner={corner}>{vertical}</IconContainer>
+        )}
         <VerticalSwiper visible={visible} corner={corner} />
       </Vertical>
       <Horizontal corner={corner}>

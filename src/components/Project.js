@@ -5,7 +5,8 @@ import ReactVisibilitySensor from "react-visibility-sensor";
 
 import { useFocusManagement, useScreenType } from "../hooks";
 
-import ShowMeSomething from "../images/Projects/ShowMeSomething/ShowMeSomethingLg.png";
+import ShowMeSomethingLg from "../images/Projects/ShowMeSomething/ShowMeSomethingLg.png";
+import ShowMeSomethingSm from "../images/Projects/ShowMeSomething/ShowMeSomethingSm.png";
 
 import Frame from "./Frame";
 import ProjectLink from "./ProjectLink";
@@ -17,18 +18,22 @@ const FrameContainer = tw.div`
     bg-white
     w-full
     lg:w-projectpanel
-    h-projectpanellg
+    h-projectpanelportrait
+    sm:h-projectpanellg
     lg:h-projectpanel
     mix-blend-screen
 `;
 
 /*
-  Project height
-
-  16x10
+  Project height (split) - 16x10
 
   width = 50vw - 2rem;
   height = (50vw - 8rem) / 16 * 10 = 31.25vw - 1.25rem
+
+  Project height (single, small) - 16x10
+
+  width = 100vw - 8rem;
+  height = (100vw - 8rem) / 10 * 16 = 160vw - 12.8rem
 */
 
 const ProjectPreview = tw.div`
@@ -37,7 +42,8 @@ const ProjectPreview = tw.div`
     z-40
     w-projectboxlg
     lg:w-projectbox
-    h-projectboxlg
+    h-projectboxportrait
+    sm:h-projectboxlg
     lg:h-projectbox
     left-16
     transform
@@ -45,7 +51,13 @@ const ProjectPreview = tw.div`
     p-4
 `;
 
-const ProjectImg = tw.img`
+const ProjectImgFallback = tw.img`
+  h-full
+  w-full
+  relative
+`;
+
+const ProjectImg = tw.picture`
   h-full
   w-full
   relative
@@ -68,12 +80,10 @@ const ProjectDescription = tw.div`
   -translate-y-full
 `;
 
-const sidetitle = styled.p`
-  writing-mode: sideways-lr;
-`;
-
-const SideTitle = tw(sidetitle)`
+const SideTitle = tw.p`
     text-white
+    transform
+    -rotate-90
 `;
 
 const Project = ({ visible }) => {
@@ -84,6 +94,14 @@ const Project = ({ visible }) => {
     useFocusManagement();
 
   const { isTouchscreen } = useScreenType();
+
+  const Screenshot = () => (
+    <ProjectImg>
+      <source media="(max-width: 639px)" srcset={ShowMeSomethingSm} />
+      <source media="(min-width: 640px)" srcset={ShowMeSomethingLg} />
+      <ProjectImgFallback src={ShowMeSomethingLg} alt="Show Me Something" />
+    </ProjectImg>
+  );
 
   return (
     <>
@@ -109,7 +127,7 @@ const Project = ({ visible }) => {
       {isTouchscreen ? (
         <ReactVisibilitySensor onChange={handleScroll}>
           <ProjectPreview>
-            <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
+            <Screenshot />
             <ProjectDescription nested={true} showMore={showMore}>
               <h2>ShowMeSomething</h2>
               <p>This is the small-screen version</p>
@@ -121,8 +139,7 @@ const Project = ({ visible }) => {
           onMouseEnter={reportHovered}
           onMouseLeave={reportUnhovered}
         >
-          <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
-
+          <Screenshot />
           <ProjectDescription nested={true} showMore={showMore}>
             <h2>ShowMeSomething</h2>
             <p>This is the small-screen version</p>

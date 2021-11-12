@@ -10,9 +10,11 @@ module.exports = {
       height: {
         fullpanel: "calc(100% - 4rem)",
         projectpanel: "31.25vw",
+        projectpanellg: "62.5vw",
+        projectpanelportrait: "calc(160vw - 8.8rem)",
         projectbox: "calc(31.25vw - 4rem)",
         projectboxlg: "calc(62.5vw - 4rem)",
-        projectpanellg: "62.5vw",
+        projectboxportrait: "calc(160vw - 12.8rem)",
         bannervertical: "8vh",
         bannerhorizontal: "8vw",
       },

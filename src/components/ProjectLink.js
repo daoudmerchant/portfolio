@@ -81,8 +81,8 @@ const ProjectLink = ({ text, url, type, handleClick }) => {
 
   return (
     <Content
-      onMouseEnter={!isTouchscreen && reportHovered}
-      onMouseLeave={!isTouchscreen && reportUnhovered}
+      onMouseEnter={isTouchscreen ? null : reportHovered}
+      onMouseLeave={isTouchscreen ? null : reportUnhovered}
       onClick={() => {
         isTouchscreen && toggleFocused();
         handleClick?.();

@@ -15,9 +15,9 @@ const FrameContainer = tw.div`
     clear-both
     bg-white
     w-full
-    md:w-projectpanel
-    h-3/4
-    md:h-projectpanel
+    lg:w-projectpanel
+    h-projectpanellg
+    lg:h-projectpanel
     mix-blend-screen
 `;
 
@@ -33,9 +33,10 @@ const FrameContainer = tw.div`
 const ProjectPreview = tw.div`
     absolute
     z-40
-    w-projectbox
-    md:w-projectbox
-    h-projectbox
+    w-projectboxlg
+    lg:w-projectbox
+    h-projectboxlg
+    lg:h-projectbox
     left-16
     transform
     translate-y-raisescreenshot
@@ -49,7 +50,7 @@ const ProjectImg = tw.img`
 
 const ProjectDescription = tw.div`
   hidden
-  md:block
+  lg:block
   absolute
   bg-white
   z-40
@@ -68,7 +69,7 @@ const Project = ({ visible }) => {
   const { focused, handleScroll, reportHovered, reportUnhovered } =
     useFocusManagement();
 
-  const isTouchscreen = useScreenType();
+  const { isTouchscreen, isSmallScreen } = useScreenType();
 
   return (
     <>
@@ -103,6 +104,12 @@ const Project = ({ visible }) => {
           onMouseLeave={reportUnhovered}
         >
           <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
+          {/* {isSmallScreen && (
+            <ProjectDescription>
+              <h2>ShowMeSomething</h2>
+              <p>This is the small-screen version</p>
+            </ProjectDescription>
+          )} */}
         </ProjectPreview>
       )}
       <ProjectDescription

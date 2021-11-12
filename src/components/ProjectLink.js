@@ -3,7 +3,7 @@ import tw from "tailwind-styled-components";
 import styled from "styled-components";
 
 const link = styled.a`
-  //   -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 const Link = tw(link)`
@@ -41,7 +41,7 @@ const LinkSwiper = tw.div`
 const ProjectLink = ({ text, url }) => {
   const { focused, reportHovered, reportUnhovered } = useFocusManagement();
 
-  const isTouchscreen = useScreenType();
+  const { isTouchscreen } = useScreenType();
 
   return (
     <Link onMouseEnter={reportHovered} onMouseLeave={reportUnhovered}>

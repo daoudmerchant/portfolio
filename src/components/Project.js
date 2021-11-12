@@ -1,3 +1,4 @@
+import { useState } from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
 import styled from "styled-components";
 import ReactVisibilitySensor from "react-visibility-sensor";
@@ -31,6 +32,7 @@ const FrameContainer = tw.div`
 */
 
 const ProjectPreview = tw.div`
+    overflow-hidden
     absolute
     z-40
     w-projectboxlg
@@ -46,30 +48,42 @@ const ProjectPreview = tw.div`
 const ProjectImg = tw.img`
   h-full
   w-full
+  relative
 `;
 
 const ProjectDescription = tw.div`
-  hidden
-  lg:block
-  absolute
-  bg-white
+  ${(props) => (props.nested ? "block lg:hidden" : "hidden lg:block")}
+  ${(props) => (props.nested ? null : "absolute")}
+  bg-green-500
   z-40
-  w-projectpanel
-  h-projectpanel
+  ${(props) =>
+    props.nested ? "h-full w-full" : "w-projectpanel h-projectpanel"}
+  
   transform
-  translate-x-full
+  transition-transform
+  duration-300
+  ease-in-out
+  ${(props) =>
+    props.nested && props.showMore ? "translate-x-0" : "translate-x-full"}
   -translate-y-full
 `;
 
-const TouchTitle = styled.p`
+const sidetitle = styled.p`
   writing-mode: sideways-lr;
 `;
 
+const SideTitle = tw(sidetitle)`
+    text-white
+`;
+
 const Project = ({ visible }) => {
+  const [showMore, setShowMore] = useState(false);
+  const toggleShowMore = () => setShowMore((prevState) => !prevState);
+
   const { focused, handleScroll, reportHovered, reportUnhovered } =
     useFocusManagement();
 
-  const { isTouchscreen, isSmallScreen } = useScreenType();
+  const { isTouchscreen } = useScreenType();
 
   return (
     <>
@@ -79,23 +93,27 @@ const Project = ({ visible }) => {
       >
         <Frame
           corner="BOTTOMLEFT"
-          vertical={
-            isTouchscreen ? <TouchTitle>ShowMeSomething</TouchTitle> : null
-          }
+          vertical={<SideTitle>ShowMeSomething</SideTitle>}
           visible={focused}
         >
-          <ProjectLink href="#" text="DEMO" />
-          <ProjectLink href="#" text="REPO" />
-          {isTouchscreen && <ProjectLink href="#" text="MORE" />}
+          <ProjectLink href="#" text="DEMO" type="LINK" />
+          <ProjectLink href="#" text="REPO" type="LINK" />
+          <ProjectLink
+            href="#"
+            text={showMore ? "LESS" : "MORE"}
+            type="BUTTON"
+            onClick={toggleShowMore}
+          />
         </Frame>
       </FrameContainer>
       {isTouchscreen ? (
         <ReactVisibilitySensor onChange={handleScroll}>
-          <ProjectPreview
-            onMouseEnter={reportHovered}
-            onMouseLeave={reportUnhovered}
-          >
+          <ProjectPreview>
             <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
+            <ProjectDescription nested={true} showMore={showMore}>
+              <h2>ShowMeSomething</h2>
+              <p>This is the small-screen version</p>
+            </ProjectDescription>
           </ProjectPreview>
         </ReactVisibilitySensor>
       ) : (
@@ -104,17 +122,17 @@ const Project = ({ visible }) => {
           onMouseLeave={reportUnhovered}
         >
           <ProjectImg src={ShowMeSomething} alt="ShowMeSomething" />
-          {/* {isSmallScreen && (
-            <ProjectDescription>
-              <h2>ShowMeSomething</h2>
-              <p>This is the small-screen version</p>
-            </ProjectDescription>
-          )} */}
+
+          <ProjectDescription nested={true} showMore={showMore}>
+            <h2>ShowMeSomething</h2>
+            <p>This is the small-screen version</p>
+          </ProjectDescription>
         </ProjectPreview>
       )}
       <ProjectDescription
         onMouseEnter={reportHovered}
         onMouseLeave={reportUnhovered}
+        nested={false}
       >
         <h2>ShowMeSomething</h2>
         <p>

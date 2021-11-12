@@ -82,8 +82,8 @@ const Project = ({ project, visible }) => {
   return (
     <>
       <FrameContainer
-        onMouseEnter={reportHovered}
-        onMouseLeave={reportUnhovered}
+        onMouseEnter={isTouchscreen ? null : reportHovered}
+        onMouseLeave={isTouchscreen ? null : reportUnhovered}
       >
         <Frame
           corner="BOTTOMLEFT"

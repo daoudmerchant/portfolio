@@ -5,7 +5,8 @@ const ProjectDescription = tw.div`
     props.nested
       ? "block lg:hidden h-full+ w-full+"
       : "hidden lg:block w-projectpanel h-projectpanel absolute"}
-  p-4
+  pr-8
+  pt-8
   bg-white
   z-40
   transform
@@ -27,10 +28,6 @@ const Title = tw.h2`
 const Text = tw.p`
     text-left
     mb-4
-`;
-const ExtraText = tw(Text)`
-    hidden
-    md:block
 `;
 
 const ProjectAbout = ({ nested, reportCursor, showMore, project }) => {

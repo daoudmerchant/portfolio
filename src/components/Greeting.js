@@ -4,7 +4,6 @@ const GreetingContainer = tw.header`
     w-full
     md:w-1/2
     lg:w-2/3
-    md:h-64
     md:h-80
     bg-white
     md:float-right
@@ -18,6 +17,7 @@ const GreetingText = tw.p`
 text-2xl
 text-center
 italic
+pb-12
 
 
 // animation

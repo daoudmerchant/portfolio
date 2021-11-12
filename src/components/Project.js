@@ -62,7 +62,7 @@ const Project = ({ project, visible }) => {
   const toggleShowMore = () => setShowMore((prevState) => !prevState);
 
   const { focused, handleScroll, reportHovered, reportUnhovered } =
-    useFocusManagement();
+    useFocusManagement(setShowMore);
 
   const reportCursor = {
     hover: reportHovered,

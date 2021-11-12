@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
-export const useFocusManagement = () => {
+export const useFocusManagement = (setShowMore = null) => {
   const [focused, setFocused] = useState(false);
   const reportHovered = () => setFocused(true);
-  const reportUnhovered = () => setFocused(false);
-  const handleScroll = (isVisible) => setFocused(isVisible);
+  const reportUnhovered = () => {
+    setFocused(false);
+    setShowMore?.(false);
+  };
+  const handleScroll = (isVisible) => {
+    setFocused(isVisible);
+    if (isVisible) return;
+    setShowMore?.(false);
+  };
   const toggleFocused = () => setFocused((prevState) => !prevState);
   return {
     focused,

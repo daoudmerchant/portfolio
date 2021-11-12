@@ -8,6 +8,17 @@ module.exports = {
         45: "45deg",
       },
       height: {
+        /*
+          Project height (split) - 16x10
+
+          width = 50vw - 2rem;
+          height = (50vw - 8rem) / 16 * 10 = 31.25vw - 1.25rem
+
+          Project height (single, small) - 10x16
+
+          width = 100vw - 8rem;
+          height = (100vw - 8rem) / 10 * 16 = 160vw - 12.8rem
+        */
         fullpanel: "calc(100% - 4rem)",
         projectpanel: "31.25vw",
         projectpanellg: "62.5vw",
@@ -17,6 +28,7 @@ module.exports = {
         projectboxportrait: "calc(160vw - 12.8rem)",
         bannervertical: "8vh",
         bannerhorizontal: "8vw",
+        "full+": "calc(100% + 2rem)",
       },
       width: {
         fullpanel: "calc(100% - 4rem)",
@@ -27,6 +39,7 @@ module.exports = {
         halfpanel: "calc(50% - 4rem)",
         bannervertical: "8vh",
         bannerhorizontal: "8vw",
+        "full+": "calc(100% + 2rem)",
       },
       translate: {
         raisescreenshot: "calc(-100% - 4rem)",

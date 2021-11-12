@@ -9,6 +9,10 @@ import { BACKGROUND } from "./images";
 // icons
 import { ICONS } from "./images/icons/iconindex";
 
+// projects
+
+import { PROJECTS } from "./projects";
+
 // components
 import Frame from "./components/Frame";
 import Greeting from "./components/Greeting";
@@ -22,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
     overflow: hidden;
-    font-family: 'Tenor Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
   }
 
   .App {
@@ -154,6 +158,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => setShowBanner(true), 500);
   }, []);
+
   return (
     <>
       <GlobalStyle />
@@ -170,8 +175,13 @@ function App() {
         <TopFader />
         <Main>
           <Greeting visible={showBanner} />
-          <Project visible={showBanner} />
-          {/* <Project visible={showBanner} /> */}
+          {PROJECTS.map((project) => (
+            <Project
+              key={project.name}
+              visible={showBanner}
+              project={project}
+            />
+          ))}
           <Footer />
         </Main>
         <BottomFader />

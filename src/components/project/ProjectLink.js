@@ -1,4 +1,4 @@
-import { useFocusManagement, useScreenType } from "../hooks";
+import { useFocusManagement, useScreenType } from "../../hooks";
 import tw from "tailwind-styled-components";
 import styled from "styled-components";
 
@@ -35,6 +35,7 @@ h-full
 flex-1
 flex
 text-l
+font-bold
 sm:text-xl
 md:text-2xl
 lg:text-3xl
@@ -51,7 +52,6 @@ select-none
 const LinkSwiper = tw.div`
     absolute
     text-black
-    
     w-full
     h-full
     transform
@@ -64,11 +64,6 @@ const LinkSwiper = tw.div`
     transition-transform
     duration-300
     ease-in-out
-`;
-
-const LinkText = tw.span`
-  // absolute
-  ${(props) => (props.focused ? "l-full" : null)}
 `;
 
 const ProjectLink = ({ text, url, type, handleClick }) => {

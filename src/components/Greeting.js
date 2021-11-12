@@ -4,7 +4,7 @@ const GreetingContainer = tw.header`
     w-full
     md:w-1/2
     lg:w-2/3
-    h-64
+    md:h-64
     md:h-80
     bg-white
     md:float-right

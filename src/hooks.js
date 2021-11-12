@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import { useMediaQuery } from "react-responsive";
 
 export const useFocusManagement = () => {
@@ -27,4 +27,8 @@ export const useScreenType = () => {
     isTouchscreen,
     isSmallScreen,
   };
+};
+
+export const useFocusContext = () => {
+  return createContext();
 };

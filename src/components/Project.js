@@ -1,6 +1,5 @@
 import { useState } from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
-import styled from "styled-components";
 import ReactVisibilitySensor from "react-visibility-sensor";
 
 import { useFocusManagement, useScreenType } from "../hooks";
@@ -9,7 +8,8 @@ import ShowMeSomethingLg from "../images/Projects/ShowMeSomething/ShowMeSomethin
 import ShowMeSomethingSm from "../images/Projects/ShowMeSomething/ShowMeSomethingSm.png";
 
 import Frame from "./Frame";
-import ProjectLink from "./ProjectLink";
+import ProjectLink from "./project/ProjectLink";
+import ProjectAbout from "./project/ProjectAbout";
 
 const FrameContainer = tw.div`
     z-0
@@ -23,18 +23,6 @@ const FrameContainer = tw.div`
     lg:h-projectpanel
     mix-blend-screen
 `;
-
-/*
-  Project height (split) - 16x10
-
-  width = 50vw - 2rem;
-  height = (50vw - 8rem) / 16 * 10 = 31.25vw - 1.25rem
-
-  Project height (single, small) - 16x10
-
-  width = 100vw - 8rem;
-  height = (100vw - 8rem) / 10 * 16 = 160vw - 12.8rem
-*/
 
 const ProjectPreview = tw.div`
     overflow-hidden
@@ -63,35 +51,23 @@ const ProjectImg = tw.picture`
   relative
 `;
 
-const ProjectDescription = tw.div`
-  ${(props) => (props.nested ? "block lg:hidden" : "hidden lg:block")}
-  ${(props) => (props.nested ? null : "absolute")}
-  bg-green-500
-  z-40
-  ${(props) =>
-    props.nested ? "h-full w-full" : "w-projectpanel h-projectpanel"}
-  
-  transform
-  transition-transform
-  duration-300
-  ease-in-out
-  ${(props) =>
-    props.nested && props.showMore ? "translate-x-0" : "translate-x-full"}
-  -translate-y-full
-`;
-
 const SideTitle = tw.p`
     text-white
     transform
     -rotate-90
 `;
 
-const Project = ({ visible }) => {
+const Project = ({ project, visible }) => {
   const [showMore, setShowMore] = useState(false);
   const toggleShowMore = () => setShowMore((prevState) => !prevState);
 
   const { focused, handleScroll, reportHovered, reportUnhovered } =
     useFocusManagement();
+
+  const reportCursor = {
+    hover: reportHovered,
+    unhover: reportUnhovered,
+  };
 
   const { isTouchscreen } = useScreenType();
 
@@ -128,10 +104,7 @@ const Project = ({ visible }) => {
         <ReactVisibilitySensor onChange={handleScroll}>
           <ProjectPreview>
             <Screenshot />
-            <ProjectDescription nested={true} showMore={showMore}>
-              <h2>ShowMeSomething</h2>
-              <p>This is the small-screen version</p>
-            </ProjectDescription>
+            <ProjectAbout project={project} nested={true} showMore={showMore} />
           </ProjectPreview>
         </ReactVisibilitySensor>
       ) : (
@@ -140,23 +113,14 @@ const Project = ({ visible }) => {
           onMouseLeave={reportUnhovered}
         >
           <Screenshot />
-          <ProjectDescription nested={true} showMore={showMore}>
-            <h2>ShowMeSomething</h2>
-            <p>This is the small-screen version</p>
-          </ProjectDescription>
+          <ProjectAbout project={project} nested={true} showMore={showMore} />
         </ProjectPreview>
       )}
-      <ProjectDescription
-        onMouseEnter={reportHovered}
-        onMouseLeave={reportUnhovered}
+      <ProjectAbout
+        reportCursor={reportCursor}
         nested={false}
-      >
-        <h2>ShowMeSomething</h2>
-        <p>
-          A 'button'-based Reddit client using the Reddit API, with CRUD button
-          management stored on user accounts in Google Firebase.
-        </p>
-      </ProjectDescription>
+        project={project}
+      />
     </>
   );
 };

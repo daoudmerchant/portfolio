@@ -4,6 +4,7 @@ const Panel = tw.div`
   z-10
   bg-black
   transform
+  font-bold
 `;
 
 const Horizontal = tw(Panel)`

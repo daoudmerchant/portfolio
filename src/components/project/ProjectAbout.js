@@ -18,6 +18,7 @@ const ProjectDescription = tw.div`
     props.nested && props.showMore ? "translate-x-0" : "translate-x-full"}
   -translate-y-full
   text-center
+  overflow-scroll
 `;
 
 const Border = tw.div`
@@ -30,7 +31,6 @@ const Border = tw.div`
 `;
 
 const Line = tw.div`
-    bg-red-500
     absolute
     transition-all
     duration-700
@@ -107,23 +107,40 @@ const DateContainer = tw.div`
 `;
 
 const Calendar = tw.img`
-    h-6
-    w-6
+    h-4
+    sm:h-6
+    w-4
+    sm:w-6
     mr-4
 `;
 
 const Date = tw.h3`
-    text-3xl
+    text-l
+    sm:text-3xl
 `;
 
 const Text = tw.p`
     text-left
-    text-2xl
+    text-l
+    sm:text-2xl
     mb-4
 `;
 
-const Technologies = tw.p`
-    text-xl
+const Technologies = tw.div`
+    text-l
+    sm:text-xl
+`;
+
+const Technology = tw.p`
+    inline-block
+    py-2
+    px-4
+    mx-3
+    whitespace-nowrap
+    bg-white
+    rounded-full
+    my-2
+    shadow-pill
 `;
 
 const ProjectAbout = ({
@@ -132,8 +149,9 @@ const ProjectAbout = ({
   showMore,
   project,
   focused = true,
-  tag = "LATEST",
+  tag,
 }) => {
+  console.log(tag);
   return (
     <ProjectDescription
       onMouseEnter={!!reportCursor ? reportCursor.hover : null}
@@ -141,12 +159,25 @@ const ProjectAbout = ({
       nested={nested}
       showMore={showMore}
     >
-      {!!tag && <Tag>{tag}</Tag>}
+      {!!tag && <Tag>{tag.text}</Tag>}
       <Border nested={nested}>
-        <TopLine focused={focused} />
-        <BottomLine focused={focused} />
-        <LeftLine focused={focused} />
-        <RightLine focused={focused} />
+        {!!tag && (
+          <>
+            <TopLine style={{ backgroundColor: tag.color }} focused={focused} />
+            <BottomLine
+              style={{ backgroundColor: tag.color }}
+              focused={focused}
+            />
+            <LeftLine
+              style={{ backgroundColor: tag.color }}
+              focused={focused}
+            />
+            <RightLine
+              style={{ backgroundColor: tag.color }}
+              focused={focused}
+            />
+          </>
+        )}
         <div>
           <Title>{project.name}</Title>
           <DateContainer>
@@ -158,9 +189,14 @@ const ProjectAbout = ({
             <Date>{project.date}</Date>
           </DateContainer>
         </div>
-        <Text>{project.description}</Text>
-        <Text>{project.more}</Text>
-        <Technologies>{project.technologies.join(" | ")}</Technologies>
+        {project.description.map((paragraph) => (
+          <Text key={paragraph.slice(0, 5)}>{paragraph}</Text>
+        ))}
+        <Technologies>
+          {project.technologies.map((technology) => (
+            <Technology>{technology}</Technology>
+          ))}
+        </Technologies>
       </Border>
     </ProjectDescription>
   );

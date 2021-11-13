@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import tw from "tailwind-styled-components";
 import styled, { createGlobalStyle } from "styled-components";
 
+// constants
+import { TAGS } from "./constants";
+
 // background
 import { BACKGROUND } from "./images";
 
@@ -10,7 +13,6 @@ import { BACKGROUND } from "./images";
 import { ICONS } from "./images/icons/iconindex";
 
 // projects
-
 import { PROJECTS } from "./projects";
 
 // components
@@ -36,6 +38,15 @@ const GlobalStyle = createGlobalStyle`
     left: 0;
     right: 0;
     z-index: 0;
+  }
+
+  .App * {
+    // hide scrollbar
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 
@@ -175,13 +186,22 @@ function App() {
         <TopFader />
         <Main>
           <Greeting visible={showBanner} />
-          {PROJECTS.map((project) => (
-            <Project
-              key={project.name}
-              visible={showBanner}
-              project={project}
-            />
-          ))}
+          {PROJECTS.map((project, i) => {
+            const tag =
+              i === 0
+                ? TAGS.NEWEST
+                : i === PROJECTS.length - 1
+                ? TAGS.OLDEST
+                : null;
+            return (
+              <Project
+                key={project.name}
+                visible={showBanner}
+                project={project}
+                tag={tag}
+              />
+            );
+          })}
           <Footer />
         </Main>
         <BottomFader />

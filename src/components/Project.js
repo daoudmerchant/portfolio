@@ -67,7 +67,8 @@ const SideTitle = tw.p`
     top-4
 `;
 
-const Project = ({ project, visible }) => {
+const Project = ({ project, visible, tag }) => {
+  console.log(tag);
   const [showMore, setShowMore] = useState(false);
   const toggleShowMore = () => setShowMore((prevState) => !prevState);
 
@@ -116,7 +117,12 @@ const Project = ({ project, visible }) => {
             <Marker />
           </ReactVisibilitySensor>
           <Screenshot />
-          <ProjectAbout project={project} nested={true} showMore={showMore} />
+          <ProjectAbout
+            project={project}
+            nested={true}
+            showMore={showMore}
+            tag={tag}
+          />
         </ProjectPreview>
       ) : (
         <ProjectPreview
@@ -124,7 +130,12 @@ const Project = ({ project, visible }) => {
           onMouseLeave={reportUnhovered}
         >
           <Screenshot />
-          <ProjectAbout project={project} nested={true} showMore={showMore} />
+          <ProjectAbout
+            project={project}
+            nested={true}
+            showMore={showMore}
+            tag={tag}
+          />
         </ProjectPreview>
       )}
       <ProjectAbout
@@ -132,6 +143,7 @@ const Project = ({ project, visible }) => {
         nested={false}
         project={project}
         focused={focused}
+        tag={tag}
       />
     </>
   );

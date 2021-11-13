@@ -30,6 +30,9 @@ module.exports = {
         bannerhorizontal: "8vw",
         "full+": "calc(100% + 2rem)",
       },
+      boxShadow: {
+        pill: "-5px 5px 15px -5px rgba(145,145,145,0.6)",
+      },
       width: {
         fullpanel: "calc(100% - 4rem)",
         fulllinks: "calc(100% - 8rem)",

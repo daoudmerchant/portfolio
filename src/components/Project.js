@@ -39,6 +39,14 @@ const ProjectPreview = tw.div`
     p-4
 `;
 
+const Marker = tw.div`
+    h-px
+    w-full
+    bg-transparent
+    absolute
+    top-1/2
+`;
+
 const ProjectImgFallback = tw.img`
   h-full
   w-full
@@ -55,6 +63,8 @@ const SideTitle = tw.p`
     text-white
     transform
     -rotate-90
+    absolute
+    top-4
 `;
 
 const Project = ({ project, visible }) => {
@@ -101,12 +111,13 @@ const Project = ({ project, visible }) => {
         </Frame>
       </FrameContainer>
       {isTouchscreen ? (
-        <ReactVisibilitySensor onChange={handleScroll}>
-          <ProjectPreview>
-            <Screenshot />
-            <ProjectAbout project={project} nested={true} showMore={showMore} />
-          </ProjectPreview>
-        </ReactVisibilitySensor>
+        <ProjectPreview>
+          <ReactVisibilitySensor onChange={handleScroll}>
+            <Marker />
+          </ReactVisibilitySensor>
+          <Screenshot />
+          <ProjectAbout project={project} nested={true} showMore={showMore} />
+        </ProjectPreview>
       ) : (
         <ProjectPreview
           onMouseEnter={reportHovered}
@@ -120,6 +131,7 @@ const Project = ({ project, visible }) => {
         reportCursor={reportCursor}
         nested={false}
         project={project}
+        focused={focused}
       />
     </>
   );

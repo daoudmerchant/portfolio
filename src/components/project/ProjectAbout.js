@@ -1,5 +1,7 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
+import { CALENDAR } from "../../images/icons/iconindex";
+
 const ProjectDescription = tw.div`
   ${(props) => (props.nested ? "pr-4 pt-4" : "px-4 pb-16")}
   ${(props) =>
@@ -22,6 +24,9 @@ const Border = tw.div`
     h-full
     relative
     p-10
+    flex
+    flex-col
+    justify-between
 `;
 
 const Line = tw.div`
@@ -86,13 +91,39 @@ const Tag = tw.p`
 
 const Title = tw.h2`
     hidden
+    tracking-wide
     lg:block
-    text-4xl
+    text-6xl
+    pb-6
+    border-b-2 border-grey-300
+`;
+
+const DateContainer = tw.div`
+    flex
+    relative
+    justify-center
+    items-center
+    py-4
+`;
+
+const Calendar = tw.img`
+    h-6
+    w-6
+    mr-4
+`;
+
+const Date = tw.h3`
+    text-3xl
 `;
 
 const Text = tw.p`
     text-left
+    text-2xl
     mb-4
+`;
+
+const Technologies = tw.p`
+    text-xl
 `;
 
 const ProjectAbout = ({
@@ -116,10 +147,20 @@ const ProjectAbout = ({
         <BottomLine focused={focused} />
         <LeftLine focused={focused} />
         <RightLine focused={focused} />
-        <Title>{project.name}</Title>
+        <div>
+          <Title>{project.name}</Title>
+          <DateContainer>
+            <Calendar
+              srcSet={`${CALENDAR.iconSet[0]} 1x, ${CALENDAR.iconSet[1]} 2x`}
+              src={CALENDAR.iconSet[0]}
+              alt="Calendar icon"
+            />
+            <Date>{project.date}</Date>
+          </DateContainer>
+        </div>
         <Text>{project.description}</Text>
         <Text>{project.more}</Text>
-        <p>{project.technologies}</p>
+        <Technologies>{project.technologies.join(" | ")}</Technologies>
       </Border>
     </ProjectDescription>
   );

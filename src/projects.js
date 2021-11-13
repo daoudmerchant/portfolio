@@ -1,6 +1,7 @@
 export const PROJECTS = [
   {
     name: "ShowMeSomething",
+    date: "October 2021",
     description:
       "A button-based Reddit app using the Reddit API, with " +
       "CRUD management of buttons stored in user accounts on Google " +

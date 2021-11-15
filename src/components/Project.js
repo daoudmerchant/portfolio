@@ -28,12 +28,12 @@ const FrameContainer = tw.div`
 const ProjectPreview = tw.div`
     overflow-hidden
     absolute
-    bg-green-500
+    bg-white
     z-40
     w-projectboxlg
     lg:w-projectbox
     h-projectboxportrait
-    sm:projectboxlg
+    sm:h-projectboxlg
     lg:h-projectbox
     left-16
     transform
@@ -41,13 +41,13 @@ const ProjectPreview = tw.div`
     p-4
 `;
 
-const Marker = tw.div`
-    h-px
-    w-full
-    bg-transparent
-    absolute
-    top-1/2
-`;
+// const Marker = tw.div`
+//     h-px
+//     w-full
+//     bg-transparent
+//     absolute
+//     top-1/2
+// `;
 
 const ProjectImgFallback = tw.img`
   h-full
@@ -121,10 +121,10 @@ const Project = ({ project, visible, tag }) => {
       </FrameContainer>
       {isTouchscreen ? (
         <ProjectPreview>
+          {/* <Marker /> */}
           <ReactVisibilitySensor onChange={handleScroll}>
-            <Marker />
+            <Screenshot />
           </ReactVisibilitySensor>
-          <Screenshot />
           <ProjectAbout
             project={project}
             nested={true}

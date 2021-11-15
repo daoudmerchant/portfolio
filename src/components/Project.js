@@ -112,15 +112,18 @@ const Project = ({ project, visible }) => {
             text={showMore && !isTouchscreen ? "LESS" : "MORE"}
             type="BUTTON"
             handleClick={toggleShowMore}
+            showMore={showMore}
           />
         </Frame>
       </FrameContainer>
       {isTouchscreen ? (
         <ProjectPreview>
-          <ReactVisibilitySensor onChange={handleScroll}>
+          {/* <ReactVisibilitySensor onChange={handleScroll}>
             <Marker />
+          </ReactVisibilitySensor> */}
+          <ReactVisibilitySensor onChange={handleScroll}>
+            <Screenshot />
           </ReactVisibilitySensor>
-          <Screenshot />
           <ProjectAbout project={project} nested={true} showMore={showMore} />
         </ProjectPreview>
       ) : (

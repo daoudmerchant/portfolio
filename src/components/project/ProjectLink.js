@@ -63,9 +63,15 @@ const LinkSwiper = tw.div`
     ease-in-out
 `;
 
-const ProjectLink = ({ text, url, isVertical, type, handleClick }) => {
-  const { focused, reportHovered, reportUnhovered, toggleFocused } =
-    useFocusManagement();
+const ProjectLink = ({
+  text,
+  url,
+  isVertical,
+  type,
+  handleClick,
+  showMore = null,
+}) => {
+  const { focused, reportHovered, reportUnhovered } = useFocusManagement();
 
   const { isTouchscreen } = useScreenType();
 
@@ -76,18 +82,24 @@ const ProjectLink = ({ text, url, isVertical, type, handleClick }) => {
       onMouseEnter={isTouchscreen ? null : reportHovered}
       onMouseLeave={isTouchscreen ? null : reportUnhovered}
       onClick={() => {
-        isTouchscreen && toggleFocused();
         handleClick?.();
       }}
-      single={text.length === 1}
     >
       {!(type === "LINK" && isTouchscreen) && (
         <>
-          <LinkSwiper hovered={focused} top={true} isVertical={isVertical}>
+          <LinkSwiper
+            hovered={showMore || focused}
+            top={true}
+            isVertical={isVertical}
+          >
             {text === "MORE" && isTouchscreen ? "LESS" : ""}
           </LinkSwiper>
-          {isTouchscreen && (
-            <LinkSwiper hovered={focused} top={false} isVertical={isVertical} />
+          {isTouchscreen && text === "MORE" && (
+            <LinkSwiper
+              hovered={showMore || focused}
+              top={false}
+              isVertical={isVertical}
+            />
           )}
         </>
       )}

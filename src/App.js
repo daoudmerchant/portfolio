@@ -100,11 +100,18 @@ function App() {
           <Greeting visible={showBanner} />
           {PROJECTS.map((project, i) => {
             return (
-              <Project
-                key={project.name}
-                visible={showBanner}
-                project={project}
-              />
+              <>
+                <Project
+                  key={project.name}
+                  visible={showBanner}
+                  project={project}
+                />
+                <Project
+                  key={project.name}
+                  visible={showBanner}
+                  project={project}
+                />
+              </>
             );
           })}
           <Footer />

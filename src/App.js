@@ -9,9 +9,6 @@ import { TAGS } from "./constants";
 // background
 import { BACKGROUND } from "./images";
 
-// icons
-import { ICONS } from "./images/icons/iconindex";
-
 // projects
 import { PROJECTS } from "./projects";
 
@@ -132,37 +129,6 @@ const BottomFader = tw(Fader)`
   bg-gradient-to-b
 `;
 
-const Icon = tw.img`
-  filter
-  invert
-`;
-
-const IconLink = tw.a`
-  my-4
-`;
-
-const LINKS = {
-  CV: "#",
-  LinkedIn: "https://www.linkedin.com",
-  email: "mailto:hellodaoud@outlook.com",
-  GitHub: "https://github.com/daoudmerchant",
-};
-
-const Icons = [ICONS.GITHUB, ICONS.LINKEDIN, ICONS.CV, ICONS.EMAIL].map(
-  (Icons) => (
-    <IconLink
-      href={LINKS[Icons.type]}
-      target={Icons.type === "email" ? undefined : "_blank"}
-      rel={Icons.type === "email" ? undefined : "noreferrer"}
-    >
-      <Icon
-        src={Icons.iconSet[0]}
-        alt={Icons.type}
-        srcSet={`${Icons.iconSet[0]}, ${Icons.iconSet[1]} 2x, ${Icons.iconSet[2]} 3x`}
-      />
-    </IconLink>
-  )
-);
 function App() {
   const [showBanner, setShowBanner] = useState(false);
 
@@ -181,7 +147,7 @@ function App() {
           src={BACKGROUND.res1920}
           alt="Aurora Borealis"
         />
-        <Frame corner="TOPRIGHT" vertical={Icons} visible={showBanner}>
+        <Frame topright={true} visible={showBanner}>
           {["Daoud Merchant"]}
         </Frame>
         <TopFader />

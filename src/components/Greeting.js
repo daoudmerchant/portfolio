@@ -6,10 +6,10 @@ const GreetingContainer = tw.header`
     lg:w-2/3
     md:h-80
     bg-white
-    md:float-right
-    md:flex
-    md:justify-center
-    md:items-center
+    float-right
+    flex
+    justify-center
+    items-center
     px-6
 `;
 
@@ -17,8 +17,8 @@ const GreetingText = tw.p`
 text-2xl
 text-center
 italic
-pb-12
-
+mb-2
+md:mb-0
 
 // animation
 opacity-0
@@ -32,7 +32,7 @@ const ProfileContainer = tw.div`
     w-full
     md:w-1/2
     lg:w-1/3
-    md:float-left
+    float-left
     flex
     justify-center
     items-center

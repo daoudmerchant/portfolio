@@ -14,8 +14,8 @@ import ProjectLink from "./project/ProjectLink";
 import ProjectAbout from "./project/ProjectAbout";
 
 const FrameContainer = tw.div`
-    z-0
-    static
+    z-10
+    relative
     clear-both
     w-full
     h-projectpanelportrait
@@ -33,6 +33,7 @@ const ProjectPreview = tw.div`
     w-projectboxlg
     lg:w-projectbox
     h-projectboxportrait
+    sm:projectboxlg
     lg:h-projectbox
     left-16
     transform
@@ -98,7 +99,7 @@ const Project = ({ project, visible, tag }) => {
         onMouseLeave={isTouchscreen ? null : reportUnhovered}
       >
         <Frame
-          corner="BOTTOMLEFT"
+          topright={false}
           vertical={<SideTitle>ShowMeSomething</SideTitle>}
           visible={focused}
         >

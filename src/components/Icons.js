@@ -6,13 +6,13 @@ import { ICONS } from "../images/icons/iconindex";
 const Icon = tw.img`
   filter
   invert
-  w-iconlandscape
-  portrait:w-iconportrait
+  w-full
 `;
 
 const IconLink = tw.a`
-  my-iconmarginlandscape
-  portrait:my-iconmarginportrait
+  w-10
+  h-10
+  mt-8
 `;
 
 const LINKS = {

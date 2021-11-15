@@ -16,7 +16,7 @@ const ProjectDescription = tw.div`
   ease-in-out
   ${(props) =>
     props.nested && props.showMore ? "translate-x-0" : "translate-x-full"}
-  translate-y-raisescreenshot
+  -translate-y-full
   text-center
   overflow-scroll
 `;
@@ -78,7 +78,6 @@ const Tag = tw.p`
     mix-blend-screen
     z-30
     absolute
-    top-0
     font-bold
     text-xl
     left-14
@@ -90,9 +89,7 @@ const Tag = tw.p`
 `;
 
 const Title = tw.h2`
-    hidden
     tracking-wide
-    lg:block
     text-6xl
     pb-6
     border-b-2 border-grey-300

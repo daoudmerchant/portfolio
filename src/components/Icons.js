@@ -3,6 +3,27 @@ import tw from "tailwind-styled-components/dist/tailwind";
 // icons
 import { ICONS } from "../images/icons/iconindex";
 
+const IconContainer = tw.div`
+z-10
+bg-black
+transform
+font-bold
+overflow-hidden
+absolute
+mix-blend-screen
+transform
+skew-y-45
+  absolute
+  top-8
+  z-20
+  w-full
+  flex
+  flex-col
+  items-center
+  h-fulllinks
+  justify-end
+`;
+
 const Icon = tw.img`
   filter
   invert
@@ -24,7 +45,7 @@ const LINKS = {
 
 const Icons = () => {
   return (
-    <>
+    <IconContainer>
       {[ICONS.GITHUB, ICONS.LINKEDIN, ICONS.CV, ICONS.EMAIL].map(
         (IconObject) => (
           <IconLink
@@ -40,7 +61,7 @@ const Icons = () => {
           </IconLink>
         )
       )}
-    </>
+    </IconContainer>
   );
 };
 

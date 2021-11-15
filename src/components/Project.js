@@ -41,13 +41,13 @@ const ProjectPreview = tw.div`
     p-4
 `;
 
-// const Marker = tw.div`
-//     h-px
-//     w-full
-//     bg-transparent
-//     absolute
-//     top-1/2
-// `;
+const Marker = tw.div`
+    h-px
+    w-full
+    bg-transparent
+    absolute
+    top-1/2
+`;
 
 const ProjectImgFallback = tw.img`
   h-full
@@ -69,7 +69,7 @@ const SideTitle = tw.p`
     top-4
 `;
 
-const Project = ({ project, visible, tag }) => {
+const Project = ({ project, visible }) => {
   const [showMore, setShowMore] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const toggleShowMore = () => setShowMore((prevState) => !prevState);
@@ -98,11 +98,7 @@ const Project = ({ project, visible, tag }) => {
         onMouseEnter={isTouchscreen ? null : reportHovered}
         onMouseLeave={isTouchscreen ? null : reportUnhovered}
       >
-        <Frame
-          topright={false}
-          vertical={<SideTitle>ShowMeSomething</SideTitle>}
-          visible={focused}
-        >
+        <Frame topright={false} visible={focused}>
           <ProjectLink
             href="#"
             text="VIDEO"
@@ -121,16 +117,11 @@ const Project = ({ project, visible, tag }) => {
       </FrameContainer>
       {isTouchscreen ? (
         <ProjectPreview>
-          {/* <Marker /> */}
           <ReactVisibilitySensor onChange={handleScroll}>
-            <Screenshot />
+            <Marker />
           </ReactVisibilitySensor>
-          <ProjectAbout
-            project={project}
-            nested={true}
-            showMore={showMore}
-            tag={tag}
-          />
+          <Screenshot />
+          <ProjectAbout project={project} nested={true} showMore={showMore} />
         </ProjectPreview>
       ) : (
         <ProjectPreview
@@ -138,12 +129,7 @@ const Project = ({ project, visible, tag }) => {
           onMouseLeave={reportUnhovered}
         >
           <Screenshot />
-          <ProjectAbout
-            project={project}
-            nested={true}
-            showMore={showMore}
-            tag={tag}
-          />
+          <ProjectAbout project={project} nested={true} showMore={showMore} />
         </ProjectPreview>
       )}
       <ProjectAbout
@@ -151,7 +137,6 @@ const Project = ({ project, visible, tag }) => {
         nested={false}
         project={project}
         focused={focused}
-        tag={tag}
       />
       <ModalVideo
         channel="vimeo"

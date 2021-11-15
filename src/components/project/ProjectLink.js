@@ -7,21 +7,20 @@ const link = styled.a`
 `;
 
 const Link = tw(link)`
-  h-full
+  ${(props) => (props.isVertical ? "w-full transform -rotate-90" : "h-full")}
+  text-white
   flex-1
   flex
-  text-l
-  sm:text-xl
-  md:text-2xl
-  lg:text-3xl
+  text-6
+  md:text-8
   justify-center
   items-center
-  relative
   overflow-hidden
   cursor-pointer
   active:bg-white
   active:text-black
   select-none
+  relative
 `;
 
 const button = styled.button`
@@ -29,15 +28,14 @@ const button = styled.button`
 `;
 
 const Button = tw(button)`
-block
-h-full
-flex-1
+${(props) => (props.isVertical ? "w-full block" : "flex-1 block")}
+h-16
+text-white
 flex
 text-l
 font-bold
-sm:text-xl
-md:text-2xl
-lg:text-3xl
+text-6
+md:text-8
 justify-center
 items-center
 relative
@@ -51,8 +49,8 @@ select-none
 const LinkSwiper = tw.div`
     absolute
     text-black
-    w-full
-    h-full
+    ${(props) => (props.isVertical ? "w-16" : "w-full")}
+    h-16
     transform
     flex
     items-center
@@ -65,7 +63,7 @@ const LinkSwiper = tw.div`
     ease-in-out
 `;
 
-const ProjectLink = ({ text, url, type, handleClick }) => {
+const ProjectLink = ({ text, url, isVertical, type, handleClick }) => {
   const { focused, reportHovered, reportUnhovered, toggleFocused } =
     useFocusManagement();
 
@@ -81,13 +79,16 @@ const ProjectLink = ({ text, url, type, handleClick }) => {
         isTouchscreen && toggleFocused();
         handleClick?.();
       }}
+      single={text.length === 1}
     >
       {!(type === "LINK" && isTouchscreen) && (
         <>
-          <LinkSwiper hovered={focused} top={true}>
+          <LinkSwiper hovered={focused} top={true} isVertical={isVertical}>
             {text === "MORE" && isTouchscreen ? "LESS" : ""}
           </LinkSwiper>
-          {isTouchscreen && <LinkSwiper hovered={focused} top={false} />}
+          {isTouchscreen && (
+            <LinkSwiper hovered={focused} top={false} isVertical={isVertical} />
+          )}
         </>
       )}
       {text}

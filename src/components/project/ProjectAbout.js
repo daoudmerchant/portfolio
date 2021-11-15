@@ -6,8 +6,8 @@ const ProjectDescription = tw.div`
   ${(props) => (props.nested ? "pr-4 pt-4" : "p-4")}
   ${(props) =>
     props.nested
-      ? "block lg:hidden h-full+ w-full+"
-      : "hidden lg:block w-projectpanel h-projectbox absolute"}
+      ? "block lg:hidden h-full+ w-full+ -translate-y-full"
+      : "hidden lg:block w-projectpanel h-projectbox absolute translate-y-raisescreenshot"}
   bg-white
   z-40
   transform
@@ -16,18 +16,19 @@ const ProjectDescription = tw.div`
   ease-in-out
   ${(props) =>
     props.nested && props.showMore ? "translate-x-0" : "translate-x-full"}
-  -translate-y-full
   text-center
-  overflow-scroll
+  overflow-hidden
 `;
 
 const Border = tw.div`
     h-full
     relative
-    p-10
+    p-4
+    md:p-10
     flex
     flex-col
     justify-between
+    overflow-scroll
 `;
 
 const Line = tw.div`
@@ -73,6 +74,8 @@ const RightLine = tw(VerticalLine)`
 `;
 
 const Tag = tw.p`
+    hidden
+    lg:block
     bg-white
     text-black
     mix-blend-screen
@@ -90,8 +93,10 @@ const Tag = tw.p`
 
 const Title = tw.h2`
     tracking-wide
-    text-6xl
-    pb-6
+    text-8
+    md:text-12
+    lg:text-14
+    font-bold
     border-b-2 border-grey-300
 `;
 
@@ -113,14 +118,14 @@ const Calendar = tw.img`
 
 const Date = tw.h3`
     text-l
-    sm:text-3xl
+    text-6
+    md:text-10
+    lg:text-14
 `;
 
 const Text = tw.p`
     text-left
-    text-l
-    sm:text-2xl
-    mb-4
+    text-6
 `;
 
 const Technologies = tw.div`
@@ -130,14 +135,16 @@ const Technologies = tw.div`
 
 const Technology = tw.p`
     inline-block
-    py-2
-    px-4
-    mx-3
+    py-0.5
+    px-0.5
+    mx-0.5
+    my-0.5
     whitespace-nowrap
     bg-white
     rounded-full
-    my-2
     shadow-pill
+    text-5
+    md:text-1
 `;
 
 const ProjectAbout = ({
@@ -146,8 +153,8 @@ const ProjectAbout = ({
   showMore,
   project,
   focused = true,
-  tag,
 }) => {
+  console.log(project);
   return (
     <ProjectDescription
       onMouseEnter={!!reportCursor ? reportCursor.hover : null}
@@ -155,21 +162,24 @@ const ProjectAbout = ({
       nested={nested}
       showMore={showMore}
     >
-      {!!tag && <Tag>{tag.text}</Tag>}
+      {!!project.tag && <Tag>{project.tag.text}</Tag>}
       <Border nested={nested}>
-        {!!tag && (
+        {!!project.tag && (
           <>
-            <TopLine style={{ backgroundColor: tag.color }} focused={focused} />
+            <TopLine
+              style={{ backgroundColor: project.tag.color }}
+              focused={focused}
+            />
             <BottomLine
-              style={{ backgroundColor: tag.color }}
+              style={{ backgroundColor: project.tag.color }}
               focused={focused}
             />
             <LeftLine
-              style={{ backgroundColor: tag.color }}
+              style={{ backgroundColor: project.tag.color }}
               focused={focused}
             />
             <RightLine
-              style={{ backgroundColor: tag.color }}
+              style={{ backgroundColor: project.tag.color }}
               focused={focused}
             />
           </>
@@ -185,9 +195,11 @@ const ProjectAbout = ({
             <Date>{project.date}</Date>
           </DateContainer>
         </div>
-        {project.description.map((paragraph) => (
-          <Text key={paragraph.slice(0, 5)}>{paragraph}</Text>
-        ))}
+        <div>
+          {project.description.map((paragraph) => (
+            <Text key={paragraph.slice(0, 5)}>{paragraph}</Text>
+          ))}
+        </div>
         <Technologies>
           {project.technologies.map((technology) => (
             <Technology>{technology}</Technology>

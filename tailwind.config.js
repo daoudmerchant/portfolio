@@ -4,11 +4,32 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
+        0.5: "0.5em",
         1: "1em",
         2: "2em",
+        3: "3em",
         4: "4em",
         6: "6em",
         8: "8em",
+        12: "12em",
+        16: "16em",
+        20: "20em",
+        30: "30em",
+        40: "40em",
+        48: "48em",
+        56: "56em",
+        64: "64em",
+        80: "80em",
+      },
+      fontSize: {
+        1: "1em",
+        2: "2em",
+        3: "3em",
+        4: "4em",
+        5: "5em",
+        6: "6em",
+        8: "8em",
+        10: "10em",
         12: "12em",
         16: "16em",
         20: "20em",
@@ -39,7 +60,7 @@ module.exports = {
           width = 100vw - 8em;
           height = (100vw - 8em) / 10 * 16 = 160vw - 12.8em
         */
-        fulllinks: "calc(100% - 8em)",
+        fulllinks: "calc(100% - 16em)",
         projectpanel: "calc(31.25vw - 16em)",
         projectpanellg: "calc(62.5vw - 4em)",
         projectpanelportrait: "calc(160vw - 35.2em)",

@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components/dist/tailwind";
-import Icons from "./Icons";
 
+import Icons from "./Icons";
 import Triangles from "./stylecomponents/Triangle";
 
 const Panel = tw.div`
@@ -11,6 +11,7 @@ const Panel = tw.div`
   overflow-hidden
   absolute
   mix-blend-screen
+  text-frame
 `;
 
 const Horizontal = tw(Panel)`
@@ -33,19 +34,6 @@ const Vertical = tw(Panel)`
   top-8
   bottom-8
   ${(props) => (props.topright ? "right-0" : "left-0")}
-`;
-
-const IconContainer = tw(Panel)`
-transform
-skew-y-45
-  absolute
-  z-20
-  w-full
-  flex
-  flex-col
-  items-center
-  h-fulllinks
-  ${(props) => (props.topright ? "justify-end" : "justify-center")}
 `;
 
 const LinkContainer = tw(Panel)`
@@ -94,9 +82,7 @@ const Frame = ({ topright, vertical, visible, children }) => {
     <>
       <Triangles />
       <Vertical topright={topright}>
-        <IconContainer topright={topright}>
-          {topright ? <Icons /> : "Hello"}
-        </IconContainer>
+        {topright && <Icons />}
         <VerticalSwiper visible={visible} topright={topright} />
       </Vertical>
       <Horizontal topright={topright}>

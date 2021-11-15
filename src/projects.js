@@ -18,5 +18,14 @@ export const PROJECTS = [
       "Sass",
       "Lodash",
     ],
+    tag: {
+      text: "LATEST",
+      color: "#ffde8c",
+    },
   },
 ];
+
+// OLDEST: {
+//   text: "SEE MY PROGRESS",
+//   color: "#c2cbff",
+// },

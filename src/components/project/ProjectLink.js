@@ -30,7 +30,6 @@ const button = styled.button`
 
 const Button = tw(button)`
 block
-lg:hidden
 h-full
 flex-1
 flex

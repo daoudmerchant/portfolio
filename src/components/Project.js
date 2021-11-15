@@ -1,5 +1,6 @@
 import { useState } from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
+// import styled from "styled-components";
 import ReactVisibilitySensor from "react-visibility-sensor";
 
 import { useFocusManagement, useScreenType } from "../hooks";
@@ -7,6 +8,7 @@ import { useFocusManagement, useScreenType } from "../hooks";
 import ShowMeSomethingLg from "../images/Projects/ShowMeSomething/ShowMeSomethingLg.png";
 import ShowMeSomethingSm from "../images/Projects/ShowMeSomething/ShowMeSomethingSm.png";
 
+import ModalVideo from "react-modal-video";
 import Frame from "./Frame";
 import ProjectLink from "./project/ProjectLink";
 import ProjectAbout from "./project/ProjectAbout";
@@ -15,23 +17,22 @@ const FrameContainer = tw.div`
     z-0
     static
     clear-both
-    bg-white
     w-full
-    lg:w-projectpanel
     h-projectpanelportrait
     sm:h-projectpanellg
     lg:h-projectpanel
     mix-blend-screen
+    relative
 `;
 
 const ProjectPreview = tw.div`
     overflow-hidden
     absolute
+    bg-green-500
     z-40
     w-projectboxlg
     lg:w-projectbox
     h-projectboxportrait
-    sm:h-projectboxlg
     lg:h-projectbox
     left-16
     transform
@@ -68,8 +69,8 @@ const SideTitle = tw.p`
 `;
 
 const Project = ({ project, visible, tag }) => {
-  console.log(tag);
   const [showMore, setShowMore] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
   const toggleShowMore = () => setShowMore((prevState) => !prevState);
 
   const { focused, handleScroll, reportHovered, reportUnhovered } =
@@ -101,6 +102,12 @@ const Project = ({ project, visible, tag }) => {
           vertical={<SideTitle>ShowMeSomething</SideTitle>}
           visible={focused}
         >
+          <ProjectLink
+            href="#"
+            text="VIDEO"
+            type="BUTTON"
+            handleClick={() => setShowVideo(true)}
+          />
           <ProjectLink href="#" text="DEMO" type="LINK" />
           <ProjectLink href="#" text="REPO" type="LINK" />
           <ProjectLink
@@ -144,6 +151,13 @@ const Project = ({ project, visible, tag }) => {
         project={project}
         focused={focused}
         tag={tag}
+      />
+      <ModalVideo
+        channel="vimeo"
+        autoplay
+        isOpen={showVideo}
+        videoId="65107797"
+        onClose={() => setShowVideo(false)}
       />
     </>
   );

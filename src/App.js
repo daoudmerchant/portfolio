@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
     left: 0;
     right: 0;
     z-index: 0;
+    font-size: 3px;
   }
 
   .App * {

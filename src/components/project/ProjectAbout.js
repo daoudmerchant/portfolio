@@ -3,11 +3,11 @@ import tw from "tailwind-styled-components/dist/tailwind";
 import { CALENDAR } from "../../images/icons/iconindex";
 
 const ProjectDescription = tw.div`
-  ${(props) => (props.nested ? "pr-4 pt-4" : "px-4 pb-16")}
+  ${(props) => (props.nested ? "pr-4 pt-4" : "p-4")}
   ${(props) =>
     props.nested
       ? "block lg:hidden h-full+ w-full+"
-      : "hidden lg:block w-projectpanel h-projectpanel absolute"}
+      : "hidden lg:block w-projectpanel h-projectbox absolute"}
   bg-white
   z-40
   transform
@@ -16,7 +16,7 @@ const ProjectDescription = tw.div`
   ease-in-out
   ${(props) =>
     props.nested && props.showMore ? "translate-x-0" : "translate-x-full"}
-  -translate-y-full
+  translate-y-raisescreenshot
   text-center
   overflow-scroll
 `;
@@ -151,7 +151,6 @@ const ProjectAbout = ({
   focused = true,
   tag,
 }) => {
-  console.log(tag);
   return (
     <ProjectDescription
       onMouseEnter={!!reportCursor ? reportCursor.hover : null}

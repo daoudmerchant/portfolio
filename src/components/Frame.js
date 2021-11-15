@@ -1,19 +1,23 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
+import Triangles from "./stylecomponents/Triangle";
+
 const Panel = tw.div`
   z-10
   bg-black
   transform
   font-bold
+  overflow-hidden
+  absolute
+  mix-blend-screen
 `;
 
 const Horizontal = tw(Panel)`
   h-16
   skew-x-minus45
-  ${(props) =>
-    props.corner === "TOPRIGHT"
-      ? "absolute mix-blend-screen left-8 right-8 top-0"
-      : "relative overflow-hidden w-fullpanel left-8"}
+  left-8
+  right-8
+  ${(props) => (props.corner === "TOPRIGHT" ? "top-0" : "bottom-0")}
 `;
 
 /*
@@ -25,11 +29,9 @@ const Horizontal = tw(Panel)`
 const Vertical = tw(Panel)`
   w-16
   skew-y-minus45
-  ${(props) =>
-    props.corner === "TOPRIGHT"
-      ? "mix-blend-screen absolute right-0 top-0 bottom-8"
-      : "relative h-fullpanel"}
-    top-8
+  top-0
+  bottom-8
+  ${(props) => (props.corner === "TOPRIGHT" ? "right-0" : "left-0")}
 `;
 
 const IconContainer = tw(Panel)`
@@ -48,15 +50,14 @@ skew-y-45
 const LinkContainer = tw(Panel)`
 transform
 skew-x-45
-  absolute
+left-8
   z-20
   h-full
-  w-fullpanel
+  w-fulllinks
   flex
   items-center
   text-white
-  ${(props) =>
-    props.length > 1 ? "left-8 justify-between" : "left-12 justify-start"}
+  justify-between
 `;
 
 const Swiper = tw.div`
@@ -100,6 +101,7 @@ const VerticalSwiper = tw(Swiper)`
 const Frame = ({ corner, vertical, visible, children }) => {
   return (
     <>
+      <Triangles />
       <Vertical corner={corner}>
         {!!vertical && (
           <IconContainer corner={corner}>{vertical}</IconContainer>

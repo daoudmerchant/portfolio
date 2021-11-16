@@ -6,9 +6,8 @@ export const PROJECTS = [
       "A button-based Reddit app using the Reddit API, with " +
         "CRUD management of buttons stored in user accounts on Google " +
         "Firebase (OAuth sign-in).",
-      "The concept behind this app was to create a Reddit client " +
-        "with immediate content consumption, minimal distraction " +
-        "and no 'doom-scrolling'.",
+      "The goal was to make Reddit content consumption immediate, improve " +
+        "accessibility and eliminate 'doom-scrolling'.",
     ],
     technologies: [
       "React",

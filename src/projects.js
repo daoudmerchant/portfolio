@@ -7,8 +7,8 @@ export const PROJECTS = [
         "CRUD management of buttons stored in user accounts on Google " +
         "Firebase (OAuth sign-in).",
       "The concept behind this app was to create a Reddit client " +
-        "for non-Reddit users, making content consumption immediate, " +
-        "distraction minimal and eliminating 'doom-scrolling'.",
+        "with immediate content consumption, minimal distraction " +
+        "and no 'doom-scrolling'.",
     ],
     technologies: [
       "React",
@@ -56,8 +56,9 @@ export const PROJECTS = [
     name: "Calculator",
     date: "March 2021",
     description: [
-      "A retro calculator with 8 fixed decimal places, 'error' message " +
-        "when you break it (like the ones at school) and keyboard controls.",
+      "One of my first projects: a retro calculator with a fixed 8 digit " +
+        "display, 'error' message when you break it (like the ones at school) " +
+        "and keyboard controls.",
       "Written entirely by hand in vanilla, furiously polluting the " +
         "global namespace before I knew better.",
     ],
@@ -70,8 +71,3 @@ export const PROJECTS = [
     },
   },
 ];
-
-// OLDEST: {
-//   text: "SEE MY PROGRESS",
-//   color: "#c2cbff",
-// },

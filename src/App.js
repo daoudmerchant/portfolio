@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: 2.8px;
     }
     @media screen and (min-width: 400px) {
-      font-size: 3px;
+      font-size: 3.3px;
     }
     @media screen and (min-width: 640px) {
       font-size: 3px;

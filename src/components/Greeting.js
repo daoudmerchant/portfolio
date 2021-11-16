@@ -4,8 +4,7 @@ import { ABOUT } from "../copy";
 
 const GreetingContainer = tw.header`
     w-full
-    md:w-1/2
-    lg:w-2/3
+    md:w-2/3
     md:h-80
     bg-white
     float-right
@@ -18,7 +17,7 @@ const GreetingContainer = tw.header`
 const GreetingText = tw.div`
 text-5
 xs:text-6
-md:text-4
+md:text-4.5
 text-left
 text-gray-600
 mb-2
@@ -38,8 +37,7 @@ const ProfileContainer = tw.div`
     h-70
     md:h-80
     w-full
-    md:w-1/2
-    lg:w-1/3
+    md:w-1/3
     float-left
     flex
     justify-center
@@ -74,8 +72,7 @@ const ProfilePic = tw.img`
     left-1/2
     top-15
     md:top-16
-    md:left-1/4
-    lg:left-1/6
+    md:left-1/6
     transform
     -translate-x-1/2
     rounded-full

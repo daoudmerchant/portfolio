@@ -92,17 +92,16 @@ const Project = ({ project, visible }) => {
       >
         <Frame topright={false} visible={focused}>
           <ProjectLink
-            href="#"
+            url="#"
             text="VIDEO"
-            type="BUTTON"
+            isLink={false}
             handleClick={() => setShowVideo(true)}
           />
-          <ProjectLink href="#" text="DEMO" type="LINK" />
-          <ProjectLink href="#" text="REPO" type="LINK" />
+          <ProjectLink url={project.demo} text="DEMO" isLink={true} />
+          <ProjectLink url={project.repo} text="REPO" isLink={true} />
           <ProjectLink
-            href="#"
             text={showMore && !isTouchscreen ? "LESS" : "MORE"}
-            type="BUTTON"
+            isLink={false}
             handleClick={toggleShowMore}
             showMore={showMore}
           />
@@ -110,12 +109,12 @@ const Project = ({ project, visible }) => {
       </FrameContainer>
       {isTouchscreen ? (
         <ProjectPreview>
-          {/* <ReactVisibilitySensor onChange={handleScroll}>
-            <Marker />
-          </ReactVisibilitySensor> */}
           <ReactVisibilitySensor onChange={handleScroll}>
-            <Screenshot />
+            <Marker />
           </ReactVisibilitySensor>
+          {/* <ReactVisibilitySensor onChange={handleScroll}> */}
+          <Screenshot />
+          {/* </ReactVisibilitySensor> */}
           <ProjectAbout project={project} nested={true} showMore={showMore} />
         </ProjectPreview>
       ) : (

@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        "3xs": "300px",
+        "2xs": "400px",
         xs: "500px",
       },
       spacing: {
@@ -14,9 +16,11 @@ module.exports = {
         4: "4em",
         5: "5em",
         6: "6em",
+        6.5: "6.5em",
         7: "7em",
         8: "8em",
         9: "9em",
+        11: "11em",
         12: "12em",
         15: "15em",
         16: "16em",

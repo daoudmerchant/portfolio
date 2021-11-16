@@ -38,6 +38,9 @@ const IconLink = tw.a`
   px-2
   md:px-1
   lg:px-2
+  xl:px-0
+  xl:w-11
+  xl:h-11
   mt-8
 `;
 

@@ -25,13 +25,6 @@ const Border = tw.div`
     w-full
     absolute
     p-4
-    md:p-10
-    xl:py-6
-    xl:px-8
-    flex
-    flex-col
-    justify-between
-    overflow-scroll
 `;
 
 const Line = tw.div`
@@ -77,6 +70,13 @@ const RightLine = tw(VerticalLine)`
 `;
 
 const TextContainer = tw.div`
+    h-full
+    w-full
+    overflow-scroll
+    lg:p-4
+    flex
+    flex-col
+    justify-between
 `;
 
 const Tag = tw.p`
@@ -89,9 +89,8 @@ const Tag = tw.p`
     z-30
     absolute
     font-bold
-    left-14
+    left-2
     px-1
-    h-5
     flex
     justify-center
     items-center
@@ -132,15 +131,19 @@ const Date = tw.h3`
 
 const Text = tw.p`
     text-left
-    text-5
-    xs:text-6
+    text-4
+    3xs:text-5
+    2xs:text-7
+    md:text-6
     xl:text-4
     pt-1
 `;
 
 const Technologies = tw.div`
-text-5
-xs:text-6
+text-4
+3xs:text-5
+2xs:text-6
+lg:text-4
 xl:text-4
 `;
 
@@ -193,27 +196,29 @@ const ProjectAbout = ({
             />
           </>
         )}
-        <div>
-          <Title>{project.name}</Title>
-          <DateContainer>
-            <Calendar
-              srcSet={`${CALENDAR.iconSet[0]} 1x, ${CALENDAR.iconSet[1]} 2x`}
-              src={CALENDAR.iconSet[0]}
-              alt="Calendar icon"
-            />
-            <Date>{project.date}</Date>
-          </DateContainer>
-        </div>
-        <div>
-          {project.description.map((paragraph) => (
-            <Text key={paragraph.slice(0, 5)}>{paragraph}</Text>
-          ))}
-        </div>
-        <Technologies>
-          {project.technologies.map((technology) => (
-            <Technology>{technology}</Technology>
-          ))}
-        </Technologies>
+        <TextContainer>
+          <div>
+            <Title>{project.name}</Title>
+            <DateContainer>
+              <Calendar
+                srcSet={`${CALENDAR.iconSet[0]} 1x, ${CALENDAR.iconSet[1]} 2x`}
+                src={CALENDAR.iconSet[0]}
+                alt="Calendar icon"
+              />
+              <Date>{project.date}</Date>
+            </DateContainer>
+          </div>
+          <div>
+            {project.description.map((paragraph) => (
+              <Text key={paragraph.slice(0, 5)}>{paragraph}</Text>
+            ))}
+          </div>
+          <Technologies>
+            {project.technologies.map((technology) => (
+              <Technology>{technology}</Technology>
+            ))}
+          </Technologies>
+        </TextContainer>
       </Border>
     </ProjectDescription>
   );

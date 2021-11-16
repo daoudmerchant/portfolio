@@ -68,7 +68,7 @@ const ProjectLink = ({
   text,
   url,
   isVertical,
-  type,
+  isLink,
   handleClick,
   showMore = null,
 }) => {
@@ -76,7 +76,7 @@ const ProjectLink = ({
 
   const { isTouchscreen } = useScreenType();
 
-  const Content = type === "LINK" ? Link : Button;
+  const Content = isLink ? Link : Button;
 
   return (
     <Content
@@ -85,8 +85,11 @@ const ProjectLink = ({
       onClick={() => {
         handleClick?.();
       }}
+      href={isLink ? url : null}
+      rel={isLink ? "noreferrer" : null}
+      target={isLink ? "_blank" : null}
     >
-      {!(type === "LINK" && isTouchscreen) && (
+      {!(isLink && isTouchscreen) && (
         <>
           <LinkSwiper
             hovered={showMore || focused}

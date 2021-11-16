@@ -13,13 +13,60 @@ export const PROJECTS = [
     technologies: [
       "React",
       "React Router Dom",
-      "Google Firebase",
+      "Firebase",
       "Reddit API",
       "Sass",
     ],
+    demo: "https://daoudmerchant.github.io/show-me-something/#/",
+    repo: "https://github.com/daoudmerchant/show-me-something",
     tag: {
       text: "LATEST",
       color: "#ffde8c",
+    },
+  },
+  {
+    name: "Battleships",
+    date: "September 2021",
+    description: [
+      "A mobile Battleships app with two-player hot-seating, " +
+        "an AI opponent, multiple grid sizes and a drag-and-drop " +
+        "ship placement interface, fully unit tested in Jest.",
+      "This app uses technology specifically for touchscreens, " +
+        "and is therefore only available on mobile devices.",
+    ],
+    technologies: ["React", "React Drag-And-Drop", "Jest", "Styled Components"],
+    demo: "https://daoudmerchant.github.io/battleships/",
+    repo: "https://github.com/daoudmerchant/battleships",
+  },
+  {
+    name: "Shopping Cart",
+    date: "August 2021",
+    description: [
+      "A simple e-commerce website with category and stock " +
+        "filtering, reordering, list and grid views, case-insensitive " +
+        "search and basket logic.",
+      "(Can you guess that I was searching online for a particular " +
+        "Switch game at the time?)",
+    ],
+    technologies: ["React", "React Router Dom", "Styled Components"],
+    demo: "https://daoudmerchant.github.io/shopping-cart/#/",
+    repo: "https://github.com/daoudmerchant/shopping-cart",
+  },
+  {
+    name: "Calculator",
+    date: "March 2021",
+    description: [
+      "A retro calculator with 8 fixed decimal places, 'error' message " +
+        "when you break it (like the ones at school) and keyboard controls.",
+      "Written entirely by hand in vanilla, furiously polluting the " +
+        "global namespace before I knew better.",
+    ],
+    technologies: ["Vanilla JS", "Vanilla CSS", "HTML5", "Mobile-Unfriendly"],
+    demo: "https://daoudmerchant.github.io/calculator/",
+    repo: "https://github.com/daoudmerchant/calculator",
+    tag: {
+      text: "SEE MY PROGRESS",
+      color: "#c2cbff",
     },
   },
 ];

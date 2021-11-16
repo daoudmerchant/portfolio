@@ -31,7 +31,10 @@ const GlobalStyle = createGlobalStyle`
     z-index: 0;
 
     // BREAKPOINTS
-    font-size: 2.8px;
+    font-size: 2.6px;
+    @media screen and (min-width: 340px) {
+      font-size: 2.8px;
+    }
     @media screen and (min-width: 420px) {
       font-size: 3px;
     }
@@ -43,6 +46,9 @@ const GlobalStyle = createGlobalStyle`
     }
     @media screen and (min-width: 1536px) {
       font-size: 4px;
+    }
+    @media screen and (min-width: 1800px) {
+      font-size: 10px;
     }
   }
 

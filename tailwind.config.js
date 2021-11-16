@@ -12,6 +12,7 @@ module.exports = {
         2: "2em",
         3: "3em",
         4: "4em",
+        5: "5em",
         6: "6em",
         7: "7em",
         8: "8em",
@@ -102,7 +103,6 @@ module.exports = {
       },
       borderWidth: {
         6: "6em",
-        16: "16px",
         triangle: "16em",
       },
       animation: {

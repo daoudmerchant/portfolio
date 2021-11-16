@@ -22,9 +22,12 @@ const ProjectDescription = tw.div`
 
 const Border = tw.div`
     h-full
+    w-full
     absolute
     p-4
     md:p-10
+    xl:py-6
+    xl:px-8
     flex
     flex-col
     justify-between
@@ -87,7 +90,7 @@ const Tag = tw.p`
     absolute
     font-bold
     left-14
-    px-5
+    px-1
     h-5
     flex
     justify-center
@@ -97,10 +100,9 @@ const Tag = tw.p`
 const Title = tw.h2`
     tracking-wide
     text-7
-    md:text-12
+    md:text-8
     lg:text-10
     xl:text-6
-    2xl:text-7
     font-bold
     border-b-2 border-grey-300
 `;
@@ -123,24 +125,23 @@ const Calendar = tw.img`
 
 const Date = tw.h3`
     text-6
-    md:text-10
+    md:text-7
     lg:text-14
     xl:text-5
-    2xl:text-6
 `;
 
 const Text = tw.p`
     text-left
     text-5
     xs:text-6
-    md:text-4
+    xl:text-4
     pt-1
 `;
 
 const Technologies = tw.div`
 text-5
 xs:text-6
-md:text-4
+xl:text-4
 `;
 
 const Technology = tw.p`

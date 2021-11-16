@@ -3,11 +3,11 @@ import tw from "tailwind-styled-components/dist/tailwind";
 import { CALENDAR } from "../../images/icons/iconindex";
 
 const ProjectDescription = tw.div`
-  ${(props) => (props.nested ? "pr-4 pt-4" : "p-4")}
+  ${(props) => (props.nested ? "pr-4 pt-4" : "p-4 lg:p-2 xl:p-0")}
   ${(props) =>
     props.nested
-      ? "block lg:hidden h-full+ w-full+ -translate-y-full"
-      : "hidden lg:block w-projectpanel h-projectbox absolute translate-y-raisescreenshot"}
+      ? "block xl:hidden h-full+ w-full+ -translate-y-full relative"
+      : "hidden xl:block w-projectpanel h-projectbox absolute translate-y-raisescreenshot"}
   bg-white
   z-40
   transform
@@ -22,7 +22,7 @@ const ProjectDescription = tw.div`
 
 const Border = tw.div`
     h-full
-    relative
+    absolute
     p-4
     md:p-10
     flex
@@ -38,7 +38,7 @@ const Line = tw.div`
     ease-in-out
     z-20
     hidden
-    lg:block
+    xl:block
 `;
 
 const HorizontalLine = tw(Line)`
@@ -73,16 +73,19 @@ const RightLine = tw(VerticalLine)`
     ${(props) => (props.focused ? "h-full" : "h-0")}
 `;
 
+const TextContainer = tw.div`
+`;
+
 const Tag = tw.p`
     hidden
     lg:block
     bg-white
     text-black
+    text-4
     mix-blend-screen
     z-30
     absolute
     font-bold
-    text-xl
     left-14
     px-5
     h-5
@@ -93,9 +96,11 @@ const Tag = tw.p`
 
 const Title = tw.h2`
     tracking-wide
-    text-8
+    text-7
     md:text-12
-    lg:text-14
+    lg:text-10
+    xl:text-6
+    2xl:text-7
     font-bold
     border-b-2 border-grey-300
 `;
@@ -105,7 +110,7 @@ const DateContainer = tw.div`
     relative
     justify-center
     items-center
-    py-4
+    pt-4
 `;
 
 const Calendar = tw.img`
@@ -117,33 +122,37 @@ const Calendar = tw.img`
 `;
 
 const Date = tw.h3`
-    text-l
     text-6
     md:text-10
     lg:text-14
+    xl:text-5
+    2xl:text-6
 `;
 
 const Text = tw.p`
     text-left
-    text-6
+    text-5
+    xs:text-6
+    md:text-4
+    pt-1
 `;
 
 const Technologies = tw.div`
-    text-l
-    sm:text-xl
+text-5
+xs:text-6
+md:text-4
 `;
 
 const Technology = tw.p`
     inline-block
     py-0.5
-    px-0.5
+    px-1
     mx-0.5
     my-0.5
     whitespace-nowrap
     bg-white
     rounded-full
     shadow-pill
-    text-5
     md:text-1
 `;
 
@@ -154,7 +163,6 @@ const ProjectAbout = ({
   project,
   focused = true,
 }) => {
-  console.log(project);
   return (
     <ProjectDescription
       onMouseEnter={!!reportCursor ? reportCursor.hover : null}

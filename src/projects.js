@@ -16,7 +16,6 @@ export const PROJECTS = [
       "Google Firebase",
       "Reddit API",
       "Sass",
-      "Lodash",
     ],
     tag: {
       text: "LATEST",

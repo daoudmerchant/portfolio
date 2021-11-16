@@ -1,5 +1,7 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
+import { ABOUT } from "../copy";
+
 const GreetingContainer = tw.header`
     w-full
     md:w-1/2
@@ -13,10 +15,12 @@ const GreetingContainer = tw.header`
     px-6
 `;
 
-const GreetingText = tw.p`
-text-2xl
-text-center
-italic
+const GreetingText = tw.div`
+text-5
+xs:text-6
+md:text-4
+text-left
+text-gray-600
 mb-2
 md:mb-0
 
@@ -25,9 +29,13 @@ opacity-0
 ${(props) => (props.visible ? "animate-fade-in" : null)}
 `;
 
+const Phrase = tw.p`
+  pt-1
+`;
+
 const ProfileContainer = tw.div`
     z-20
-    h-64
+    h-70
     md:h-80
     w-full
     md:w-1/2
@@ -41,10 +49,12 @@ const ProfileContainer = tw.div`
 `;
 
 const ProfileBorder = tw.div`
-    border-8
+    border-6
     border-black
-    h-48
-    w-48
+    h-56
+    w-56
+    md:h-48
+    md:w-48
     md:h-64
     md:w-64
     rounded-full
@@ -59,15 +69,15 @@ const ProfilePic = tw.img`
     z-30
     h-40
     w-40
-    md:h-56
-    md:w-56
-    top-0
+    md:h-48
+    md:w-48
     left-1/2
+    top-15
+    md:top-16
     md:left-1/4
     lg:left-1/6
     transform
     -translate-x-1/2
-    top-12
     rounded-full
     m-0
 
@@ -89,10 +99,9 @@ const Greeting = ({ visible }) => {
       />
       <GreetingContainer visible={visible}>
         <GreetingText visible={visible}>
-          This is the greeting (NOT blended)
-          <br />
-          In it I'll talk a little bit about myself, trying to sound
-          professional and appealing
+          {ABOUT.map((phrase) => (
+            <Phrase>{phrase}</Phrase>
+          ))}
         </GreetingText>
       </GreetingContainer>
     </>

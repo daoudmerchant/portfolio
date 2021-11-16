@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        xs: "500px",
+      },
       spacing: {
         0.5: "0.5em",
         1: "1em",
@@ -10,16 +13,22 @@ module.exports = {
         3: "3em",
         4: "4em",
         6: "6em",
+        7: "7em",
         8: "8em",
+        9: "9em",
         12: "12em",
+        15: "15em",
         16: "16em",
         20: "20em",
         30: "30em",
         40: "40em",
         48: "48em",
+        50: "50em",
         56: "56em",
         64: "64em",
+        70: "70em",
         80: "80em",
+        90: "90em",
       },
       fontSize: {
         1: "1em",
@@ -28,7 +37,9 @@ module.exports = {
         4: "4em",
         5: "5em",
         6: "6em",
+        7: "7em",
         8: "8em",
+        9: "9em",
         10: "10em",
         12: "12em",
         16: "16em",
@@ -36,6 +47,7 @@ module.exports = {
         30: "30em",
         40: "40em",
         48: "48em",
+        50: "50em",
         56: "56em",
         64: "64em",
         80: "80em",
@@ -89,6 +101,7 @@ module.exports = {
         74: "74em",
       },
       borderWidth: {
+        6: "6em",
         16: "16px",
         triangle: "16em",
       },

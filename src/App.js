@@ -29,7 +29,21 @@ const GlobalStyle = createGlobalStyle`
     left: 0;
     right: 0;
     z-index: 0;
-    font-size: 3px;
+
+    // BREAKPOINTS
+    font-size: 2.8px;
+    @media screen and (min-width: 420px) {
+      font-size: 3px;
+    }
+    @media screen and (min-width: 640px) {
+      font-size: 3px;
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: 3.5px;
+    }
+    @media screen and (min-width: 1536px) {
+      font-size: 4px;
+    }
   }
 
   .App * {
@@ -100,18 +114,11 @@ function App() {
           <Greeting visible={showBanner} />
           {PROJECTS.map((project, i) => {
             return (
-              <>
-                <Project
-                  key={project.name}
-                  visible={showBanner}
-                  project={project}
-                />
-                <Project
-                  key={project.name}
-                  visible={showBanner}
-                  project={project}
-                />
-              </>
+              <Project
+                key={project.name}
+                visible={showBanner}
+                project={project}
+              />
             );
           })}
           <Footer />

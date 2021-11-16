@@ -33,6 +33,11 @@ const Icon = tw.img`
 const IconLink = tw.a`
   w-10
   h-10
+  lg:w-14
+  lg:h-14
+  px-2
+  md:px-1
+  lg:px-2
   mt-8
 `;
 

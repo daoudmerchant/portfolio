@@ -20,7 +20,7 @@ const FrameContainer = tw.div`
     w-full
     h-projectpanelportrait
     sm:h-projectpanellg
-    lg:h-projectpanel
+    xl:h-projectpanel
     mix-blend-screen
     relative
 `;
@@ -31,10 +31,10 @@ const ProjectPreview = tw.div`
     bg-white
     z-40
     w-projectboxlg
-    lg:w-projectbox
+    xl:w-projectbox
     h-projectboxportrait
     sm:h-projectboxlg
-    lg:h-projectbox
+    xl:h-projectbox
     left-16
     transform
     translate-y-raisescreenshot
@@ -59,14 +59,6 @@ const ProjectImg = tw.picture`
   h-full
   w-full
   relative
-`;
-
-const SideTitle = tw.p`
-    text-white
-    transform
-    -rotate-90
-    absolute
-    top-4
 `;
 
 const Project = ({ project, visible }) => {
@@ -132,7 +124,12 @@ const Project = ({ project, visible }) => {
           onMouseLeave={reportUnhovered}
         >
           <Screenshot />
-          <ProjectAbout project={project} nested={true} showMore={showMore} />
+          <ProjectAbout
+            reportCursor={reportCursor}
+            project={project}
+            nested={true}
+            showMore={showMore}
+          />
         </ProjectPreview>
       )}
       <ProjectAbout

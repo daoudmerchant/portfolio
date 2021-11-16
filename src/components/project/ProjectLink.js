@@ -12,6 +12,7 @@ const Link = tw(link)`
   flex-1
   flex
   text-6
+  sm:text-7
   md:text-8
   justify-center
   items-center
@@ -32,9 +33,9 @@ ${(props) => (props.isVertical ? "w-full block" : "flex-1 block")}
 h-16
 text-white
 flex
-text-l
 font-bold
 text-6
+sm:text-7
 md:text-8
 justify-center
 items-center

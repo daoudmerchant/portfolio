@@ -1,3 +1,5 @@
+import { SCREENSHOTS } from "./images/Projects";
+
 export const PROJECTS = [
   {
     name: "ShowMeSomething",
@@ -22,6 +24,7 @@ export const PROJECTS = [
       text: "LATEST",
       color: "#ffde8c",
     },
+    screenshots: SCREENSHOTS.ShowMeSomething,
   },
   {
     name: "Battleships",
@@ -30,8 +33,18 @@ export const PROJECTS = [
       "A mobile Battleships app with two-player hot-seating, " +
         "an AI opponent, multiple grid sizes and a drag-and-drop " +
         "ship placement interface, fully unit tested in Jest.",
-      "This app uses technology specifically for touchscreens, " +
-        "and is therefore only available on mobile devices.",
+      [
+        "This app uses technology specifically for touchscreens " +
+          "and is therefore only available on mobile devices (see why ",
+        <a
+          href="https://github.com/daoudmerchant/battleships#why-doesnt-this-work-on-desktop"
+          rel="noreferrer"
+          target="_blank"
+        >
+          here
+        </a>,
+        ").",
+      ],
     ],
     technologies: ["React", "React Drag-And-Drop", "Jest", "Styled Components"],
     demo: "https://daoudmerchant.github.io/battleships/",

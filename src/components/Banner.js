@@ -6,7 +6,7 @@ import { BACKGROUND } from "../images";
 import Frame from "./Frame";
 
 const Background = tw.img`
-  object-fill
+  object-cover
   center
   h-full
   w-full

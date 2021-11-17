@@ -5,9 +5,6 @@ import ReactVisibilitySensor from "react-visibility-sensor";
 
 import { useFocusManagement, useScreenType } from "../hooks";
 
-import ShowMeSomethingLg from "../images/Projects/ShowMeSomething/ShowMeSomethingLg.png";
-import ShowMeSomethingSm from "../images/Projects/ShowMeSomething/ShowMeSomethingSm.png";
-
 import ModalVideo from "react-modal-video";
 import Frame from "./Frame";
 import ProjectLink from "./project/ProjectLink";
@@ -76,13 +73,34 @@ const Project = ({ project, visible }) => {
 
   const { isTouchscreen } = useScreenType();
 
-  const Screenshot = () => (
-    <ProjectImg>
-      <source media="(max-width: 639px)" srcset={ShowMeSomethingSm} />
-      <source media="(min-width: 640px)" srcset={ShowMeSomethingLg} />
-      <ProjectImgFallback src={ShowMeSomethingLg} alt="Show Me Something" />
-    </ProjectImg>
-  );
+  const Screenshot = () => {
+    const _getSrcSet = (array) => {
+      return `${array[0]}, ${array[1]} 2x, ${array[2]} 3x`;
+    };
+
+    return (
+      <ProjectImg>
+        {project.screenshots.map((collection) => (
+          <>
+            <source
+              media="(max-width: 639px)"
+              srcSet={_getSrcSet(collection.mobile)}
+              type={`image/${collection.type}`}
+            />
+            <source
+              media="(min-width: 640px)"
+              srcSet={_getSrcSet(collection.desktop)}
+              typ={`image/${collection.type}`}
+            />
+          </>
+        ))}
+        <ProjectImgFallback
+          src={project.screenshots[0].desktop[0]}
+          alt={project.name}
+        />
+      </ProjectImg>
+    );
+  };
 
   return (
     <>

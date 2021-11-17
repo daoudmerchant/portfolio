@@ -78,6 +78,8 @@ const ProjectLink = ({
 
   const Content = isLink ? Link : Button;
 
+  const isMore = text === "MORE";
+
   return (
     <Content
       onMouseEnter={isTouchscreen ? null : reportHovered}
@@ -96,7 +98,7 @@ const ProjectLink = ({
             top={true}
             isVertical={isVertical}
           >
-            {text === "MORE" && isTouchscreen ? "LESS" : ""}
+            {isMore && isTouchscreen ? "LESS" : ""}
           </LinkSwiper>
           {isTouchscreen && text === "MORE" && (
             <LinkSwiper

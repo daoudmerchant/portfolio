@@ -81,10 +81,10 @@ module.exports = {
         */
         fulllinks: "calc(100% - 16em)",
         projectpanel: "calc(31.25vw - 16em)",
-        projectpanellg: "calc(62.5vw - 4em)",
+        projectpanellg: "calc(62.5vw - 20em)",
         projectpanelportrait: "calc(160vw - 35.2em)",
         projectbox: "calc(31.25vw - 32em)",
-        projectboxlg: "calc(62.5vw - 20em)",
+        projectboxlg: "calc(62.5vw - 36em)",
         projectboxportrait: "calc(160vw - 51.2em)",
         "full+": "calc(100% + 2em)",
       },

@@ -30,7 +30,7 @@ const Border = tw.div`
 const Line = tw.div`
     absolute
     transition-all
-    duration-700
+    duration-500
     ease-in-out
     z-20
     hidden

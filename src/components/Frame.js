@@ -55,7 +55,7 @@ const Swiper = tw.div`
   absolute
   transform
   transition-position
-  duration-700
+  duration-500
   ease-in-out
 `;
 

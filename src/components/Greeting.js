@@ -15,12 +15,10 @@ const GreetingContainer = tw.header`
 `;
 
 const GreetingText = tw.div`
-text-5
-xs:text-6
-md:text-4.5
 text-left
 text-gray-600
 mb-2
+sm:mb-8
 md:mb-0
 
 // animation
@@ -30,6 +28,10 @@ ${(props) => (props.visible ? "animate-fade-in" : null)}
 
 const Phrase = tw.p`
   pt-1
+  text-5
+xs:text-6
+md:text-4.5
+xl:text-5
 `;
 
 const ProfileContainer = tw.div`

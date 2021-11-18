@@ -2,12 +2,19 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      "3xs": { min: "300px" },
+      "2xs": { min: "400px" },
+      xs: { min: "500px" },
+      sm: { min: "640px" },
+      md: { min: "768px" },
+      lg: { min: "1024px" },
+      xl: { min: "1280px" },
+      "2xl": { min: "1536px" },
+      portrait: { raw: "(orientation: portrait)" },
+      touch: { raw: "(hover: none) and (pointer: coarse)" },
+    },
     extend: {
-      screens: {
-        "3xs": "300px",
-        "2xs": "400px",
-        xs: "500px",
-      },
       spacing: {
         0.5: "0.5em",
         1: "1em",
@@ -126,9 +133,6 @@ module.exports = {
       },
       transitionProperty: {
         position: "left, right, top, bottom",
-      },
-      screens: {
-        portrait: { raw: "(orientation: portrait)" },
       },
     },
   },

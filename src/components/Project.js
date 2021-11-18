@@ -122,7 +122,9 @@ const Project = ({ project, visible }) => {
             isLink={false}
             handleClick={() => setShowVideo(true)}
           />
-          <ProjectLink url={project.demo} text="DEMO" isLink={true} />
+          {!!project.demo && (!project.mobileOnly || isTouchscreen) && (
+            <ProjectLink url={project.demo} text="DEMO" isLink={true} />
+          )}
           <ProjectLink url={project.repo} text="REPO" isLink={true} />
           <ProjectLink
             text={showMore && !isTouchscreen ? "LESS" : "MORE"}

@@ -25,6 +25,7 @@ export const PROJECTS = [
       color: "#ffde8c",
     },
     screenshots: SCREENSHOTS.ShowMeSomething,
+    mobileOnly: false,
   },
   {
     name: "Battleships",
@@ -50,6 +51,7 @@ export const PROJECTS = [
     demo: "https://daoudmerchant.github.io/battleships/",
     repo: "https://github.com/daoudmerchant/battleships",
     screenshots: SCREENSHOTS.Battleships,
+    mobileOnly: true,
   },
   {
     name: "Shopping Cart",
@@ -65,6 +67,7 @@ export const PROJECTS = [
     demo: "https://daoudmerchant.github.io/shopping-cart/#/",
     repo: "https://github.com/daoudmerchant/shopping-cart",
     screenshots: SCREENSHOTS.ShoppingCart,
+    mobileOnly: false,
   },
   {
     name: "Calculator",
@@ -84,5 +87,26 @@ export const PROJECTS = [
       color: "#c2cbff",
     },
     screenshots: SCREENSHOTS.Calculator,
+    mobileOnly: false,
+  },
+  {
+    name: "This Site",
+    date: "November 2021",
+    description: [
+      "For this site I really wanted to set myself a challenge both in terms " +
+        "of design and implementation, avoiding templates and practising " +
+        "knock-out graphics.",
+      "Retrospectively, Tailwind probably wasn't the best tool for the job, but " +
+        "persisting with it taught me a lot about advanced usage and configuration.",
+    ],
+    technologies: ["React", "Styled Components", "Tailwind"],
+    repo: "https://github.com/daoudmerchant/portfolio",
+    demo: false,
+    tag: {
+      text: "SITE-CEPTION",
+      color: "#d4d4d4",
+    },
+    screenshots: SCREENSHOTS.Calculator, // FIX
+    mobileOnly: false,
   },
 ];

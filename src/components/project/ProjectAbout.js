@@ -25,6 +25,8 @@ const Border = tw.div`
     w-full
     absolute
     p-4
+    pt-0
+    sm:pt-4
 `;
 
 const Line = tw.div`
@@ -102,8 +104,9 @@ const Tag = tw.p`
 const Title = tw.h2`
     tracking-wide
     text-7
+    xs:text-8
     md:text-10
-    xl:text-8
+    xl:text-6
     font-bold
     border-b-2 border-grey-300
 `;
@@ -134,8 +137,8 @@ const Date = tw.h3`
 const Text = tw.p`
     text-left
     text-5
-    2xs:text-8
-    xs:text-10
+    xs:text-6
+    sm:text-5
     md:text-6
     xl:text-4
     pt-1
@@ -143,9 +146,7 @@ const Text = tw.p`
 
 const Technologies = tw.div`
 text-4
-3xs:text-5
-2xs:text-6
-xs:text-10
+xs:text-5
     md:text-5
     xl:text-3
 `;

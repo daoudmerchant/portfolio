@@ -29,7 +29,9 @@ const button = styled.button`
 `;
 
 const Button = tw(button)`
-${(props) => (props.isVertical ? "w-full block" : "flex-1 block")}
+block
+${(props) => (props.isMore ? "xl:hidden" : null)}
+${(props) => (props.isVertical ? "w-full" : "flex-1")}
 h-16
 text-white
 flex
@@ -90,6 +92,7 @@ const ProjectLink = ({
       href={isLink ? url : null}
       rel={isLink ? "noreferrer" : null}
       target={isLink ? "_blank" : null}
+      isMore={isMore}
     >
       {!(isLink && isTouchscreen) && (
         <>

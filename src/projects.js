@@ -64,6 +64,7 @@ export const PROJECTS = [
     technologies: ["React", "React Router Dom", "Styled Components"],
     demo: "https://daoudmerchant.github.io/shopping-cart/#/",
     repo: "https://github.com/daoudmerchant/shopping-cart",
+    screenshots: SCREENSHOTS.ShoppingCart,
   },
   {
     name: "Calculator",
@@ -82,5 +83,6 @@ export const PROJECTS = [
       text: "SEE MY PROGRESS",
       color: "#c2cbff",
     },
+    screenshots: SCREENSHOTS.Calculator,
   },
 ];

@@ -32,7 +32,49 @@ import BattleshipsSmWebpHigh from "../Projects/Battleships/small/webp/Battleship
 import BattleshipsSmWebpMed from "../Projects/Battleships/small/webp/BattleshipsSmMed.webp";
 import BattleshipsSmWebpLow from "../Projects/Battleships/small/webp/BattleshipsSmLow.webp";
 
-// import ShowMeSomethingLg from "../Projects/ShowMeSomething/ShowMeSomethingLg.png";
+// SHOPPING CART
+
+// mobile
+
+import ShoppingCartSmJpgHigh from "../Projects/ShoppingCart/small/jpg/ShoppingCartSmHigh.jpg";
+import ShoppingCartSmJpgMed from "../Projects/ShoppingCart/small/jpg/ShoppingCartSmMed.jpg";
+import ShoppingCartSmJpgLow from "../Projects/ShoppingCart/small/jpg/ShoppingCartSmLow.jpg";
+
+import ShoppingCartSmWebpHigh from "../Projects/ShoppingCart/small/webp/ShoppingCartSmHigh.webp";
+import ShoppingCartSmWebpMed from "../Projects/ShoppingCart/small/webp/ShoppingCartSmMed.webp";
+import ShoppingCartSmWebpLow from "../Projects/ShoppingCart/small/webp/ShoppingCartSmLow.webp";
+
+// desktop
+
+import ShoppingCartLrgJpgHigh from "../Projects/ShoppingCart/large/jpg/ShoppingCartLrgHigh.jpg";
+import ShoppingCartLrgJpgMed from "../Projects/ShoppingCart/large/jpg/ShoppingCartLrgMed.jpg";
+import ShoppingCartLrgJpgLow from "../Projects/ShoppingCart/large/jpg/ShoppingCartLrgLow.jpg";
+
+import ShoppingCartLrgWebpHigh from "../Projects/ShoppingCart/large/webp/ShoppingCartLrgHigh.webp";
+import ShoppingCartLrgWebpMed from "../Projects/ShoppingCart/large/webp/ShoppingCartLrgMed.webp";
+import ShoppingCartLrgWebpLow from "../Projects/ShoppingCart/large/webp/ShoppingCartLrgLow.webp";
+
+// CALCULATOR
+
+// mobile
+
+import CalculatorSmJpgHigh from "../Projects/Calculator/small/jpg/CalculatorSmHigh.jpg";
+import CalculatorSmJpgMed from "../Projects/Calculator/small/jpg/CalculatorSmMed.jpg";
+import CalculatorSmJpgLow from "../Projects/Calculator/small/jpg/CalculatorSmLow.jpg";
+
+import CalculatorSmWebpHigh from "../Projects/Calculator/small/webp/CalculatorSmHigh.webp";
+import CalculatorSmWebpMed from "../Projects/Calculator/small/webp/CalculatorSmMed.webp";
+import CalculatorSmWebpLow from "../Projects/Calculator/small/webp/CalculatorSmLow.webp";
+
+// desktop
+
+import CalculatorLrgJpgHigh from "../Projects/Calculator/large/jpg/CalculatorLrgHigh.jpg";
+import CalculatorLrgJpgMed from "../Projects/Calculator/large/jpg/CalculatorLrgMed.jpg";
+import CalculatorLrgJpgLow from "../Projects/Calculator/large/jpg/CalculatorLrgLow.jpg";
+
+import CalculatorLrgWebpHigh from "../Projects/Calculator/large/webp/CalculatorLrgHigh.webp";
+import CalculatorLrgWebpMed from "../Projects/Calculator/large/webp/CalculatorLrgMed.webp";
+import CalculatorLrgWebpLow from "../Projects/Calculator/large/webp/CalculatorLrgLow.webp";
 
 export const SCREENSHOTS = {
   ShowMeSomething: [
@@ -77,6 +119,50 @@ export const SCREENSHOTS = {
       type: "jpg",
       mobile: [BattleshipsSmJpgLow, BattleshipsSmJpgMed, BattleshipsSmJpgHigh],
       desktop: false,
+    },
+  ],
+  ShoppingCart: [
+    {
+      type: "webp",
+      mobile: [
+        ShoppingCartSmWebpLow,
+        ShoppingCartSmWebpMed,
+        ShoppingCartSmWebpHigh,
+      ],
+      desktop: [
+        ShoppingCartLrgWebpLow,
+        ShoppingCartLrgWebpMed,
+        ShoppingCartLrgWebpHigh,
+      ],
+    },
+    {
+      type: "jpg",
+      mobile: [
+        ShoppingCartSmJpgLow,
+        ShoppingCartSmJpgMed,
+        ShoppingCartSmJpgHigh,
+      ],
+      desktop: [
+        ShoppingCartLrgJpgLow,
+        ShoppingCartLrgJpgMed,
+        ShoppingCartLrgJpgHigh,
+      ],
+    },
+  ],
+  Calculator: [
+    {
+      type: "webp",
+      mobile: [CalculatorSmWebpLow, CalculatorSmWebpMed, CalculatorSmWebpHigh],
+      desktop: [
+        CalculatorLrgWebpLow,
+        CalculatorLrgWebpMed,
+        CalculatorLrgWebpHigh,
+      ],
+    },
+    {
+      type: "jpg",
+      mobile: [CalculatorSmJpgLow, CalculatorSmJpgMed, CalculatorSmJpgHigh],
+      desktop: [CalculatorLrgJpgLow, CalculatorLrgJpgMed, CalculatorLrgJpgHigh],
     },
   ],
 };

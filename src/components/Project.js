@@ -50,12 +50,14 @@ const ProjectImgFallback = tw.img`
   h-full
   w-full
   relative
+  object-contain
 `;
 
 const ProjectImg = tw.picture`
   h-full
   w-full
   relative
+  object-contain
 `;
 
 const Project = ({ project, visible }) => {
@@ -87,15 +89,20 @@ const Project = ({ project, visible }) => {
               srcSet={_getSrcSet(collection.mobile)}
               type={`image/${collection.type}`}
             />
-            <source
-              media="(min-width: 640px)"
-              srcSet={_getSrcSet(collection.desktop)}
-              typ={`image/${collection.type}`}
-            />
+            {!!collection.desktop && (
+              <source
+                media="(min-width: 640px)"
+                srcSet={_getSrcSet(collection.desktop)}
+                typ={`image/${collection.type}`}
+              />
+            )}
           </>
         ))}
         <ProjectImgFallback
-          src={project.screenshots[0].desktop[0]}
+          src={
+            project.screenshots[0].desktop[0] ||
+            project.screenshots[0].mobile[0]
+          }
           alt={project.name}
         />
       </ProjectImg>

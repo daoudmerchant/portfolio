@@ -124,7 +124,7 @@ function App() {
         <TopFader />
         <Main>
           <Greeting visible={showBanner} />
-          {[PROJECTS[0]].map((project, i) => {
+          {[PROJECTS[0], PROJECTS[1]].map((project, i) => {
             return (
               <Project
                 key={project.name}

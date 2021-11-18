@@ -49,6 +49,7 @@ export const PROJECTS = [
     technologies: ["React", "React Drag-And-Drop", "Jest", "Styled Components"],
     demo: "https://daoudmerchant.github.io/battleships/",
     repo: "https://github.com/daoudmerchant/battleships",
+    screenshots: SCREENSHOTS.Battleships,
   },
   {
     name: "Shopping Cart",

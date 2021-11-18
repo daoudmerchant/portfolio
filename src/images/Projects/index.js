@@ -10,6 +10,8 @@ import ShowMeSomethingSmWebpHigh from "../Projects/ShowMeSomething/small/webp/Sh
 import ShowMeSomethingSmWebpMed from "../Projects/ShowMeSomething/small/webp/ShowMeSomethingSmMed.webp";
 import ShowMeSomethingSmWebpLow from "../Projects/ShowMeSomething/small/webp/ShowMeSomethingSmLow.webp";
 
+// desktop
+
 import ShowMeSomethingLrgJpgHigh from "../Projects/ShowMeSomething/large/jpg/ShowMeSomethingLrgHigh.jpg";
 import ShowMeSomethingLrgJpgMed from "../Projects/ShowMeSomething/large/jpg/ShowMeSomethingLrgMed.jpg";
 import ShowMeSomethingLrgJpgLow from "../Projects/ShowMeSomething/large/jpg/ShowMeSomethingLrgLow.jpg";
@@ -17,6 +19,18 @@ import ShowMeSomethingLrgJpgLow from "../Projects/ShowMeSomething/large/jpg/Show
 import ShowMeSomethingLrgWebpHigh from "../Projects/ShowMeSomething/large/webp/ShowMeSomethingLrgHigh.webp";
 import ShowMeSomethingLrgWebpMed from "../Projects/ShowMeSomething/large/webp/ShowMeSomethingLrgMed.webp";
 import ShowMeSomethingLrgWebpLow from "../Projects/ShowMeSomething/large/webp/ShowMeSomethingLrgLow.webp";
+
+// BATTLESHIPS
+
+// mobile (ONLY)
+
+import BattleshipsSmJpgHigh from "../Projects/Battleships/small/jpg/BattleshipsSmHigh.jpg";
+import BattleshipsSmJpgMed from "../Projects/Battleships/small/jpg/BattleshipsSmMed.jpg";
+import BattleshipsSmJpgLow from "../Projects/Battleships/small/jpg/BattleshipsSmLow.jpg";
+
+import BattleshipsSmWebpHigh from "../Projects/Battleships/small/webp/BattleshipsSmHigh.webp";
+import BattleshipsSmWebpMed from "../Projects/Battleships/small/webp/BattleshipsSmMed.webp";
+import BattleshipsSmWebpLow from "../Projects/Battleships/small/webp/BattleshipsSmLow.webp";
 
 // import ShowMeSomethingLg from "../Projects/ShowMeSomething/ShowMeSomethingLg.png";
 
@@ -47,6 +61,22 @@ export const SCREENSHOTS = {
         ShowMeSomethingLrgJpgMed,
         ShowMeSomethingLrgJpgHigh,
       ],
+    },
+  ],
+  Battleships: [
+    {
+      type: "webp",
+      mobile: [
+        BattleshipsSmWebpLow,
+        BattleshipsSmWebpMed,
+        BattleshipsSmWebpHigh,
+      ],
+      desktop: false,
+    },
+    {
+      type: "jpg",
+      mobile: [BattleshipsSmJpgLow, BattleshipsSmJpgMed, BattleshipsSmJpgHigh],
+      desktop: false,
     },
   ],
 };

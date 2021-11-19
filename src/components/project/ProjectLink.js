@@ -11,7 +11,8 @@ const Link = tw(link)`
   text-white
   flex-1
   flex
-  text-6
+  text-5
+  xs:text-6
   sm:text-7
   md:text-8
   justify-center
@@ -36,7 +37,8 @@ h-full
 text-white
 flex
 font-bold
-text-6
+text-5
+xs:text-6
 sm:text-7
 md:text-8
 justify-center

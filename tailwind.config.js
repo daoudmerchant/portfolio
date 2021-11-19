@@ -42,6 +42,8 @@ module.exports = {
         80: "80em",
         90: "90em",
         100: "100em",
+        footer: "30px",
+        footertext: "10px",
       },
       fontSize: {
         1: "1em",
@@ -95,6 +97,7 @@ module.exports = {
         projectboxlg: "calc(62.5vw - 36em)",
         projectboxportrait: "calc(160vw - 51.2em)",
         "full+": "calc(100% + 2em)",
+        spotify: "80px",
       },
       boxShadow: {
         pill: "-5px 5px 15px -5px rgba(145,145,145,0.6)",
@@ -107,6 +110,7 @@ module.exports = {
         projectboxlg: "calc(100vw - 32em)",
         halfpanel: "calc(50% - 4em)",
         "full+": "calc(100% + 2em)",
+        spotify: "250px",
       },
       translate: {
         raisescreenshot: "calc(-100% - 16em)",

@@ -85,7 +85,7 @@ const Main = tw(main)`
   top-16
   z-1
   bg-transparent
-  overflow-x-auto
+  overflow-x-hidden
 `;
 
 const Screen = tw.div`
@@ -142,11 +142,10 @@ function App() {
     return keys.length > 2 && keys.every((item) => !!ready[item]);
   }, [ready]);
 
-  // TODO: Improve 'start the show' logic
   useEffect(() => {
     if (!pageIsReady) return;
-    setTimeout(() => setShowBanner(true), 0); // move to back of queue
-    setTimeout(() => setShowContent(true), 300);
+    setTimeout(() => setShowBanner(true), 100); // move to back of queue
+    setTimeout(() => setShowContent(true), 400);
   }, [pageIsReady]);
 
   const reportReady = (name) => {
@@ -178,9 +177,6 @@ function App() {
           <Footer />
         </Main>
         <BottomFader />
-
-        {/* Photo by <a href="https://unsplash.com/@maripopeo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maria Vojtovicova</a> on <a href="https://unsplash.com/s/photos/aurora-borealis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*/}
       </div>
     </>
   );

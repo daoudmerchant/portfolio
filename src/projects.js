@@ -20,6 +20,7 @@ export const PROJECTS = [
     ],
     demo: "https://daoudmerchant.github.io/show-me-something/#/",
     repo: "https://github.com/daoudmerchant/show-me-something",
+    video: "L4Fa_zh-WmM",
     tag: {
       text: "LATEST",
       color: "#ffde8c",
@@ -50,6 +51,7 @@ export const PROJECTS = [
     technologies: ["React", "React Drag-And-Drop", "Jest", "Styled Components"],
     demo: "https://daoudmerchant.github.io/battleships/",
     repo: "https://github.com/daoudmerchant/battleships",
+    video: "x2teyEYqs5A",
     screenshots: SCREENSHOTS.Battleships,
     mobileOnly: true,
   },
@@ -66,6 +68,7 @@ export const PROJECTS = [
     technologies: ["React", "React Router Dom", "Styled Components"],
     demo: "https://daoudmerchant.github.io/shopping-cart/#/",
     repo: "https://github.com/daoudmerchant/shopping-cart",
+    video: "DntN1dEsbIg",
     screenshots: SCREENSHOTS.ShoppingCart,
     mobileOnly: false,
   },
@@ -82,6 +85,7 @@ export const PROJECTS = [
     technologies: ["Vanilla JS", "Vanilla CSS", "HTML5", "Mobile-Unfriendly"],
     demo: "https://daoudmerchant.github.io/calculator/",
     repo: "https://github.com/daoudmerchant/calculator",
+    video: "uWlrfumgFpU",
     tag: {
       text: "SEE MY PROGRESS",
       color: "#c2cbff",
@@ -101,6 +105,7 @@ export const PROJECTS = [
     technologies: ["React", "Styled Components", "Tailwind"],
     repo: "https://github.com/daoudmerchant/portfolio",
     demo: false,
+    video: "uWlrfumgFpU", // FIX
     tag: {
       text: "SITE-CEPTION",
       color: "#d4d4d4",

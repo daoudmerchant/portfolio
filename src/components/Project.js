@@ -145,10 +145,10 @@ const Project = ({ project, reportReady }) => {
       )}
       <ProjectAbout nested={false} project={project} focused={focused} />
       <ModalVideo
-        channel="vimeo"
+        channel="youtube"
         autoplay
         isOpen={showVideo}
-        videoId="65107797"
+        videoId={project.video}
         onClose={() => setShowVideo(false)}
       />
     </div>

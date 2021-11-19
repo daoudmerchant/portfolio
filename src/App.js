@@ -20,6 +20,14 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     overflow: hidden;
     font-family: 'Raleway', sans-serif;
+
+    // hide scrollbar
+    & > * {
+      -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .App {
@@ -55,15 +63,6 @@ const GlobalStyle = createGlobalStyle`
     }
     @media screen and (min-width: 4000px) {
       font-size: 10px;
-    }
-  }
-
-  .App * {
-    // hide scrollbar
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
     }
   }
 `;
@@ -144,7 +143,7 @@ function App() {
 
   useEffect(() => {
     if (!pageIsReady) return;
-    setTimeout(() => setShowBanner(true), 300); // move to back of queue
+    setTimeout(() => setShowBanner(true), 300); // ODO: Fix/tweak timings
     setTimeout(() => setShowContent(true), 600);
   }, [pageIsReady]);
 

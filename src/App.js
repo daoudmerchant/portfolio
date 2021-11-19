@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 import tw from "tailwind-styled-components";
 import styled, { createGlobalStyle } from "styled-components";
@@ -88,6 +88,18 @@ const Main = tw(main)`
   overflow-x-auto
 `;
 
+const Screen = tw.div`
+  h-full
+  w-full
+  bg-white
+  z-50
+  transition-position
+  duration-500
+  ease-in-out
+  absolute
+  ${(props) => (props.visible ? "left-full" : "left-0")};
+`;
+
 const Fader = tw.div`
   h-4
   right-16
@@ -108,28 +120,58 @@ const BottomFader = tw(Fader)`
   bg-gradient-to-b
 `;
 
+const readyState = (() => {
+  let state = {
+    background: false,
+    profile: false,
+  };
+  PROJECTS.forEach((project) => {
+    state[project.name] = false;
+  });
+  return state;
+})();
+
 function App() {
   const [showBanner, setShowBanner] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+
+  const [ready, setReady] = useState(readyState);
+
+  const pageIsReady = useMemo(() => {
+    const keys = Object.keys(ready);
+    return keys.length > 2 && keys.every((item) => !!ready[item]);
+  }, [ready]);
 
   // TODO: Improve 'start the show' logic
   useEffect(() => {
-    setTimeout(() => setShowBanner(true), 500);
-  }, []);
+    if (!pageIsReady) return;
+    setTimeout(() => setShowBanner(true), 0); // move to back of queue
+    setTimeout(() => setShowContent(true), 300);
+  }, [pageIsReady]);
+
+  const reportReady = (name) => {
+    if (ready[name]) return;
+    setReady((prevReady) => ({
+      ...prevReady,
+      [name]: true,
+    }));
+  };
 
   return (
     <>
       <GlobalStyle />
       <div className="App">
-        <Banner visible={showBanner} />
+        <Banner visible={showBanner} reportReady={reportReady} />
         <TopFader />
         <Main>
-          <Greeting visible={showBanner} />
+          <Screen visible={showContent} />
+          <Greeting reportReady={reportReady} />
           {PROJECTS.map((project, i) => {
             return (
               <Project
                 key={project.name}
-                visible={showBanner}
                 project={project}
+                reportReady={reportReady}
               />
             );
           })}

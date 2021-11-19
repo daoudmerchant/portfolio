@@ -5,7 +5,7 @@ import { ABOUT } from "../copy";
 const GreetingContainer = tw.header`
     w-full
     md:w-2/3
-    md:h-80
+    md:h-100
     bg-white
     float-right
     flex
@@ -17,13 +17,9 @@ const GreetingContainer = tw.header`
 const GreetingText = tw.div`
 text-left
 text-gray-600
-mb-2
-sm:mb-8
+mb-8
 md:mb-0
-
-// animation
-opacity-0
-${(props) => (props.visible ? "animate-fade-in" : null)}
+md:mr-8
 `;
 
 const Phrase = tw.p`
@@ -37,7 +33,7 @@ xl:text-5
 const ProfileContainer = tw.div`
     z-20
     h-70
-    md:h-80
+    md:h-100
     w-full
     md:w-1/3
     float-left
@@ -58,10 +54,6 @@ const ProfileBorder = tw.div`
     md:h-64
     md:w-64
     rounded-full
-
-    // animation
-    opacity-0
-    ${(props) => (props.visible ? "animate-fade-in" : null)}
 `;
 
 const ProfilePic = tw.img`
@@ -71,33 +63,29 @@ const ProfilePic = tw.img`
     w-40
     md:h-48
     md:w-48
-    left-1/2
     top-15
-    md:top-16
+    md:top-26
+    left-1/2
     md:left-1/6
     transform
     -translate-x-1/2
     rounded-full
     m-0
-
-    // animation
-    opacity-0
-    ${(props) => (props.visible ? "animate-fade-in" : null)}
 `;
 
-const Greeting = ({ visible }) => {
+const Greeting = ({ reportReady }) => {
   return (
     <>
       <ProfileContainer>
-        <ProfileBorder visible={visible} />
+        <ProfileBorder />
       </ProfileContainer>
       <ProfilePic
+        onLoad={() => reportReady("profile")}
         src="https://hips.hearstapps.com/countryliving.cdnds.net/17/47/2048x1365/gallery-1511194376-cavachon-puppy-christmas.jpg?resize=980:*"
         alt="PLACEHOLDER ALTER"
-        visible={visible}
       />
-      <GreetingContainer visible={visible}>
-        <GreetingText visible={visible}>
+      <GreetingContainer>
+        <GreetingText>
           {ABOUT.map((phrase) => (
             <Phrase>{phrase}</Phrase>
           ))}

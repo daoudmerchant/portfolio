@@ -7,7 +7,7 @@ export const PROJECTS = [
     description: [
       "A button-based Reddit app using the Reddit API, with " +
         "CRUD management of buttons stored in user accounts on Google " +
-        "Firebase (OAuth sign-in).",
+        "Firebase upon form validation.",
       "The goal was to make Reddit content consumption immediate, improve " +
         "accessibility and eliminate 'doom-scrolling'.",
     ],
@@ -33,7 +33,7 @@ export const PROJECTS = [
     description: [
       "A mobile Battleships app with two-player hot-seating, " +
         "an AI opponent, multiple grid sizes and a drag-and-drop " +
-        "ship placement interface, fully unit tested in Jest.",
+        "ship placement interface, unit tested in Jest.",
       [
         "This app uses technology specifically for touchscreens " +
           "and is therefore only available on mobile devices (see why ",
@@ -73,7 +73,7 @@ export const PROJECTS = [
     name: "Calculator",
     date: "March 2021",
     description: [
-      "One of my first projects: a retro calculator with a fixed 8 digit " +
+      "See my progress! A retro calculator with a fixed 8 digit " +
         "display, 'error' message when you break it (like the ones at school) " +
         "and keyboard controls.",
       "Written entirely by hand in vanilla, furiously polluting the " +
@@ -93,11 +93,10 @@ export const PROJECTS = [
     name: "This Site",
     date: "November 2021",
     description: [
-      "For this site I really wanted to set myself a challenge both in terms " +
-        "of design and implementation, avoiding templates and practising " +
-        "knock-out graphics.",
-      "Retrospectively, Tailwind probably wasn't the best tool for the job, but " +
-        "persisting with it taught me a lot about advanced usage and configuration.",
+      "Created without any template for a deeper learning experience and more explicit " +
+        "example of my current skill level.",
+      "Apart from practising knock-out graphics, forcing myself to use Tailwind taught " +
+        "me a lot about its advanced usage and configuration.",
     ],
     technologies: ["React", "Styled Components", "Tailwind"],
     repo: "https://github.com/daoudmerchant/portfolio",

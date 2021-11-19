@@ -41,6 +41,7 @@ module.exports = {
         70: "70em",
         80: "80em",
         90: "90em",
+        100: "100em",
       },
       fontSize: {
         1: "1em",
@@ -112,6 +113,8 @@ module.exports = {
       },
       inset: {
         "1/6": "16.6666667%",
+        15: "15em",
+        26: "26em",
         74: "74em",
       },
       borderWidth: {

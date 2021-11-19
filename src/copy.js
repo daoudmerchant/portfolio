@@ -4,6 +4,6 @@ export const ABOUT = [
   "What does that mean? It means I come from a history of playing collaborative roles " +
     "balancing support with proactivity, where constant professional development and mastery " +
     "of the process of learning mean better realising a collective vision.",
-  "Currently most likely to be found in a Stockholm cafe with my nose in a ThinkPad, " +
+  "Most likely found in my free time in a Stockholm cafe with my nose in a ThinkPad, " +
     "VS Code and 13 tabs open, fascinated and caffeinated.",
 ];

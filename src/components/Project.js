@@ -5,6 +5,8 @@ import ReactVisibilitySensor from "react-visibility-sensor";
 
 import { useFocusManagement, useScreenType } from "../hooks";
 
+import { getSrcSet } from "../utils";
+
 import ModalVideo from "react-modal-video";
 import Frame from "./Frame";
 import ProjectLink from "./project/ProjectLink";
@@ -60,39 +62,30 @@ const ProjectImg = tw.picture`
   object-contain
 `;
 
-const Project = ({ project, visible }) => {
+const Project = ({ project, reportReady }) => {
   const [showMore, setShowMore] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const toggleShowMore = () => setShowMore((prevState) => !prevState);
 
+  const { isTouchscreen } = useScreenType();
+
   const { focused, handleScroll, reportHovered, reportUnhovered } =
     useFocusManagement(setShowMore);
 
-  const reportCursor = {
-    hover: reportHovered,
-    unhover: reportUnhovered,
-  };
-
-  const { isTouchscreen } = useScreenType();
-
   const Screenshot = () => {
-    const _getSrcSet = (array) => {
-      return `${array[0]}, ${array[1]} 2x, ${array[2]} 3x`;
-    };
-
     return (
-      <ProjectImg>
+      <ProjectImg onLoad={() => reportReady(project.name)}>
         {project.screenshots.map((collection) => (
           <>
             <source
               media="(max-width: 639px)"
-              srcSet={_getSrcSet(collection.mobile)}
+              srcSet={getSrcSet(collection.mobile)}
               type={`image/${collection.type}`}
             />
             {!!collection.desktop && (
               <source
                 media="(min-width: 640px)"
-                srcSet={_getSrcSet(collection.desktop)}
+                srcSet={getSrcSet(collection.desktop)}
                 typ={`image/${collection.type}`}
               />
             )}
@@ -110,11 +103,11 @@ const Project = ({ project, visible }) => {
   };
 
   return (
-    <>
-      <FrameContainer
-        onMouseEnter={isTouchscreen ? null : reportHovered}
-        onMouseLeave={isTouchscreen ? null : reportUnhovered}
-      >
+    <div
+      onMouseEnter={isTouchscreen ? null : reportHovered}
+      onMouseLeave={isTouchscreen ? null : reportUnhovered}
+    >
+      <FrameContainer>
         <Frame topright={false} visible={focused}>
           <ProjectLink
             url="#"
@@ -145,25 +138,12 @@ const Project = ({ project, visible }) => {
           <ProjectAbout project={project} nested={true} showMore={showMore} />
         </ProjectPreview>
       ) : (
-        <ProjectPreview
-          onMouseEnter={reportHovered}
-          onMouseLeave={reportUnhovered}
-        >
+        <ProjectPreview>
           <Screenshot />
-          <ProjectAbout
-            reportCursor={reportCursor}
-            project={project}
-            nested={true}
-            showMore={showMore}
-          />
+          <ProjectAbout project={project} nested={true} showMore={showMore} />
         </ProjectPreview>
       )}
-      <ProjectAbout
-        reportCursor={reportCursor}
-        nested={false}
-        project={project}
-        focused={focused}
-      />
+      <ProjectAbout nested={false} project={project} focused={focused} />
       <ModalVideo
         channel="vimeo"
         autoplay
@@ -171,7 +151,7 @@ const Project = ({ project, visible }) => {
         videoId="65107797"
         onClose={() => setShowVideo(false)}
       />
-    </>
+    </div>
   );
 };
 

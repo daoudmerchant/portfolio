@@ -32,7 +32,7 @@ const Button = tw(button)`
 block
 ${(props) => (props.isMore ? "xl:hidden" : null)}
 ${(props) => (props.isVertical ? "w-full" : "flex-1")}
-h-16
+h-full
 text-white
 flex
 font-bold
@@ -53,7 +53,7 @@ const LinkSwiper = tw.div`
     absolute
     text-black
     ${(props) => (props.isVertical ? "w-16" : "w-full")}
-    h-16
+    h-full
     transform
     flex
     items-center

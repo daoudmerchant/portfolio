@@ -63,7 +63,7 @@ const HorizontalSwiper = tw(Swiper)`
   h-16
   left-0
   right-0
-  ${(props) => (console.log(props) || props.topright ? "top-0" : "bottom-0")}
+  ${(props) => (props.topright ? "top-0" : "bottom-0")}
   ${(props) =>
     !props.visible ? null : props.topright ? "right-full" : "left-full"}
 `;

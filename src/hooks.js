@@ -3,7 +3,9 @@ import { useMediaQuery } from "react-responsive";
 
 export const useFocusManagement = (setShowMore = null) => {
   const [focused, setFocused] = useState(false);
-  const reportHovered = () => setFocused(true);
+  const reportHovered = () => {
+    setFocused(true);
+  };
   const reportUnhovered = () => {
     setFocused(false);
     setShowMore?.(false);

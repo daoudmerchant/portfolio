@@ -1,11 +1,13 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
 // background
-import { BACKGROUND } from "../images";
+import { BACKGROUND } from "../images/background";
+
+import { getSrcSet } from "../utils";
 
 import Frame from "./Frame";
 
-const Background = tw.img`
+const Background = tw.picture`
   object-cover
   center
   h-full
@@ -19,18 +21,36 @@ const Background = tw.img`
   overflow-hidden
 `;
 
+const Fallback = tw.img`
+object-cover
+center
+h-full
+w-full
+z-0
+absolute
+top-0
+bottom-0
+left-0
+right-0
+overflow-hidden
+`;
+
 const Name = tw.h1`
     text-10
 `;
 
-const Banner = ({ visible }) => {
+const Banner = ({ visible, reportReady }) => {
   return (
     <>
-      <Background
-        srcSet={`${BACKGROUND.res640} 640w, ${BACKGROUND.res1920} 1920w, ${BACKGROUND.res2400} 2400w, ${BACKGROUND.res4160} 4160w`}
-        src={BACKGROUND.res1920}
-        alt="Aurora Borealis"
-      />
+      <Background onLoad={() => reportReady("background")}>
+        {BACKGROUND.map((imgSet) => (
+          <source
+            srcSet={getSrcSet(imgSet.files)}
+            type={`image/${imgSet.type}`}
+          />
+        ))}
+        <Fallback src={BACKGROUND[0].files[2]} alt="Aurora Borealis" />
+      </Background>
       <Frame topright={true} visible={visible}>
         <Name>Daoud Merchant</Name>
       </Frame>

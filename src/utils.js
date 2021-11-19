@@ -1,0 +1,11 @@
+export const getSrcSet = (array) => {
+  let srcSet = "";
+  for (let i = 0; i < array.length; i++) {
+    if (i === 0) {
+      srcSet += array[0];
+    } else {
+      srcSet += `, ${array[i]} ${i + 1}x`;
+    }
+  }
+  return srcSet;
+};

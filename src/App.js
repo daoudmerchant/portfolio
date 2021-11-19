@@ -144,8 +144,8 @@ function App() {
 
   useEffect(() => {
     if (!pageIsReady) return;
-    setTimeout(() => setShowBanner(true), 100); // move to back of queue
-    setTimeout(() => setShowContent(true), 400);
+    setTimeout(() => setShowBanner(true), 300); // move to back of queue
+    setTimeout(() => setShowContent(true), 600);
   }, [pageIsReady]);
 
   const reportReady = (name) => {

@@ -2,6 +2,8 @@ import tw from "tailwind-styled-components/dist/tailwind";
 
 import { ABOUT } from "../copy";
 
+import PROFILE from "../images/portrait/jpg/selfie.jpg";
+
 const GreetingContainer = tw.header`
     w-full
     md:w-2/3

@@ -106,7 +106,7 @@ const Title = tw.h2`
     text-7
     xs:text-8
     md:text-10
-    xl:text-6
+    lg:text-6
     font-bold
     border-b-2 border-grey-300
 `;

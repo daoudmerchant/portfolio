@@ -1,13 +1,14 @@
 import tw from "tailwind-styled-components/dist/tailwind";
+import styled from "styled-components";
 
 const FooterEl = tw.footer`
     w-full
     bg-gray-100
     flex
     flex-col
-    sm:flex-row
+    lg:flex-row
     space-around
-    sm:p-footer
+    lg:p-footer
 `;
 
 const SubContainer = tw.div`
@@ -20,7 +21,7 @@ const SubContainer = tw.div`
 `;
 
 const SpotifyContainer = tw(SubContainer)`
-  sm:flex-row
+  lg:flex-row
 `;
 
 const Text = tw.p`
@@ -38,11 +39,18 @@ const SpotifyText = tw(Text)`
   text-center
   bg-gray-200
   w-spotify
-  sm:w-auto
-  sm:h-spotify
-  sm:flex
-  sm:items-center
-  sm:px-2
+  lg:w-auto
+  lg:h-spotify
+  lg:flex
+  lg:items-center
+  lg:px-2
+`;
+
+const SpotifyIframe = styled.iframe`
+  width: 250px;
+  @media (min-width: 1024px) {
+    width: 300px !important;
+  }
 `;
 
 const Footer = () => {
@@ -78,10 +86,9 @@ const Footer = () => {
       </SubContainer>
       <SpotifyContainer>
         <SpotifyText>Hear me play drums</SpotifyText>
-        <iframe
+        <SpotifyIframe
           title="spotify"
           src="https://open.spotify.com/embed/track/3JqsmGGE44NkrY7sOMdEXL"
-          width="250"
           height="80"
           frameborder="0"
           allowtransparency="true"

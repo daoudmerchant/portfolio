@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
     @media screen and (min-width: 1536px) {
       font-size: 4px;
     }
-    @media screen and (min-width: 2000px) {
+    @media screen and (min-width: 1800px) {
       font-size: 5px;
     }
     @media screen and (min-width: 4000px) {

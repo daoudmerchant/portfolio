@@ -3,7 +3,7 @@ import tw from "tailwind-styled-components/dist/tailwind";
 // background
 import { BACKGROUND } from "../images/background";
 
-import { getSrcSet } from "../utils";
+import { getSrcSets } from "../utils";
 
 import Frame from "./Frame";
 
@@ -43,12 +43,7 @@ const Banner = ({ visible, reportReady }) => {
   return (
     <>
       <Background onLoad={() => reportReady("background")}>
-        {BACKGROUND.map((imgSet) => (
-          <source
-            srcSet={getSrcSet(imgSet.files)}
-            type={`image/${imgSet.type}`}
-          />
-        ))}
+        {getSrcSets(BACKGROUND)}
         <Fallback src={BACKGROUND[0].files[2]} alt="Aurora Borealis" />
       </Background>
       <Frame topright={true} visible={visible}>

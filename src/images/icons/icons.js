@@ -1,3 +1,9 @@
+// CV file
+
+import CVFILE from "../../downloads/CV Daoud Merchant.pdf";
+
+// ICONS
+
 // CV
 import CV32 from "./cv/cv32.png";
 import CV64 from "./cv/cv64.png";
@@ -22,24 +28,32 @@ import GITHUB128 from "./github/github128.png";
 import CALENDAR24 from "./calendar/calendar24.png";
 import CALENDAR32 from "./calendar/calendar32.png";
 
-export const ICONS = {
-  CV: {
-    iconSet: [CV32, CV64, CV128],
-    type: "CV",
+export const ICONS = [
+  {
+    name: "EMAIL",
+    type: "EMAIL",
+    url: "mailto:hello@daoudmerchant.com",
+    icons: [EMAIL32, EMAIL64, EMAIL128],
   },
-  EMAIL: {
-    iconSet: [EMAIL32, EMAIL64, EMAIL128],
-    type: "email",
+  {
+    name: "CV",
+    type: "DOWNLOAD",
+    url: CVFILE,
+    icons: [CV32, CV64, CV128],
   },
-  LINKEDIN: {
-    iconSet: [LINKEDIN32, LINKEDIN64, LINKEDIN128],
-    type: "LinkedIn",
+  {
+    name: "LINKEDIN",
+    type: "LINK",
+    url: "https://www.linkedin.com/in/daoudmerchant",
+    icons: [LINKEDIN32, LINKEDIN64, LINKEDIN128],
   },
-  GITHUB: {
-    iconSet: [GITHUB32, GITHUB64, GITHUB128],
-    type: "GitHub",
+  {
+    name: "GITHUB",
+    type: "LINK",
+    url: "https://www.github.com/daoudmerchant",
+    icons: [GITHUB32, GITHUB64, GITHUB128],
   },
-};
+];
 
 export const CALENDAR = {
   iconSet: [CALENDAR24, CALENDAR32],

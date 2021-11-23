@@ -2,7 +2,9 @@ import tw from "tailwind-styled-components/dist/tailwind";
 
 import { ABOUT } from "../copy";
 
-import PROFILE from "../images/portrait/jpg/selfie.jpg";
+import { PROFILE } from "../images/profile";
+
+import { getSrcSets } from "../utils";
 
 const GreetingContainer = tw.header`
     w-full
@@ -81,11 +83,10 @@ const Greeting = ({ reportReady }) => {
       <ProfileContainer>
         <ProfileBorder />
       </ProfileContainer>
-      <ProfilePic
-        onLoad={() => reportReady("profile")}
-        src="https://hips.hearstapps.com/countryliving.cdnds.net/17/47/2048x1365/gallery-1511194376-cavachon-puppy-christmas.jpg?resize=980:*"
-        alt="PLACEHOLDER ALTER"
-      />
+      <picture onLoad={() => reportReady("profile")}>
+        {getSrcSets(PROFILE)}
+        <ProfilePic src={PROFILE[1].files[0]} alt="profile" />
+      </picture>
       <GreetingContainer>
         <GreetingText>
           {ABOUT.map((phrase) => (

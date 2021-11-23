@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const FooterEl = tw.footer`
     w-full
-    bg-gray-100
+    bg-white
     flex
     flex-col
     lg:flex-row
@@ -59,8 +59,7 @@ const Footer = () => {
       <SubContainer>
         <Text>Daoud Merchant, 2021</Text>
         <Text>
-          Next, I really want to try a FrontendMentor challenge written in
-          Typescript
+          Next, I'm itching to do a FrontendMentor challenge in Typescript
         </Text>
         <Text>
           Background photo by{" "}

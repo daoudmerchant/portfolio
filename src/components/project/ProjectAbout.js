@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
-import { CALENDAR } from "../../images/icons/iconindex";
+import { CALENDAR } from "../../images/icons/icons";
 
 const ProjectDescription = tw.div`
   ${(props) => (props.nested ? "pr-4 pt-4" : "p-4 lg:p-2 xl:p-0")}
@@ -106,7 +106,7 @@ const Title = tw.h2`
     text-7
     xs:text-8
     md:text-10
-    lg:text-6
+    xl:text-6
     font-bold
     border-b-2 border-grey-300
 `;

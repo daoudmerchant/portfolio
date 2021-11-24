@@ -7,7 +7,7 @@ import { getSrcSets } from "../utils";
 
 import Frame from "./Frame";
 
-const Background = tw.img`
+const BackgroundImg = tw.img`
   object-cover
   center
   h-full
@@ -26,13 +26,13 @@ const Name = tw.h1`
   text-10
 `;
 
-const Banner = ({ visible, reportReady }) => {
+const Background = ({ visible, reportReady }) => {
   const reportFinished = () => reportReady("background");
   return (
     <>
       <picture>
         {getSrcSets(BACKGROUND)}
-        <Background
+        <BackgroundImg
           onLoad={reportFinished}
           onError={reportFinished}
           src={BACKGROUND[0].files[2]}
@@ -46,4 +46,4 @@ const Banner = ({ visible, reportReady }) => {
   );
 };
 
-export default Banner;
+export default Background;

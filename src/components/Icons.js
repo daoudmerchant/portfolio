@@ -1,29 +1,29 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
+import Obfuscate from "react-obfuscate";
+
 // icons
 import { ICONS } from "../images/icons/icons";
 
 import { getSrcSet } from "../utils";
 
 const IconContainer = tw.div`
-z-10
+w-full
+h-fulllinks
 bg-black
-transform
-font-bold
-overflow-hidden
-absolute
-mix-blend-screen
-transform
-skew-y-45
+  z-10
+  transform
+  font-bold
   absolute
+  mix-blend-screen
+  transform
+  skew-y-45
   top-8
-  z-20
-  w-full
   flex
   flex-col
   items-center
-  h-fulllinks
   justify-end
+  overflow-hidden
 `;
 
 const Icon = tw.img`
@@ -32,7 +32,7 @@ const Icon = tw.img`
   w-full
 `;
 
-const IconLink = tw.a`
+const LinkStyles = `
   w-10
   h-10
   lg:w-14
@@ -47,23 +47,32 @@ const IconLink = tw.a`
   mt-8
 `;
 
+const IconLink = tw.a(LinkStyles);
+
+const EmailLink = tw(Obfuscate)(LinkStyles);
+
 const Icons = () => {
   return (
     <IconContainer>
-      {ICONS.map((icon) => (
-        <IconLink
-          key={icon.url}
-          href={icon.url}
-          target={icon.type !== "EMAIL" ? "_blank" : null}
-          rel={icon.type === "LINK" ? "noreferrer" : null}
-        >
-          <Icon
-            src={icon.icons[0]}
-            alt={icon.type}
-            srcSet={getSrcSet(icon.icons)}
-          />
-        </IconLink>
-      ))}
+      {ICONS.map((icon) => {
+        const isMail = icon.type === "EMAIL";
+        const Link = isMail ? EmailLink : IconLink;
+        return (
+          <Link
+            key={icon.url}
+            href={isMail ? null : icon.url}
+            target={isMail ? null : "_blank"}
+            rel={isMail ? null : "noreferrer"}
+            email={isMail ? icon.url : null}
+          >
+            <Icon
+              src={icon.icons[0]}
+              alt={icon.type}
+              srcSet={getSrcSet(icon.icons)}
+            />
+          </Link>
+        );
+      })}
     </IconContainer>
   );
 };

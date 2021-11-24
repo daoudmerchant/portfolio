@@ -1,6 +1,5 @@
 import { useState, Fragment } from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
-// import styled from "styled-components";
 import ReactVisibilitySensor from "react-visibility-sensor";
 
 import { useFocusManagement, useScreenType } from "../hooks";
@@ -13,39 +12,38 @@ import ProjectLink from "./project/ProjectLink";
 import ProjectAbout from "./project/ProjectAbout";
 
 const FrameContainer = tw.div`
-    z-10
-    relative
-    clear-both
-    w-full
-    h-projectpanelportrait
-    sm:h-projectpanellg
-    xl:h-projectpanel
-    mix-blend-screen
-    relative
+  w-full
+  h-projectpanelportrait
+  sm:h-projectpanellg
+  xl:h-projectpanel
+  clear-both
+  z-10
+  relative
+  mix-blend-screen
 `;
 
 const ProjectPreview = tw.div`
-    overflow-hidden
-    absolute
-    bg-white
-    z-40
-    w-projectboxlg
-    xl:w-projectbox
-    h-projectboxportrait
-    sm:h-projectboxlg
-    xl:h-projectbox
-    left-16
-    transform
-    translate-y-raisescreenshot
-    p-4
+  h-projectboxportrait
+  sm:h-projectboxlg
+  xl:h-projectbox
+  w-projectboxlg
+  xl:w-projectbox
+  absolute
+  overflow-hidden
+  bg-white
+  z-40
+  left-16
+  transform
+  translate-y-raisescreenshot
+  p-4
 `;
 
 const Marker = tw.div`
-    h-px
-    w-full
-    bg-transparent
-    absolute
-    top-1/2
+  h-px
+  w-full
+  absolute
+  bg-transparent
+  top-1/2
 `;
 
 const ProjectImg = tw.img`
@@ -138,9 +136,7 @@ const Project = ({ project, reportReady }) => {
             <ReactVisibilitySensor onChange={handleScroll}>
               <Marker />
             </ReactVisibilitySensor>
-            {/* <ReactVisibilitySensor onChange={handleScroll}> */}
             <Screenshot />
-            {/* </ReactVisibilitySensor> */}
             <ProjectAbout
               project={project}
               nested={+true}

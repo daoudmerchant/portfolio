@@ -32,7 +32,7 @@ export const ICONS = [
   {
     name: "EMAIL",
     type: "EMAIL",
-    url: "mailto:hello@daoudmerchant.com",
+    url: "hello@daoudmerchant.com",
     icons: [EMAIL32, EMAIL64, EMAIL128],
   },
   {

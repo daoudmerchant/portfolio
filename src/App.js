@@ -7,7 +7,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { PROJECTS } from "./projects";
 
 // components
-import Banner from "./components/Banner";
+import Banner from "./components/Background";
 import Greeting from "./components/Greeting";
 import Project from "./components/Project";
 import Footer from "./components/Footer";
@@ -162,7 +162,7 @@ function App() {
         <Banner visible={showBanner} reportReady={reportReady} />
         <TopFader />
         <Main>
-          <Screen visible={showContent} />
+          <Screen visible={+showContent} />
           <Greeting reportReady={reportReady} />
           {PROJECTS.map((project, i) => {
             return (

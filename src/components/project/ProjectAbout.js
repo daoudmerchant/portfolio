@@ -5,11 +5,10 @@ import { CALENDAR } from "../../images/icons/icons";
 import { getSrcSet } from "../../utils";
 
 const ProjectDescription = tw.div`
-  ${(props) => (props.nested ? "pr-4 pt-4" : "p-4 lg:p-2 xl:p-0")}
   ${(props) =>
     props.nested
-      ? "block xl:hidden h-full+ w-full+ -translate-y-full relative"
-      : "hidden xl:block w-projectpanel h-projectbox absolute translate-y-raisescreenshot"}
+      ? "block xl:hidden h-full+ w-full+ -translate-y-full relative pr-4 pt-4"
+      : "hidden xl:block w-projectpanel h-projectbox absolute translate-y-raisescreenshot p-4 lg:p-2 xl:p-0"}
   bg-white
   z-40
   transform
@@ -142,7 +141,8 @@ const Text = tw.p`
   text-4.5
   xs:text-6
   md:text-4.5
-  xl:text-5
+  xl:text-4
+  2xl:text-5
   p-0.5
 `;
 
@@ -184,7 +184,7 @@ const ProjectAbout = ({
       onMouseEnter={!!reportCursor ? reportCursor.hover : null}
       onMouseLeave={!!reportCursor ? reportCursor.unhover : null}
       nested={nested}
-      showMore={showMore}
+      showMore={+showMore}
     >
       {!!project.tag && <Tag>{project.tag.text}</Tag>}
       <Border nested={nested}>

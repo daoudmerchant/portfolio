@@ -30,42 +30,42 @@ const button = styled.button`
 `;
 
 const Button = tw(button)`
-block
-${(props) => (props.isMore ? "xl:hidden" : null)}
-${(props) => (props.isVertical ? "w-full" : "flex-1")}
-h-full
-text-white
-flex
-font-bold
-text-5
-xs:text-6
-sm:text-7
-md:text-8
-justify-center
-items-center
-relative
-overflow-hidden
-cursor-pointer
-active:bg-white
-active:text-black
-select-none
+  block
+  ${(props) => (props.isMore ? "xl:hidden" : null)}
+  ${(props) => (props.isVertical ? "w-full" : "flex-1")}
+  h-full
+  relative
+  text-white
+  font-bold
+  text-5
+  xs:text-6
+  sm:text-7
+  md:text-8
+  flex
+  justify-center
+  items-center
+  overflow-hidden
+  cursor-pointer
+  active:bg-white
+  active:text-black
+  select-none
 `;
 
 const LinkSwiper = tw.div`
-    absolute
-    text-black
-    ${(props) => (props.isVertical ? "w-16" : "w-full")}
-    h-full
-    transform
-    flex
-    items-center
-    justify-center
-    ${(props) => (props.hovered ? "translate-x-0" : "-translate-x-full")}
-    ${(props) =>
-      props.top ? "bg-white z-30 mix-blend-difference" : "bg-black z-20"}
-    transition-transform
-    duration-300
-    ease-in-out
+  h-full
+  absolute
+  text-black
+  ${(props) => (props.isVertical ? "w-16" : "w-full")}
+  transform
+  flex
+  justify-center
+  items-center
+  ${(props) => (props.hovered ? "translate-x-0" : "-translate-x-full")}
+  ${(props) =>
+    props.top ? "bg-white z-30 mix-blend-difference" : "bg-black z-20"}
+  transition-transform
+  duration-300
+  ease-in-out
 `;
 
 const ProjectLink = ({
@@ -100,7 +100,7 @@ const ProjectLink = ({
         <>
           <LinkSwiper
             hovered={+showMore || +focused}
-            top={true}
+            top={+true}
             isVertical={isVertical}
           >
             {
@@ -113,7 +113,7 @@ const ProjectLink = ({
             isTouchscreen && isMore && (
               <LinkSwiper
                 hovered={+showMore || +focused}
-                top={false}
+                top={+false}
                 isVertical={isVertical}
               />
             )

@@ -8,6 +8,7 @@ const link = styled.a`
 
 const Link = tw(link)`
   ${(props) => (props.isVertical ? "w-full transform -rotate-90" : "h-full")}
+  relative
   text-white
   flex-1
   flex
@@ -22,7 +23,6 @@ const Link = tw(link)`
   active:bg-white
   active:text-black
   select-none
-  relative
 `;
 
 const button = styled.button`
@@ -53,9 +53,9 @@ const Button = tw(button)`
 
 const LinkSwiper = tw.div`
   h-full
+  w-full
   absolute
   text-black
-  ${(props) => (props.isVertical ? "w-16" : "w-full")}
   transform
   flex
   justify-center
@@ -68,14 +68,7 @@ const LinkSwiper = tw.div`
   ease-in-out
 `;
 
-const ProjectLink = ({
-  text,
-  url,
-  isVertical,
-  isLink,
-  handleClick,
-  showMore = null,
-}) => {
+const ProjectLink = ({ text, url, isLink, handleClick, showMore = null }) => {
   const { focused, reportHovered, reportUnhovered } = useFocusManagement();
 
   const { isTouchscreen } = useScreenType();
@@ -98,11 +91,7 @@ const ProjectLink = ({
     >
       {!(isLink && isTouchscreen) && (
         <>
-          <LinkSwiper
-            hovered={+showMore || +focused}
-            top={+true}
-            isVertical={isVertical}
-          >
+          <LinkSwiper hovered={+showMore || +focused} top={+true}>
             {
               // text on swiper if touchscreen (instead of hover)
               isMore && isTouchscreen ? "LESS" : ""
@@ -111,11 +100,7 @@ const ProjectLink = ({
           {
             // black backing on touchscreen only for swiper text knock-out effect
             isTouchscreen && isMore && (
-              <LinkSwiper
-                hovered={+showMore || +focused}
-                top={+false}
-                isVertical={isVertical}
-              />
+              <LinkSwiper hovered={+showMore || +focused} top={+false} />
             )
           }
         </>

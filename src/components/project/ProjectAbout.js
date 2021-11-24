@@ -28,6 +28,7 @@ const Border = tw.div`
   p-4
   pt-0
   sm:pt-4
+  lg:pt-0
 `;
 
 const Line = tw.div`
@@ -140,7 +141,9 @@ const Text = tw.p`
   text-left
   text-4.5
   xs:text-6
-  md:text-4.5
+  sm:text-5
+  md:text-5
+  lg:text-6
   xl:text-4
   2xl:text-5
   p-0.5
@@ -155,6 +158,7 @@ const Warning = tw(Text)`
 const Technologies = tw.div`
   text-4
   xs:text-5
+  sm:text-4.5
   md:text-5
   xl:text-3
 `;

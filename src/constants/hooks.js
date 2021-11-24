@@ -26,14 +26,17 @@ export const useFocusManagement = (setShowMore = null) => {
 };
 
 export const useScreenType = () => {
-  const isTouchscreen = useMediaQuery({
-    query: "(hover: none) and (pointer: coarse)",
+  const noHover = useMediaQuery({
+    query: "(hover: none)",
+  });
+  const noPointer = useMediaQuery({
+    query: "(pointer: coarse)",
   });
   const isSmallScreen = useMediaQuery({
     query: "(max-width: 640px)",
   });
   return {
-    isTouchscreen,
+    isTouchscreen: noHover || noPointer,
     isSmallScreen,
   };
 };

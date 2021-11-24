@@ -2,6 +2,8 @@ import tw from "tailwind-styled-components/dist/tailwind";
 
 import { CALENDAR } from "../../images/icons/icons";
 
+import { getSrcSet } from "../../utils";
+
 const ProjectDescription = tw.div`
   ${(props) => (props.nested ? "pr-4 pt-4" : "p-4 lg:p-2 xl:p-0")}
   ${(props) =>
@@ -108,7 +110,8 @@ const Title = tw.h2`
     md:text-10
     xl:text-6
     font-bold
-    border-b-2 border-grey-300
+    border-b-2
+    border-grey-300
 `;
 
 const DateContainer = tw.div`
@@ -116,7 +119,7 @@ const DateContainer = tw.div`
     relative
     justify-center
     items-center
-    pt-4
+    pt-1
 `;
 
 const Calendar = tw.img`
@@ -184,19 +187,19 @@ const ProjectAbout = ({
           <>
             <TopLine
               style={{ backgroundColor: project.tag.color }}
-              focused={focused}
+              focused={+focused}
             />
             <BottomLine
               style={{ backgroundColor: project.tag.color }}
-              focused={focused}
+              focused={+focused}
             />
             <LeftLine
               style={{ backgroundColor: project.tag.color }}
-              focused={focused}
+              focused={+focused}
             />
             <RightLine
               style={{ backgroundColor: project.tag.color }}
-              focused={focused}
+              focused={+focused}
             />
           </>
         )}
@@ -205,7 +208,7 @@ const ProjectAbout = ({
             <Title>{project.name}</Title>
             <DateContainer>
               <Calendar
-                srcSet={`${CALENDAR.iconSet[0]} 1x, ${CALENDAR.iconSet[1]} 2x`}
+                srcSet={getSrcSet(CALENDAR.iconSet)}
                 src={CALENDAR.iconSet[0]}
                 alt="Calendar icon"
               />
@@ -219,7 +222,7 @@ const ProjectAbout = ({
           </div>
           <Technologies>
             {project.technologies.map((technology) => (
-              <Technology>{technology}</Technology>
+              <Technology key={technology}>{technology}</Technology>
             ))}
           </Technologies>
         </TextContainer>

@@ -99,19 +99,25 @@ const ProjectLink = ({
       {!(isLink && isTouchscreen) && (
         <>
           <LinkSwiper
-            hovered={showMore || focused}
+            hovered={+showMore || +focused}
             top={true}
             isVertical={isVertical}
           >
-            {isMore && isTouchscreen ? "LESS" : ""}
+            {
+              // text on swiper if touchscreen (instead of hover)
+              isMore && isTouchscreen ? "LESS" : ""
+            }
           </LinkSwiper>
-          {isTouchscreen && text === "MORE" && (
-            <LinkSwiper
-              hovered={showMore || focused}
-              top={false}
-              isVertical={isVertical}
-            />
-          )}
+          {
+            // black backing on touchscreen only for swiper text knock-out effect
+            isTouchscreen && isMore && (
+              <LinkSwiper
+                hovered={+showMore || +focused}
+                top={false}
+                isVertical={isVertical}
+              />
+            )
+          }
         </>
       )}
       {text}

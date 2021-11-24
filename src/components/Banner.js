@@ -46,7 +46,7 @@ const Banner = ({ visible, reportReady }) => {
         {getSrcSets(BACKGROUND)}
         <Fallback src={BACKGROUND[0].files[2]} alt="Aurora Borealis" />
       </Background>
-      <Frame topright={true} visible={visible}>
+      <Frame topright={+true} visible={+visible}>
         <Name>Daoud Merchant</Name>
       </Frame>
     </>

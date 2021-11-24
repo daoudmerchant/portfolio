@@ -37,7 +37,8 @@ const IconLink = tw.a`
   h-10
   lg:w-14
   lg:h-14
-  px-2
+  px-1
+  sm:px-2
   md:px-1
   lg:px-2
   xl:px-0
@@ -51,6 +52,7 @@ const Icons = () => {
     <IconContainer>
       {ICONS.map((icon) => (
         <IconLink
+          key={icon.url}
           href={icon.url}
           target={icon.type !== "EMAIL" ? "_blank" : null}
           rel={icon.type === "LINK" ? "noreferrer" : null}

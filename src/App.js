@@ -143,8 +143,8 @@ function App() {
 
   useEffect(() => {
     if (!pageIsReady) return;
-    setTimeout(() => setShowBanner(true), 300); // ODO: Fix/tweak timings
-    setTimeout(() => setShowContent(true), 600);
+    setShowBanner(true); // ODO: Fix/tweak timings
+    setTimeout(() => setShowContent(true), 300);
   }, [pageIsReady]);
 
   const reportReady = (name) => {

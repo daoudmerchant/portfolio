@@ -22,12 +22,6 @@ const Horizontal = tw(Panel)`
   ${(props) => (props.topright ? "top-0" : "bottom-0")}
 `;
 
-/*
-    Project horizontal will always be 50% (- 4em)
-    16:10 ratio
-    50 / 16 * 10 = 31.25% (- 4em)
-*/
-
 const Vertical = tw(Panel)`
   w-16
   skew-y-minus45
@@ -77,17 +71,17 @@ const VerticalSwiper = tw(Swiper)`
     !props.visible ? null : props.topright ? "top-full" : "bottom-full"}
 `;
 
-const Frame = ({ topright, vertical, visible, children }) => {
+const Frame = ({ topright, visible, children }) => {
   return (
     <>
       <Triangles />
       <Vertical topright={topright}>
         {topright && <Icons />}
-        <VerticalSwiper visible={visible} topright={topright} />
+        <VerticalSwiper visible={+visible} topright={topright} />
       </Vertical>
       <Horizontal topright={topright}>
         <LinkContainer>{children}</LinkContainer>
-        <HorizontalSwiper visible={visible} topright={topright} />
+        <HorizontalSwiper visible={+visible} topright={topright} />
       </Horizontal>
     </>
   );

@@ -90,7 +90,7 @@ const Greeting = ({ reportReady }) => {
       <GreetingContainer>
         <GreetingText>
           {ABOUT.map((phrase) => (
-            <Phrase>{phrase}</Phrase>
+            <Phrase key={phrase}>{phrase}</Phrase>
           ))}
         </GreetingText>
       </GreetingContainer>

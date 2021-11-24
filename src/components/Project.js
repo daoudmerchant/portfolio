@@ -108,42 +108,60 @@ const Project = ({ project, reportReady }) => {
       onMouseLeave={isTouchscreen ? null : reportUnhovered}
     >
       <FrameContainer>
-        <Frame topright={false} visible={focused}>
+        <Frame topright={+false} visible={+focused}>
           <ProjectLink
             url="#"
             text="VIDEO"
             isLink={false}
             handleClick={() => setShowVideo(true)}
           />
-          {!!project.demo && (!project.mobileOnly || isTouchscreen) && (
-            <ProjectLink url={project.demo} text="DEMO" isLink={true} />
-          )}
+          {
+            // Only show DEMO button if:
+            // - Demo exists
+            // - Demo is mobile and desktop OR demo is mobile and device is mobile
+            !!project.demo && (!project.mobileOnly || isTouchscreen) && (
+              <ProjectLink url={project.demo} text="DEMO" isLink={true} />
+            )
+          }
           <ProjectLink url={project.repo} text="REPO" isLink={true} />
           <ProjectLink
+            // Only toggle text on mouse interfaces (slider on touch)
             text={showMore && !isTouchscreen ? "LESS" : "MORE"}
             isLink={false}
             handleClick={toggleShowMore}
-            showMore={showMore}
+            showMore={+showMore}
           />
         </Frame>
       </FrameContainer>
-      {isTouchscreen ? (
-        <ProjectPreview>
-          <ReactVisibilitySensor onChange={handleScroll}>
-            <Marker />
-          </ReactVisibilitySensor>
-          {/* <ReactVisibilitySensor onChange={handleScroll}> */}
-          <Screenshot />
-          {/* </ReactVisibilitySensor> */}
-          <ProjectAbout project={project} nested={true} showMore={showMore} />
-        </ProjectPreview>
-      ) : (
-        <ProjectPreview>
-          <Screenshot />
-          <ProjectAbout project={project} nested={true} showMore={showMore} />
-        </ProjectPreview>
-      )}
-      <ProjectAbout nested={false} project={project} focused={focused} />
+      {
+        // Only include visibility reporter IF device is touch (no hover)
+        isTouchscreen ? (
+          <ProjectPreview>
+            {/* Visibility reported by invisible marker half-way up screenshot */}
+            <ReactVisibilitySensor onChange={handleScroll}>
+              <Marker />
+            </ReactVisibilitySensor>
+            {/* <ReactVisibilitySensor onChange={handleScroll}> */}
+            <Screenshot />
+            {/* </ReactVisibilitySensor> */}
+            <ProjectAbout
+              project={project}
+              nested={+true}
+              showMore={+showMore}
+            />
+          </ProjectPreview>
+        ) : (
+          <ProjectPreview>
+            <Screenshot />
+            <ProjectAbout
+              project={project}
+              nested={+true}
+              showMore={+showMore}
+            />
+          </ProjectPreview>
+        )
+      }
+      <ProjectAbout nested={+false} project={project} focused={+focused} />
       <ModalVideo
         channel="youtube"
         autoplay

@@ -61,7 +61,10 @@ const Footer = () => {
         <Text>
           Next, I'm itching to do a FrontendMentor challenge in Typescript
         </Text>
-        <Text>
+        {/*
+          ATTRIBUTIONS
+        
+          <Text>
           Background photo by{" "}
           <a href="https://unsplash.com/@maripopeo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
             Maria Vojtovicova
@@ -81,7 +84,7 @@ const Footer = () => {
           <a href="https://www.flaticon.com/" title="Flaticon">
             www.flaticon.com
           </a>
-        </Text>
+        </Text> */}
       </SubContainer>
       <SpotifyContainer>
         <SpotifyText>Hear me play drums</SpotifyText>

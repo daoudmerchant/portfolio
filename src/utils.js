@@ -9,6 +9,10 @@ export const getSrcSet = (array) => {
 
 export const getSrcSets = (array) => {
   return array.map((imgSet) => (
-    <source srcSet={getSrcSet(imgSet.files)} type={`image/${imgSet.type}`} />
+    <source
+      key={imgSet.type}
+      srcSet={getSrcSet(imgSet.files)}
+      type={`image/${imgSet.type}`}
+    />
   ));
 };

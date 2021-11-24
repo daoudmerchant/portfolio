@@ -2,79 +2,103 @@
 
 // mobile
 
-import ShowMeSomethingSmJpgHigh from "../Projects/ShowMeSomething/small/jpg/ShowMeSomethingSmHigh.jpg";
-import ShowMeSomethingSmJpgMed from "../Projects/ShowMeSomething/small/jpg/ShowMeSomethingSmMed.jpg";
-import ShowMeSomethingSmJpgLow from "../Projects/ShowMeSomething/small/jpg/ShowMeSomethingSmLow.jpg";
+import ShowMeSomethingSmJpgHigh from "./ShowMeSomething/small/jpg/ShowMeSomethingSmHigh.jpg";
+import ShowMeSomethingSmJpgMed from "./ShowMeSomething/small/jpg/ShowMeSomethingSmMed.jpg";
+import ShowMeSomethingSmJpgLow from "./ShowMeSomething/small/jpg/ShowMeSomethingSmLow.jpg";
 
-import ShowMeSomethingSmWebpHigh from "../Projects/ShowMeSomething/small/webp/ShowMeSomethingSmHigh.webp";
-import ShowMeSomethingSmWebpMed from "../Projects/ShowMeSomething/small/webp/ShowMeSomethingSmMed.webp";
-import ShowMeSomethingSmWebpLow from "../Projects/ShowMeSomething/small/webp/ShowMeSomethingSmLow.webp";
+import ShowMeSomethingSmWebpHigh from "./ShowMeSomething/small/webp/ShowMeSomethingSmHigh.webp";
+import ShowMeSomethingSmWebpMed from "./ShowMeSomething/small/webp/ShowMeSomethingSmMed.webp";
+import ShowMeSomethingSmWebpLow from "./ShowMeSomething/small/webp/ShowMeSomethingSmLow.webp";
 
 // desktop
 
-import ShowMeSomethingLrgJpgHigh from "../Projects/ShowMeSomething/large/jpg/ShowMeSomethingLrgHigh.jpg";
-import ShowMeSomethingLrgJpgMed from "../Projects/ShowMeSomething/large/jpg/ShowMeSomethingLrgMed.jpg";
-import ShowMeSomethingLrgJpgLow from "../Projects/ShowMeSomething/large/jpg/ShowMeSomethingLrgLow.jpg";
+import ShowMeSomethingLrgJpgHigh from "./ShowMeSomething/large/jpg/ShowMeSomethingLrgHigh.jpg";
+import ShowMeSomethingLrgJpgMed from "./ShowMeSomething/large/jpg/ShowMeSomethingLrgMed.jpg";
+import ShowMeSomethingLrgJpgLow from "./ShowMeSomething/large/jpg/ShowMeSomethingLrgLow.jpg";
 
-import ShowMeSomethingLrgWebpHigh from "../Projects/ShowMeSomething/large/webp/ShowMeSomethingLrgHigh.webp";
-import ShowMeSomethingLrgWebpMed from "../Projects/ShowMeSomething/large/webp/ShowMeSomethingLrgMed.webp";
-import ShowMeSomethingLrgWebpLow from "../Projects/ShowMeSomething/large/webp/ShowMeSomethingLrgLow.webp";
+import ShowMeSomethingLrgWebpHigh from "./ShowMeSomething/large/webp/ShowMeSomethingLrgHigh.webp";
+import ShowMeSomethingLrgWebpMed from "./ShowMeSomething/large/webp/ShowMeSomethingLrgMed.webp";
+import ShowMeSomethingLrgWebpLow from "./ShowMeSomething/large/webp/ShowMeSomethingLrgLow.webp";
 
 // BATTLESHIPS
 
 // mobile (ONLY)
 
-import BattleshipsSmJpgHigh from "../Projects/Battleships/small/jpg/BattleshipsSmHigh.jpg";
-import BattleshipsSmJpgMed from "../Projects/Battleships/small/jpg/BattleshipsSmMed.jpg";
-import BattleshipsSmJpgLow from "../Projects/Battleships/small/jpg/BattleshipsSmLow.jpg";
+import BattleshipsSmJpgHigh from "./Battleships/small/jpg/BattleshipsSmHigh.jpg";
+import BattleshipsSmJpgMed from "./Battleships/small/jpg/BattleshipsSmMed.jpg";
+import BattleshipsSmJpgLow from "./Battleships/small/jpg/BattleshipsSmLow.jpg";
 
-import BattleshipsSmWebpHigh from "../Projects/Battleships/small/webp/BattleshipsSmHigh.webp";
-import BattleshipsSmWebpMed from "../Projects/Battleships/small/webp/BattleshipsSmMed.webp";
-import BattleshipsSmWebpLow from "../Projects/Battleships/small/webp/BattleshipsSmLow.webp";
+import BattleshipsSmWebpHigh from "./Battleships/small/webp/BattleshipsSmHigh.webp";
+import BattleshipsSmWebpMed from "./Battleships/small/webp/BattleshipsSmMed.webp";
+import BattleshipsSmWebpLow from "./Battleships/small/webp/BattleshipsSmLow.webp";
 
 // SHOPPING CART
 
 // mobile
 
-import ShoppingCartSmJpgHigh from "../Projects/ShoppingCart/small/jpg/ShoppingCartSmHigh.jpg";
-import ShoppingCartSmJpgMed from "../Projects/ShoppingCart/small/jpg/ShoppingCartSmMed.jpg";
-import ShoppingCartSmJpgLow from "../Projects/ShoppingCart/small/jpg/ShoppingCartSmLow.jpg";
+import ShoppingCartSmJpgHigh from "./ShoppingCart/small/jpg/ShoppingCartSmHigh.jpg";
+import ShoppingCartSmJpgMed from "./ShoppingCart/small/jpg/ShoppingCartSmMed.jpg";
+import ShoppingCartSmJpgLow from "./ShoppingCart/small/jpg/ShoppingCartSmLow.jpg";
 
-import ShoppingCartSmWebpHigh from "../Projects/ShoppingCart/small/webp/ShoppingCartSmHigh.webp";
-import ShoppingCartSmWebpMed from "../Projects/ShoppingCart/small/webp/ShoppingCartSmMed.webp";
-import ShoppingCartSmWebpLow from "../Projects/ShoppingCart/small/webp/ShoppingCartSmLow.webp";
+import ShoppingCartSmWebpHigh from "./ShoppingCart/small/webp/ShoppingCartSmHigh.webp";
+import ShoppingCartSmWebpMed from "./ShoppingCart/small/webp/ShoppingCartSmMed.webp";
+import ShoppingCartSmWebpLow from "./ShoppingCart/small/webp/ShoppingCartSmLow.webp";
 
 // desktop
 
-import ShoppingCartLrgJpgHigh from "../Projects/ShoppingCart/large/jpg/ShoppingCartLrgHigh.jpg";
-import ShoppingCartLrgJpgMed from "../Projects/ShoppingCart/large/jpg/ShoppingCartLrgMed.jpg";
-import ShoppingCartLrgJpgLow from "../Projects/ShoppingCart/large/jpg/ShoppingCartLrgLow.jpg";
+import ShoppingCartLrgJpgHigh from "./ShoppingCart/large/jpg/ShoppingCartLrgHigh.jpg";
+import ShoppingCartLrgJpgMed from "./ShoppingCart/large/jpg/ShoppingCartLrgMed.jpg";
+import ShoppingCartLrgJpgLow from "./ShoppingCart/large/jpg/ShoppingCartLrgLow.jpg";
 
-import ShoppingCartLrgWebpHigh from "../Projects/ShoppingCart/large/webp/ShoppingCartLrgHigh.webp";
-import ShoppingCartLrgWebpMed from "../Projects/ShoppingCart/large/webp/ShoppingCartLrgMed.webp";
-import ShoppingCartLrgWebpLow from "../Projects/ShoppingCart/large/webp/ShoppingCartLrgLow.webp";
+import ShoppingCartLrgWebpHigh from "./ShoppingCart/large/webp/ShoppingCartLrgHigh.webp";
+import ShoppingCartLrgWebpMed from "./ShoppingCart/large/webp/ShoppingCartLrgMed.webp";
+import ShoppingCartLrgWebpLow from "./ShoppingCart/large/webp/ShoppingCartLrgLow.webp";
 
 // CALCULATOR
 
 // mobile
 
-import CalculatorSmJpgHigh from "../Projects/Calculator/small/jpg/CalculatorSmHigh.jpg";
-import CalculatorSmJpgMed from "../Projects/Calculator/small/jpg/CalculatorSmMed.jpg";
-import CalculatorSmJpgLow from "../Projects/Calculator/small/jpg/CalculatorSmLow.jpg";
+import CalculatorSmJpgHigh from "./Calculator/small/jpg/CalculatorSmHigh.jpg";
+import CalculatorSmJpgMed from "./Calculator/small/jpg/CalculatorSmMed.jpg";
+import CalculatorSmJpgLow from "./Calculator/small/jpg/CalculatorSmLow.jpg";
 
-import CalculatorSmWebpHigh from "../Projects/Calculator/small/webp/CalculatorSmHigh.webp";
-import CalculatorSmWebpMed from "../Projects/Calculator/small/webp/CalculatorSmMed.webp";
-import CalculatorSmWebpLow from "../Projects/Calculator/small/webp/CalculatorSmLow.webp";
+import CalculatorSmWebpHigh from "./Calculator/small/webp/CalculatorSmHigh.webp";
+import CalculatorSmWebpMed from "./Calculator/small/webp/CalculatorSmMed.webp";
+import CalculatorSmWebpLow from "./Calculator/small/webp/CalculatorSmLow.webp";
 
 // desktop
 
-import CalculatorLrgJpgHigh from "../Projects/Calculator/large/jpg/CalculatorLrgHigh.jpg";
-import CalculatorLrgJpgMed from "../Projects/Calculator/large/jpg/CalculatorLrgMed.jpg";
-import CalculatorLrgJpgLow from "../Projects/Calculator/large/jpg/CalculatorLrgLow.jpg";
+import CalculatorLrgJpgHigh from "./Calculator/large/jpg/CalculatorLrgHigh.jpg";
+import CalculatorLrgJpgMed from "./Calculator/large/jpg/CalculatorLrgMed.jpg";
+import CalculatorLrgJpgLow from "./Calculator/large/jpg/CalculatorLrgLow.jpg";
 
-import CalculatorLrgWebpHigh from "../Projects/Calculator/large/webp/CalculatorLrgHigh.webp";
-import CalculatorLrgWebpMed from "../Projects/Calculator/large/webp/CalculatorLrgMed.webp";
-import CalculatorLrgWebpLow from "../Projects/Calculator/large/webp/CalculatorLrgLow.webp";
+import CalculatorLrgWebpHigh from "./Calculator/large/webp/CalculatorLrgHigh.webp";
+import CalculatorLrgWebpMed from "./Calculator/large/webp/CalculatorLrgMed.webp";
+import CalculatorLrgWebpLow from "./Calculator/large/webp/CalculatorLrgLow.webp";
+
+// THIS SITE
+
+// mobile
+
+import ThisSiteSmJpgHigh from "./ThisSite/small/jpg/SiteSmHigh.jpg";
+import ThisSiteSmJpgMed from "./ThisSite/small/jpg/SiteSmMed.jpg";
+import ThisSiteSmJpgLow from "./ThisSite/small/jpg/SiteSmLow.jpg";
+
+import ThisSiteSmWebpHigh from "./ThisSite/small/webp/SiteSmHigh.webp";
+import ThisSiteSmWebpMed from "./ThisSite/small/webp/SiteSmMed.webp";
+import ThisSiteSmWebpLow from "./ThisSite/small/webp/SiteSmLow.webp";
+
+// desktop
+
+import ThisSiteLrgJpgHigh from "./ThisSite/large/jpg/SiteLrgHigh.jpg";
+import ThisSiteLrgJpgMed from "./ThisSite/large/jpg/SiteLrgMed.jpg";
+import ThisSiteLrgJpgLow from "./ThisSite/large/jpg/SiteLrgLow.jpg";
+
+import ThisSiteLrgWebpHigh from "./ThisSite/large/webp/SiteLrgHigh.webp";
+import ThisSiteLrgWebpMed from "./ThisSite/large/webp/SiteLrgMed.webp";
+import ThisSiteLrgWebpLow from "./ThisSite/large/webp/SiteLrgLow.webp";
+
+//
 
 export const SCREENSHOTS = {
   ShowMeSomething: [
@@ -163,6 +187,18 @@ export const SCREENSHOTS = {
       type: "jpg",
       mobile: [CalculatorSmJpgLow, CalculatorSmJpgMed, CalculatorSmJpgHigh],
       desktop: [CalculatorLrgJpgLow, CalculatorLrgJpgMed, CalculatorLrgJpgHigh],
+    },
+  ],
+  ThisSite: [
+    {
+      type: "webp",
+      mobile: [ThisSiteSmWebpLow, ThisSiteSmWebpMed, ThisSiteSmWebpHigh],
+      desktop: [ThisSiteLrgWebpLow, ThisSiteLrgWebpMed, ThisSiteLrgWebpHigh],
+    },
+    {
+      type: "jpg",
+      mobile: [ThisSiteSmJpgLow, ThisSiteSmJpgMed, ThisSiteSmJpgHigh],
+      desktop: [ThisSiteLrgJpgLow, ThisSiteLrgJpgMed, ThisSiteLrgJpgHigh],
     },
   ],
 };

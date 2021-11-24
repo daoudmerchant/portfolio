@@ -47,18 +47,18 @@ export const PROJECTS = [
       "A mobile Battleships app with two-player hot-seating, " +
         "an AI opponent, multiple grid sizes and a drag-and-drop " +
         "ship placement interface, unit tested in Jest.",
-      [
-        "This app uses technology specifically for touchscreens " +
-          "and is therefore only available on mobile devices (see why ",
-        <Link
-          href="https://github.com/daoudmerchant/battleships#why-doesnt-this-work-on-desktop"
-          rel="noreferrer"
-          target="_blank"
-        >
-          here
-        </Link>,
-        ").",
-      ],
+    ],
+    warning: [
+      "This app uses technology specifically for touchscreens " +
+        "and is therefore only available on mobile devices (see why ",
+      <Link
+        href="https://github.com/daoudmerchant/battleships#why-doesnt-this-work-on-desktop"
+        rel="noreferrer"
+        target="_blank"
+      >
+        here
+      </Link>,
+      ").",
     ],
     technologies: ["React", "React Drag-And-Drop", "Jest", "Styled Components"],
     demo: "https://daoudmerchant.github.io/battleships/",
@@ -122,7 +122,7 @@ export const PROJECTS = [
       text: "SITE-CEPTION",
       color: "#d4d4d4",
     },
-    screenshots: SCREENSHOTS.Calculator, // FIX
+    screenshots: SCREENSHOTS.ThisSite,
     mobileOnly: false,
   },
 ];

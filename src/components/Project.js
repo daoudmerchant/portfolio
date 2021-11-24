@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
 // import styled from "styled-components";
 import ReactVisibilitySensor from "react-visibility-sensor";
@@ -71,7 +71,7 @@ const Project = ({ project, reportReady }) => {
     return (
       <picture>
         {project.screenshots.map((collection) => (
-          <>
+          <Fragment key={collection.mobile[0]}>
             <source
               media="(max-width: 639px)"
               srcSet={getSrcSet(collection.mobile)}
@@ -84,7 +84,7 @@ const Project = ({ project, reportReady }) => {
                 typ={`image/${collection.type}`}
               />
             )}
-          </>
+          </Fragment>
         ))}
         <ProjectImg
           onLoad={reportFinished}

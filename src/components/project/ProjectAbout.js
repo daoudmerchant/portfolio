@@ -139,12 +139,17 @@ const Date = tw.h3`
 
 const Text = tw.p`
   text-left
-  text-5
+  text-4.5
   xs:text-6
-  sm:text-5
-  md:text-6
-  xl:text-4
-  pt-1
+  md:text-4.5
+  xl:text-5
+  p-0.5
+`;
+
+const Warning = tw(Text)`
+  bg-gray-100
+  border-l-8
+  border-gray-300
 `;
 
 const Technologies = tw.div`
@@ -219,6 +224,7 @@ const ProjectAbout = ({
             {project.description.map((paragraph) => (
               <Text key={paragraph}>{paragraph}</Text>
             ))}
+            {project.warning && <Warning>{project.warning}</Warning>}
           </div>
           <Technologies>
             {project.technologies.map((technology) => (

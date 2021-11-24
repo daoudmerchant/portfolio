@@ -104,6 +104,9 @@ const Tag = tw.p`
 `;
 
 const Title = tw.h2`
+  mt-0
+  lg:-mt-1
+  xl:mt-0
   tracking-wide
   text-7
   xs:text-8

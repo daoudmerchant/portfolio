@@ -23,148 +23,148 @@ const ProjectDescription = tw.div`
 `;
 
 const Border = tw.div`
-    h-full
-    w-full
-    absolute
-    p-4
-    pt-0
-    sm:pt-4
+  h-full
+  w-full
+  absolute
+  p-4
+  pt-0
+  sm:pt-4
 `;
 
 const Line = tw.div`
-    absolute
-    transition-all
-    duration-500
-    ease-in-out
-    z-20
-    hidden
-    xl:block
+  absolute
+  transition-all
+  duration-500
+  ease-in-out
+  z-20
+  hidden
+  xl:block
 `;
 
 const HorizontalLine = tw(Line)`
-    h-5
+  h-5
 `;
 
 const VerticalLine = tw(Line)`
-    w-5
+  w-5
 `;
 
 const TopLine = tw(HorizontalLine)`
-    top-0
-    right-0
-    ${(props) => (props.focused ? "w-full" : "w-0")}
+  top-0
+  right-0
+  ${(props) => (props.focused ? "w-full" : "w-0")}
 `;
 
 const BottomLine = tw(HorizontalLine)`
-    bottom-0
-    left-0
-    ${(props) => (props.focused ? "w-full" : "w-0")}
+  bottom-0
+  left-0
+  ${(props) => (props.focused ? "w-full" : "w-0")}
 `;
 
 const LeftLine = tw(VerticalLine)`
-    left-0
-    bottom-0
-    ${(props) => (props.focused ? "h-full" : "h-0")}
+  left-0
+  bottom-0
+  ${(props) => (props.focused ? "h-full" : "h-0")}
 `;
 
 const RightLine = tw(VerticalLine)`
-    right-0
-    top-0
-    ${(props) => (props.focused ? "h-full" : "h-0")}
+  right-0
+  top-0
+  ${(props) => (props.focused ? "h-full" : "h-0")}
 `;
 
 const TextContainer = tw.div`
-    h-full
-    w-full
-    overflow-scroll
-    md:overflow-hidden
-    lg:p-4
-    xl:p-6
-    2xl:p-8
-    flex
-    flex-col
-    justify-between
+  h-full
+  w-full
+  overflow-scroll
+  md:overflow-hidden
+  lg:p-4
+  xl:p-6
+  2xl:p-8
+  flex
+  flex-col
+  justify-between
 `;
 
 const Tag = tw.p`
-    hidden
-    lg:block
-    bg-white
-    text-black
-    text-4
-    mix-blend-screen
-    z-30
-    absolute
-    font-bold
-    left-2
-    px-1
-    flex
-    justify-center
-    items-center
+  hidden
+  lg:block
+  bg-white
+  text-black
+  text-4
+  mix-blend-screen
+  z-30
+  absolute
+  font-bold
+  left-2
+  px-1
+  flex
+  justify-center
+  items-center
 `;
 
 const Title = tw.h2`
-    tracking-wide
-    text-7
-    xs:text-8
-    md:text-10
-    xl:text-6
-    font-bold
-    border-b-2
-    border-grey-300
+  tracking-wide
+  text-7
+  xs:text-8
+  md:text-10
+  xl:text-6
+  font-bold
+  border-b-2
+  border-grey-300
 `;
 
 const DateContainer = tw.div`
-    flex
-    relative
-    justify-center
-    items-center
-    pt-1
+  flex
+  relative
+  justify-center
+  items-center
+  pt-1
 `;
 
 const Calendar = tw.img`
-    h-4
-    sm:h-6
-    w-4
-    sm:w-6
-    mr-4
+  h-4
+  sm:h-6
+  w-4
+  sm:w-6
+  mr-4
 `;
 
 const Date = tw.h3`
-    text-6
-    md:text-7
-    lg:text-14
-    xl:text-5
+  text-6
+  md:text-7
+  lg:text-14
+  xl:text-5
 `;
 
 const Text = tw.p`
-    text-left
-    text-5
-    xs:text-6
-    sm:text-5
-    md:text-6
-    xl:text-4
-    pt-1
+  text-left
+  text-5
+  xs:text-6
+  sm:text-5
+  md:text-6
+  xl:text-4
+  pt-1
 `;
 
 const Technologies = tw.div`
-text-4
-xs:text-5
-    md:text-5
-    xl:text-3
+  text-4
+  xs:text-5
+  md:text-5
+  xl:text-3
 `;
 
 const Technology = tw.p`
-    inline-block
-    py-0.5
-    px-1
-    mx-0.5
-    my-0.5
-    whitespace-nowrap
-    bg-white
-    rounded-full
-    shadow-pill
-    md:text-1
+  inline-block
+  py-0.5
+  px-1
+  mx-0.5
+  my-0.5
+  whitespace-nowrap
+  bg-white
+  rounded-full
+  shadow-pill
+  md:text-1
 `;
 
 const ProjectAbout = ({
@@ -217,7 +217,7 @@ const ProjectAbout = ({
           </div>
           <div>
             {project.description.map((paragraph) => (
-              <Text key={paragraph.slice(0, 5)}>{paragraph}</Text>
+              <Text key={paragraph}>{paragraph}</Text>
             ))}
           </div>
           <Technologies>

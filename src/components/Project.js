@@ -48,14 +48,7 @@ const Marker = tw.div`
     top-1/2
 `;
 
-const ProjectImgFallback = tw.img`
-  h-full
-  w-full
-  relative
-  object-contain
-`;
-
-const ProjectImg = tw.picture`
+const ProjectImg = tw.img`
   h-full
   w-full
   relative
@@ -72,9 +65,11 @@ const Project = ({ project, reportReady }) => {
   const { focused, handleScroll, reportHovered, reportUnhovered } =
     useFocusManagement(setShowMore);
 
+  const reportFinished = () => reportReady(project.name);
+
   const Screenshot = () => {
     return (
-      <ProjectImg onLoad={() => reportReady(project.name)}>
+      <picture>
         {project.screenshots.map((collection) => (
           <>
             <source
@@ -91,14 +86,16 @@ const Project = ({ project, reportReady }) => {
             )}
           </>
         ))}
-        <ProjectImgFallback
+        <ProjectImg
+          onLoad={reportFinished}
+          onError={reportFinished}
           src={
             project.screenshots[0].desktop[0] ||
             project.screenshots[0].mobile[0]
           }
           alt={project.name}
         />
-      </ProjectImg>
+      </picture>
     );
   };
 

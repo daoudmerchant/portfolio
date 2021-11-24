@@ -77,11 +77,11 @@ const Frame = ({ topright, visible, children }) => {
       <Triangles />
       <Vertical topright={topright}>
         {topright && <Icons />}
-        <VerticalSwiper visible={+visible} topright={topright} />
+        <VerticalSwiper visible={+visible} topright={+topright} />
       </Vertical>
       <Horizontal topright={topright}>
         <LinkContainer>{children}</LinkContainer>
-        <HorizontalSwiper visible={+visible} topright={topright} />
+        <HorizontalSwiper visible={+visible} topright={+topright} />
       </Horizontal>
     </>
   );

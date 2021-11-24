@@ -1,4 +1,16 @@
+import tw from "tailwind-styled-components/dist/tailwind";
+
 import { SCREENSHOTS } from "./images/Projects";
+
+const Link = tw.a`
+  border-b-2
+  border-blue-600
+  text-blue-600
+  hover:text-blue-800
+  hover:border-blue-800
+  visited:text-purple-600
+  visited:border-purple-600
+`;
 
 export const PROJECTS = [
   {
@@ -38,13 +50,13 @@ export const PROJECTS = [
       [
         "This app uses technology specifically for touchscreens " +
           "and is therefore only available on mobile devices (see why ",
-        <a
+        <Link
           href="https://github.com/daoudmerchant/battleships#why-doesnt-this-work-on-desktop"
           rel="noreferrer"
           target="_blank"
         >
           here
-        </a>,
+        </Link>,
         ").",
       ],
     ],

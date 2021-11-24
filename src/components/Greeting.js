@@ -78,14 +78,20 @@ const ProfilePic = tw.img`
 `;
 
 const Greeting = ({ reportReady }) => {
+  const reportFinished = () => reportReady("profile");
   return (
     <>
       <ProfileContainer>
         <ProfileBorder />
       </ProfileContainer>
-      <picture onLoad={() => reportReady("profile")}>
+      <picture>
         {getSrcSets(PROFILE)}
-        <ProfilePic src={PROFILE[1].files[0]} alt="profile" />
+        <ProfilePic
+          onLoad={reportFinished}
+          onError={reportFinished}
+          src={PROFILE[1].files[0]}
+          alt="profile"
+        />
       </picture>
       <GreetingContainer>
         <GreetingText>

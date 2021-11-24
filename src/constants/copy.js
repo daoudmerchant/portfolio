@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
-import { SCREENSHOTS } from "../images/Projects/index";
+import { SCREENSHOTS } from "../images/projects/index";
 
 const Bold = tw.span`
   font-bold

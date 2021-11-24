@@ -57,7 +57,7 @@ const Icons = () => {
         >
           <Icon
             src={icon.icons[0]}
-            alt={Icons.type}
+            alt={icon.type}
             srcSet={getSrcSet(icon.icons)}
           />
         </IconLink>

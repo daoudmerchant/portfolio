@@ -1,6 +1,5 @@
 import tw from "tailwind-styled-components/dist/tailwind";
 
-// background
 import { BACKGROUND } from "../images/background";
 
 import { getSrcSets } from "../constants/utils";

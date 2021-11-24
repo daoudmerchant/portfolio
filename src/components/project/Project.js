@@ -2,14 +2,14 @@ import { useState, Fragment } from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
 import ReactVisibilitySensor from "react-visibility-sensor";
 
-import { useFocusManagement, useScreenType } from "../constants/hooks";
+import { useFocusManagement, useScreenType } from "../../constants/hooks";
 
-import { getSrcSet } from "../constants/utils";
+import { getSrcSet } from "../../constants/utils";
 
 import ModalVideo from "react-modal-video";
-import Frame from "./Frame";
-import ProjectLink from "./project/ProjectLink";
-import ProjectAbout from "./project/ProjectAbout";
+import Frame from "../Frame";
+import ProjectLink from "./ProjectLink";
+import ProjectAbout from "./ProjectAbout";
 
 const FrameContainer = tw.div`
   w-full

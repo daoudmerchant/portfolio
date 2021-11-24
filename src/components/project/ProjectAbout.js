@@ -6,7 +6,7 @@ import { getSrcSet } from "../../constants/utils";
 
 const ProjectDescription = tw.div`
   ${(props) =>
-    props.nested
+    props.$nested
       ? "block xl:hidden h-full+ w-full+ -translate-y-full relative pr-4 pt-4"
       : "hidden xl:block w-projectpanel h-projectbox absolute translate-y-raisescreenshot p-4 lg:p-2 xl:p-0"}
   bg-white
@@ -16,7 +16,7 @@ const ProjectDescription = tw.div`
   duration-300
   ease-in-out
   ${(props) =>
-    props.nested && props.$showMore ? "translate-x-0" : "translate-x-full"}
+    props.$nested && props.$showMore ? "translate-x-0" : "translate-x-full"}
   text-center
   overflow-hidden
 `;
@@ -51,25 +51,25 @@ const VerticalLine = tw(Line)`
 const TopLine = tw(HorizontalLine)`
   top-0
   right-0
-  ${(props) => (props.focused ? "w-full" : "w-0")}
+  ${(props) => (props.$focused ? "w-full" : "w-0")}
 `;
 
 const BottomLine = tw(HorizontalLine)`
   bottom-0
   left-0
-  ${(props) => (props.focused ? "w-full" : "w-0")}
+  ${(props) => (props.$focused ? "w-full" : "w-0")}
 `;
 
 const LeftLine = tw(VerticalLine)`
   left-0
   bottom-0
-  ${(props) => (props.focused ? "h-full" : "h-0")}
+  ${(props) => (props.$focused ? "h-full" : "h-0")}
 `;
 
 const RightLine = tw(VerticalLine)`
   right-0
   top-0
-  ${(props) => (props.focused ? "h-full" : "h-0")}
+  ${(props) => (props.$focused ? "h-full" : "h-0")}
 `;
 
 const TextContainer = tw.div`
@@ -183,28 +183,28 @@ const ProjectAbout = ({
     <ProjectDescription
       onMouseEnter={!!reportCursor ? reportCursor.hover : null}
       onMouseLeave={!!reportCursor ? reportCursor.unhover : null}
-      nested={nested}
+      $nested={nested}
       $showMore={+showMore}
     >
       {!!project.tag && <Tag>{project.tag.text}</Tag>}
-      <Border nested={nested}>
+      <Border>
         {!!project.tag && (
           <>
             <TopLine
               style={{ backgroundColor: project.tag.color }}
-              focused={+focused}
+              $focused={+focused}
             />
             <BottomLine
               style={{ backgroundColor: project.tag.color }}
-              focused={+focused}
+              $focused={+focused}
             />
             <LeftLine
               style={{ backgroundColor: project.tag.color }}
-              focused={+focused}
+              $focused={+focused}
             />
             <RightLine
               style={{ backgroundColor: project.tag.color }}
-              focused={+focused}
+              $focused={+focused}
             />
           </>
         )}

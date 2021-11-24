@@ -32,7 +32,7 @@ const Icon = tw.img`
   w-full
 `;
 
-const LinkStyles = `
+const linkStyles = `
   w-10
   h-10
   lg:w-14
@@ -47,9 +47,9 @@ const LinkStyles = `
   mt-8
 `;
 
-const IconLink = tw.a(LinkStyles);
+const IconLink = tw.a(linkStyles);
 
-const EmailLink = tw(Obfuscate)(LinkStyles);
+const EmailLink = tw(Obfuscate)(linkStyles);
 
 const Icons = () => {
   return (

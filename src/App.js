@@ -9,7 +9,7 @@ import { PROJECTS } from "./constants/copy";
 // components
 import Banner from "./components/Background";
 import Greeting from "./components/Greeting";
-import Project from "./components/Project";
+import Project from "./components/project/Project";
 import Footer from "./components/Footer";
 
 const GlobalStyle = createGlobalStyle`

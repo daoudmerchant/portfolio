@@ -150,3 +150,8 @@ export const ABOUT = [
       "in a ThinkPad, VS Code and 13 tabs open, fascinated and caffeinated.",
   ],
 ];
+
+export const FOOTER = [
+  "Daoud Merchant, 2021",
+  "Next, I'm itching to do a FrontendMentor challenge in Typescript",
+];

@@ -4,7 +4,7 @@ import tw from "tailwind-styled-components";
 import styled, { createGlobalStyle } from "styled-components";
 
 // projects
-import { PROJECTS } from "./projects";
+import { PROJECTS } from "./constants/copy";
 
 // components
 import Banner from "./components/Background";

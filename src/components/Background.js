@@ -3,7 +3,7 @@ import tw from "tailwind-styled-components/dist/tailwind";
 // background
 import { BACKGROUND } from "../images/background";
 
-import { getSrcSets } from "../utils";
+import { getSrcSets } from "../constants/utils";
 
 import Frame from "./Frame";
 

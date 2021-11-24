@@ -5,12 +5,12 @@ import Obfuscate from "react-obfuscate";
 // icons
 import { ICONS } from "../images/icons/icons";
 
-import { getSrcSet } from "../utils";
+import { getSrcSet } from "../constants/utils";
 
 const IconContainer = tw.div`
-w-full
-h-fulllinks
-bg-black
+  w-full
+  h-fulllinks
+  bg-black
   z-10
   transform
   font-bold

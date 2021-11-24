@@ -1,4 +1,4 @@
-import { useFocusManagement, useScreenType } from "../../hooks";
+import { useFocusManagement, useScreenType } from "../../constants/hooks";
 import tw from "tailwind-styled-components";
 import styled from "styled-components";
 

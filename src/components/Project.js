@@ -2,9 +2,9 @@ import { useState, Fragment } from "react";
 import tw from "tailwind-styled-components/dist/tailwind";
 import ReactVisibilitySensor from "react-visibility-sensor";
 
-import { useFocusManagement, useScreenType } from "../hooks";
+import { useFocusManagement, useScreenType } from "../constants/hooks";
 
-import { getSrcSet } from "../utils";
+import { getSrcSet } from "../constants/utils";
 
 import ModalVideo from "react-modal-video";
 import Frame from "./Frame";

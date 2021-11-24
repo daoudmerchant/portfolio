@@ -2,7 +2,7 @@ import tw from "tailwind-styled-components/dist/tailwind";
 
 import { CALENDAR } from "../../images/icons/icons";
 
-import { getSrcSet } from "../../utils";
+import { getSrcSet } from "../../constants/utils";
 
 const ProjectDescription = tw.div`
   ${(props) =>
@@ -16,7 +16,7 @@ const ProjectDescription = tw.div`
   duration-300
   ease-in-out
   ${(props) =>
-    props.nested && props.showMore ? "translate-x-0" : "translate-x-full"}
+    props.nested && props.$showMore ? "translate-x-0" : "translate-x-full"}
   text-center
   overflow-hidden
 `;
@@ -184,7 +184,7 @@ const ProjectAbout = ({
       onMouseEnter={!!reportCursor ? reportCursor.hover : null}
       onMouseLeave={!!reportCursor ? reportCursor.unhover : null}
       nested={nested}
-      showMore={+showMore}
+      $showMore={+showMore}
     >
       {!!project.tag && <Tag>{project.tag.text}</Tag>}
       <Border nested={nested}>

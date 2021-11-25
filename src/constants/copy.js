@@ -6,6 +6,10 @@ const Bold = tw.span`
   font-bold
 `;
 
+const JobTitle = tw(Bold)`
+  whitespace-nowrap
+`;
+
 const Link = tw.a`
   border-b-2
   border-blue-600
@@ -36,7 +40,7 @@ export const PROJECTS = [
     ],
     demo: "https://daoudmerchant.github.io/show-me-something/#/",
     repo: "https://github.com/daoudmerchant/show-me-something",
-    video: "L4Fa_zh-WmM",
+    video: "Vg_5aqZ1s-o-WmM",
     tag: {
       text: "LATEST",
       color: "#ffde8c",
@@ -67,7 +71,7 @@ export const PROJECTS = [
     technologies: ["React", "React Drag-And-Drop", "Jest", "Styled Components"],
     demo: "https://daoudmerchant.github.io/battleships/",
     repo: "https://github.com/daoudmerchant/battleships",
-    video: "x2teyEYqs5A",
+    video: "loJpeKAAwZk",
     screenshots: SCREENSHOTS.Battleships,
     mobileOnly: true,
   },
@@ -84,7 +88,7 @@ export const PROJECTS = [
     technologies: ["React", "React Router Dom", "Styled Components"],
     demo: "https://daoudmerchant.github.io/shopping-cart/#/",
     repo: "https://github.com/daoudmerchant/shopping-cart",
-    video: "DntN1dEsbIg",
+    video: "ejl0oLEUaOc",
     screenshots: SCREENSHOTS.ShoppingCart,
     mobileOnly: false,
   },
@@ -101,7 +105,7 @@ export const PROJECTS = [
     technologies: ["Vanilla JS", "Vanilla CSS", "HTML5", "Mobile-Unfriendly"],
     demo: "https://daoudmerchant.github.io/calculator/",
     repo: "https://github.com/daoudmerchant/calculator",
-    video: "uWlrfumgFpU",
+    video: "BhlnAzRnMPQ",
     tag: {
       text: "SEE MY PROGRESS",
       color: "#c2cbff",
@@ -121,7 +125,7 @@ export const PROJECTS = [
     technologies: ["React", "Styled Components", "Tailwind"],
     repo: "https://github.com/daoudmerchant/portfolio",
     demo: false,
-    video: "uWlrfumgFpU", // FIX
+    video: "cB3eyiUDi3k",
     tag: {
       text: "SITE-CEPTION",
       color: "#d4d4d4",
@@ -134,7 +138,7 @@ export const PROJECTS = [
 export const ABOUT = [
   [
     "Former jazz drummer and conservatoire professor, briefly a Parisian hotelier, now a ",
-    <Bold>front-end web developer</Bold>,
+    <JobTitle>front-end web developer</JobTitle>,
     ".",
   ],
   [

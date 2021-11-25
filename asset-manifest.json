@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.9a3af780.chunk.css",
-    "main.js": "/static/js/main.dc24c34f.chunk.js",
-    "main.js.map": "/static/js/main.dc24c34f.chunk.js.map",
+    "main.css": "/static/css/main.59833de4.chunk.css",
+    "main.js": "/static/js/main.b467d84d.chunk.js",
+    "main.js.map": "/static/js/main.b467d84d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.34f626da.js",
     "runtime-main.js.map": "/static/js/runtime-main.34f626da.js.map",
     "static/css/2.27de7858.chunk.css": "/static/css/2.27de7858.chunk.css",
-    "static/js/2.3bf8f195.chunk.js": "/static/js/2.3bf8f195.chunk.js",
-    "static/js/2.3bf8f195.chunk.js.map": "/static/js/2.3bf8f195.chunk.js.map",
+    "static/js/2.ecb6ab46.chunk.js": "/static/js/2.ecb6ab46.chunk.js",
+    "static/js/2.ecb6ab46.chunk.js.map": "/static/js/2.ecb6ab46.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.27de7858.chunk.css.map": "/static/css/2.27de7858.chunk.css.map",
-    "static/css/main.9a3af780.chunk.css.map": "/static/css/main.9a3af780.chunk.css.map",
-    "static/js/2.3bf8f195.chunk.js.LICENSE.txt": "/static/js/2.3bf8f195.chunk.js.LICENSE.txt",
+    "static/css/main.59833de4.chunk.css.map": "/static/css/main.59833de4.chunk.css.map",
+    "static/js/2.ecb6ab46.chunk.js.LICENSE.txt": "/static/js/2.ecb6ab46.chunk.js.LICENSE.txt",
     "static/media/AuroraBorealisHigh.00c73446.webp": "/static/media/AuroraBorealisHigh.00c73446.webp",
     "static/media/AuroraBorealisHigh.433771b8.jpg": "/static/media/AuroraBorealisHigh.433771b8.jpg",
     "static/media/AuroraBorealisLow.29319d7e.jpg": "/static/media/AuroraBorealisLow.29319d7e.jpg",
@@ -24,7 +24,7 @@
     "static/media/BattleshipsSmLow.d9d162b9.jpg": "/static/media/BattleshipsSmLow.d9d162b9.jpg",
     "static/media/BattleshipsSmMed.2ea6e028.jpg": "/static/media/BattleshipsSmMed.2ea6e028.jpg",
     "static/media/BattleshipsSmMed.36cadae8.webp": "/static/media/BattleshipsSmMed.36cadae8.webp",
-    "static/media/CV Daoud Merchant.ff55afbc.pdf": "/static/media/CV Daoud Merchant.ff55afbc.pdf",
+    "static/media/CV Daoud Merchant.da7ae5e8.pdf": "/static/media/CV Daoud Merchant.da7ae5e8.pdf",
     "static/media/CalculatorLrgHigh.12649af9.jpg": "/static/media/CalculatorLrgHigh.12649af9.jpg",
     "static/media/CalculatorLrgHigh.e247c0a5.webp": "/static/media/CalculatorLrgHigh.e247c0a5.webp",
     "static/media/CalculatorLrgLow.54a0fd6b.webp": "/static/media/CalculatorLrgLow.54a0fd6b.webp",
@@ -81,8 +81,8 @@
   "entrypoints": [
     "static/js/runtime-main.34f626da.js",
     "static/css/2.27de7858.chunk.css",
-    "static/js/2.3bf8f195.chunk.js",
-    "static/css/main.9a3af780.chunk.css",
-    "static/js/main.dc24c34f.chunk.js"
+    "static/js/2.ecb6ab46.chunk.js",
+    "static/css/main.59833de4.chunk.css",
+    "static/js/main.b467d84d.chunk.js"
   ]
 }

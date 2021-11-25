@@ -74,7 +74,7 @@ const Swiper = tw.div`
   bg-white
   transform
   transition-position
-  duration-500
+  duration-700
   ease-in-out
 `;
 

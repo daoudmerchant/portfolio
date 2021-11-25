@@ -14,7 +14,7 @@ const ProjectDescription = tw.div`
   transform
   transition-transform
   duration-300
-  ease-in-out
+  startrek
   ${(props) =>
     props.$nested && props.$showMore ? "translate-x-0" : "translate-x-full"}
   text-center
@@ -33,8 +33,8 @@ const Border = tw.div`
 const Line = tw.div`
   absolute
   transition-all
-  duration-500
-  ease-in-out
+  duration-700
+  startrek
   z-20
   hidden
   xl:block

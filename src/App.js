@@ -104,8 +104,8 @@ const Screen = tw.div`
   bg-white
   z-70
   transition-all
-  duration-500
-  ease-in-out
+  duration-700
+  startrek
   ${(props) => (props.$visible ? "w-0" : "w-full")};
 `;
 
@@ -129,6 +129,7 @@ const BottomFader = tw(Fader)`
   bg-gradient-to-b
 `;
 
+// Prepare initial state
 const readyState = (() => {
   let state = {
     background: false,
@@ -153,8 +154,8 @@ function App() {
 
   useEffect(() => {
     if (!pageIsReady) return;
-    setTimeout(() => setShowBanner(true), 100); // TODO: Fix/tweak timings
-    setTimeout(() => setShowContent(true), 400);
+    setTimeout(() => setShowBanner(true), 150); // Slight delay to guarantee page rendered
+    setTimeout(() => setShowContent(true), 450);
   }, [pageIsReady]);
 
   const reportReady = (name) => {

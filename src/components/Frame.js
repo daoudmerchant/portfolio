@@ -30,12 +30,12 @@ const TriangleBottomRight = tw(trianglebottomright)`
 `;
 
 const Panel = tw.div`
+  absolute
   z-10
   bg-black
   transform
   font-bold
   overflow-hidden
-  absolute
   mix-blend-screen
   text-frame
 `;
@@ -57,22 +57,21 @@ const Vertical = tw(Panel)`
 `;
 
 const LinkContainer = tw(Panel)`
-transform
-skew-x-45
-left-8
-  z-20
   h-full
   w-fulllinks
+  transform
+  skew-x-45
+  left-8
+  z-20
   flex
   items-center
   text-white
-
 `;
 
 const Swiper = tw.div`
+  absolute
   z-30
   bg-white
-  absolute
   transform
   transition-position
   duration-500

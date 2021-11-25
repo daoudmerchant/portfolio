@@ -79,17 +79,6 @@ module.exports = {
         iconmarginportrait: "3em",
       },
       height: {
-        /*
-          Project height (split) - 16x10
-
-          width = 50vw - 2em;
-          height = (50vw - 8em) / 16 * 10 = 31.25vw - 1.25em
-
-          Project height (single, small) - 10x16
-
-          width = 100vw - 8em;
-          height = (100vw - 8em) / 10 * 16 = 160vw - 12.8em
-        */
         fulllinks: "calc(100% - 16em)",
         projectpanel: "calc(31.25vw - 16em)",
         projectpanellg: "calc(62.5vw - 20em)",
@@ -128,6 +117,9 @@ module.exports = {
       },
       animation: {
         "fade-in": "fade-in 1s linear forwards",
+      },
+      transitionTimingFunction: {
+        startrek: "cubic-bezier(.36,.25,0,1.08)",
       },
       keyframes: {
         "fade-in": {

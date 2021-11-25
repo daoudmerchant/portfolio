@@ -54,7 +54,7 @@ const LinkSwiper = tw.div`
     props.$top ? "bg-white z-30 mix-blend-difference" : "bg-black z-20"}
   transition-transform
   duration-300
-  ease-in-out
+  startrek
 `;
 
 const ProjectLink = ({ text, url, isLink, handleClick, showMore = null }) => {

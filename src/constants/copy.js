@@ -40,7 +40,7 @@ export const PROJECTS = [
     ],
     demo: "https://daoudmerchant.github.io/show-me-something/#/",
     repo: "https://github.com/daoudmerchant/show-me-something",
-    video: "Vg_5aqZ1s-o-WmM",
+    video: "Vg_5aqZ1s-o",
     tag: {
       text: "LATEST",
       color: "#ffde8c",

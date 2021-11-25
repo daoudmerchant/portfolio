@@ -55,11 +55,23 @@ const GlobalStyle = createGlobalStyle`
     @media screen and (min-width: 1024px) {
       font-size: 4px;
     }
+    @media screen and (min-width: 1280px) {
+      font-size: 3.6px;
+    }
+    @media screen and (min-width: 1536px) {
+      font-size: 4.5px;
+    }
     @media screen and (min-width: 2500px) {
       font-size: 5px;
     }
     @media screen and (min-width: 4000px) {
       font-size: 8px;
+    }
+    @media screen and (min-width: 5000px) {
+      font-size: 10px;
+    }
+    @media screen and (min-width: 6000px) {
+      font-size: 11px;
     }
   }
 `;

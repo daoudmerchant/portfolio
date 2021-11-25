@@ -25,10 +25,9 @@ const Border = tw.div`
   h-full
   w-full
   absolute
-  p-4
-  pt-0
-  sm:pt-4
-  lg:pt-0
+  p-5
+  2xl:px-8
+  3xl:px-16
 `;
 
 const Line = tw.div`
@@ -78,12 +77,9 @@ const TextContainer = tw.div`
   w-full
   overflow-scroll
   md:overflow-hidden
-  lg:p-4
-  xl:p-6
-  2xl:p-8
   flex
   flex-col
-  justify-between
+  justify-around
 `;
 
 const Tag = tw.p`
@@ -105,11 +101,10 @@ const Tag = tw.p`
 
 const Title = tw.h2`
   mt-0
-  lg:-mt-1
-  xl:mt-0
   tracking-wide
   text-7
   xs:text-8
+  sm:text-6
   md:text-10
   xl:text-6
   font-bold
@@ -135,9 +130,10 @@ const Calendar = tw.img`
 
 const Date = tw.h3`
   text-6
+  sm:text-5
   md:text-7
   lg:text-14
-  xl:text-5
+  xl:text-4
 `;
 
 const Text = tw.p`
@@ -148,7 +144,6 @@ const Text = tw.p`
   md:text-5
   lg:text-6
   xl:text-4
-  2xl:text-5
   p-0.5
 `;
 
@@ -160,6 +155,7 @@ const Warning = tw(Text)`
 
 const Technologies = tw.div`
   text-4
+  2xs:text-3
   xs:text-5
   sm:text-4.5
   md:text-5

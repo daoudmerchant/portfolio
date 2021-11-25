@@ -11,6 +11,7 @@ module.exports = {
       lg: { min: "1024px" },
       xl: { min: "1280px" },
       "2xl": { min: "1536px" },
+      "3xl": { min: "2500px" },
       portrait: { raw: "(orientation: portrait)" },
       touch: { raw: "(hover: none) and (pointer: coarse)" },
     },

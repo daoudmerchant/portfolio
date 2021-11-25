@@ -115,8 +115,8 @@ export const PROJECTS = [
     description: [
       "Created without any template for a deeper learning experience and more explicit " +
         "example of my current skill level.",
-      "Apart from practising knock-out graphics, forcing myself to use Tailwind taught " +
-        "me a lot about its advanced usage and configuration.",
+      "Apart from practising knock-out graphics, choosing Tailwind for such a customised " +
+        "layout taught me a lot about its advanced usage and configuration.",
     ],
     technologies: ["React", "Styled Components", "Tailwind"],
     repo: "https://github.com/daoudmerchant/portfolio",

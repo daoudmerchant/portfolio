@@ -141,6 +141,10 @@ module.exports = {
       transitionProperty: {
         position: "left, right, top, bottom",
       },
+      zIndex: {
+        60: 60,
+        70: 70,
+      },
     },
   },
   variants: {},

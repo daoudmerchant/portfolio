@@ -85,15 +85,16 @@ const Main = tw(main)`
 `;
 
 const Screen = tw.div`
+  fixed
+  top-16
+  right-16
   h-full
-  w-full
   bg-white
-  z-50
-  transition-position
+  z-70
+  transition-all
   duration-500
   ease-in-out
-  absolute
-  ${(props) => (props.visible ? "left-full" : "left-0")};
+  ${(props) => (props.$visible ? "w-0" : "w-full")};
 `;
 
 const Fader = tw.div`
@@ -159,7 +160,7 @@ function App() {
         <Banner visible={showBanner} reportReady={reportReady} />
         <TopFader />
         <Main>
-          <Screen visible={+showContent} />
+          <Screen $visible={+showContent} />
           <Greeting reportReady={reportReady} />
           {PROJECTS.map((project, i) => {
             return (

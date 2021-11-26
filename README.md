@@ -11,6 +11,7 @@ Well, this turned out to be _much_ more complicated than I intended!
 ### Successes
 
 - [x] Animated frame effects
+- [x] Reveal upon images reported loaded
 - [x] 'Focus' animations on both mobile (scroll) and desktop (hover)
 - [x] Infinitely scalable by adding or removing projects to the `PROJECTS` object
 - [x] Fully responsive

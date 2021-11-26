@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.e48f62ab.chunk.css",
-    "main.js": "/static/js/main.ea55d82b.chunk.js",
-    "main.js.map": "/static/js/main.ea55d82b.chunk.js.map",
+    "main.js": "/static/js/main.6ad0290b.chunk.js",
+    "main.js.map": "/static/js/main.6ad0290b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.34f626da.js",
     "runtime-main.js.map": "/static/js/runtime-main.34f626da.js.map",
     "static/css/2.27de7858.chunk.css": "/static/css/2.27de7858.chunk.css",
@@ -12,12 +12,12 @@
     "static/css/2.27de7858.chunk.css.map": "/static/css/2.27de7858.chunk.css.map",
     "static/css/main.e48f62ab.chunk.css.map": "/static/css/main.e48f62ab.chunk.css.map",
     "static/js/2.ecb6ab46.chunk.js.LICENSE.txt": "/static/js/2.ecb6ab46.chunk.js.LICENSE.txt",
-    "static/media/AuroraBorealisHigh.00c73446.webp": "/static/media/AuroraBorealisHigh.00c73446.webp",
-    "static/media/AuroraBorealisHigh.433771b8.jpg": "/static/media/AuroraBorealisHigh.433771b8.jpg",
-    "static/media/AuroraBorealisLow.29319d7e.jpg": "/static/media/AuroraBorealisLow.29319d7e.jpg",
-    "static/media/AuroraBorealisLow.58f48b91.webp": "/static/media/AuroraBorealisLow.58f48b91.webp",
-    "static/media/AuroraBorealisMed.88da6749.webp": "/static/media/AuroraBorealisMed.88da6749.webp",
-    "static/media/AuroraBorealisMed.d90e8a1c.jpg": "/static/media/AuroraBorealisMed.d90e8a1c.jpg",
+    "static/media/AuroraBorealisHigh.bb00375f.jpg": "/static/media/AuroraBorealisHigh.bb00375f.jpg",
+    "static/media/AuroraBorealisHigh.cc237f8f.webp": "/static/media/AuroraBorealisHigh.cc237f8f.webp",
+    "static/media/AuroraBorealisLow.54ffe6f1.jpg": "/static/media/AuroraBorealisLow.54ffe6f1.jpg",
+    "static/media/AuroraBorealisLow.a46b2779.webp": "/static/media/AuroraBorealisLow.a46b2779.webp",
+    "static/media/AuroraBorealisMed.a18f677c.jpg": "/static/media/AuroraBorealisMed.a18f677c.jpg",
+    "static/media/AuroraBorealisMed.c59a14be.webp": "/static/media/AuroraBorealisMed.c59a14be.webp",
     "static/media/BattleshipsSmHigh.59381f77.webp": "/static/media/BattleshipsSmHigh.59381f77.webp",
     "static/media/BattleshipsSmHigh.d495ac21.jpg": "/static/media/BattleshipsSmHigh.d495ac21.jpg",
     "static/media/BattleshipsSmLow.13febba3.webp": "/static/media/BattleshipsSmLow.13febba3.webp",
@@ -83,6 +83,6 @@
     "static/css/2.27de7858.chunk.css",
     "static/js/2.ecb6ab46.chunk.js",
     "static/css/main.e48f62ab.chunk.css",
-    "static/js/main.ea55d82b.chunk.js"
+    "static/js/main.6ad0290b.chunk.js"
   ]
 }

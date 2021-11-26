@@ -130,7 +130,7 @@ const BottomFader = tw(Fader)`
 `;
 
 // Prepare initial state
-const readyState = (() => {
+const READYSTATE = (() => {
   let state = {
     background: false,
     profile: false,
@@ -145,7 +145,7 @@ function App() {
   const [showBanner, setShowBanner] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
-  const [ready, setReady] = useState(readyState);
+  const [ready, setReady] = useState(READYSTATE);
 
   const pageIsReady = useMemo(() => {
     const keys = Object.keys(ready);
@@ -154,8 +154,8 @@ function App() {
 
   useEffect(() => {
     if (!pageIsReady) return;
-    setTimeout(() => setShowBanner(true), 150); // Slight delay to guarantee page rendered
-    setTimeout(() => setShowContent(true), 450);
+    setShowBanner(true);
+    setTimeout(() => setShowContent(true), 300);
   }, [pageIsReady]);
 
   const reportReady = (name) => {
